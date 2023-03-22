@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta name="author" content="JustOneBean">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://just-girl.github.io/2018/04/19/android拍照，适配到android7.0/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Android拍照适配到Android7.0">
+    <meta property="og:description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta property="og:url" content="https://just-girl.github.io2018/04/19/Android拍照，适配到Android7.0/">
+    
+    <meta property="og:site_name" content="个人博客">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Android拍照适配到Android7.0">
+    <meta name="twitter:description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta name="twitter:image" content="/images/favicon.png">
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <meta name="theme-color" content="#005080">
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Android拍照适配到Android7.0 -
+        
+        个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"just-girl.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar.jpg","favicon":"/images/favicon.png","og_image":{"enable":false,"image_url":null},"article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":false,"background_image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"font_sizes":{"title":"2.8rem","subtitle":"1.5rem"},"line_height":1.2,"title":"Theme Redefine","subtitle":{"enable":false,"list":[]},"custom_font":{"enable":false,"font_family":null,"font_url":null}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_block":{"copy":true,"style":"simple","custom_font":{"enable":false,"font_family":null,"font_url":null}},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.2.3","friend_links":{"columns":2},"home_article":{"date_format":"YYYY-MM-DD","category":{"enable":false,"limit":3},"tag":{"enable":true,"limit":3}},"plugins":{"aplayer":{"enable":false,"audio":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}}};
+    REDEFINE.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="menu-wrapper">
+    
+    <div class="menu-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        归档
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/tags"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-tag"></i>
+                                        
+                                        标签
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="menu-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                归档
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/tags"  >
+                             
+                                
+                                    <i class="fa-regular fa-tag"></i>
+                                
+                                标签
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">Android拍照适配到Android7.0</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.jpg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">JustOneBean</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2018-04-19</span>
+        <span class="mobile">2018-04-19 00</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="pc">2023-03-22 16:54:15</span>
+            <span class="mobile">2023-03-22 16:54</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Android/">Android</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Android/">Android</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h3 id="获得相机权限"><a href="#获得相机权限" class="headerlink" title="获得相机权限"></a>获得相机权限</h3><p>因为需要用到camera，所以需要在manifest 文件里面声明设备 <code>需要安装</code>有camera程序。</p>
+<span id="more"></span>
+
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">...</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-feature</span> <span class="attr">android:name</span>=<span class="string">&quot;android.hardware.camera&quot;</span></span></span><br><span class="line"><span class="tag">                  <span class="attr">android:required</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="获得缩略图"><a href="#获得缩略图" class="headerlink" title="获得缩略图"></a>获得缩略图</h3><p>Anroid相机程序将通过<code>onActivityResult()</code> 返回 <code>Bitmap</code>缩略图</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onActivityResult</span><span class="params">(<span class="type">int</span> requestCode, <span class="type">int</span> resultCode, Intent data)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (requestCode == REQUEST_IMAGE_CAPTURE &amp;&amp; resultCode == RESULT_OK)     &#123;</span><br><span class="line">        <span class="type">Bundle</span> <span class="variable">extras</span> <span class="operator">=</span> data.getExtras();</span><br><span class="line">        <span class="type">Bitmap</span> <span class="variable">imageBitmap</span> <span class="operator">=</span> (Bitmap) extras.get(<span class="string">&quot;data&quot;</span>);</span><br><span class="line">        mImageView.setImageBitmap(imageBitmap);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><strong>注意：</strong> 从“<strong>data</strong>”从获取来的缩略图只适合作为icon，不适合其他用途。</p>
+<h3 id="保存大尺寸图片"><a href="#保存大尺寸图片" class="headerlink" title="保存大尺寸图片"></a>保存大尺寸图片</h3><p>一般用户应该将通过相机拍摄的照片保存在公共外部存储目录，这样可以方便其他应用程序访问。 <code>getExternalStoragePublicDirectory()</code>方法和 <code>DIRECTORY_PICTURES</code>参数可以将公共照片保存在正确的目录，因为这种方法提供的目录是所有应用程序之间共享，各自需要<code>READ_EXTERNAL_STORAGE</code>和<code>WRITE_EXTERNAL_STORAGE</code>权限。如果允许了写的权限，那么读的权限也将被隐式允许。所以，如果你需要读写外部存取目录，你只需要声明一个权限。</p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">...</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-permission</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:name</span>=<span class="string">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span> /&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>然而，如果你想将照片保存到私有目录只供你的app使用，那么你可以使用<code>getExternalFilesDir()</code>方法。在Android4.3及以下，仍需要<code>WRITE_EXTERNAL_STORAGE</code> 权限；但是从Android4.4开始，就不再需要声明此权限了，因为这个目录无法被其他app访问。因此你可以这样声明权限，仅仅只在较低的版本上添加<code>maxSdkVersion</code>属性：</p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">...</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:maxSdkVersion</span>=<span class="string">&quot;18&quot;</span> /&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p><strong>注意：</strong> 用<code>getExternalFilesDir()</code>和 <code>getFilesDir()</code>方法保存在目录的文件，会随着用户卸载app而一并删除。</p>
+<ul>
+<li>以下是谷歌提供的生成唯一文件名的一种方法</li>
+</ul>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">String mCurrentPhotoPath;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> File <span class="title function_">createImageFile</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="comment">// Create an image file name</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">timeStamp</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyyMMdd_HHmmss&quot;</span>).format(<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">    <span class="type">String</span> <span class="variable">imageFileName</span> <span class="operator">=</span> <span class="string">&quot;JPEG_&quot;</span> + timeStamp + <span class="string">&quot;_&quot;</span>;</span><br><span class="line">    <span class="type">File</span> <span class="variable">storageDir</span> <span class="operator">=</span> getExternalFilesDir(Environment.DIRECTORY_PICTURES);</span><br><span class="line">    <span class="type">File</span> <span class="variable">image</span> <span class="operator">=</span> File.createTempFile(</span><br><span class="line">        imageFileName,  <span class="comment">/* prefix */</span></span><br><span class="line">        <span class="string">&quot;.jpg&quot;</span>,         <span class="comment">/* suffix */</span></span><br><span class="line">        storageDir      <span class="comment">/* directory */</span></span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Save a file: path for use with ACTION_VIEW intents</span></span><br><span class="line">    mCurrentPhotoPath = image.getAbsolutePath();</span><br><span class="line">    <span class="keyword">return</span> image;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>然后调用<code>Intent</code> 启动相机</li>
+</ul>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">REQUEST_TAKE_PHOTO</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">dispatchTakePictureIntent</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">Intent</span> <span class="variable">takePictureIntent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(MediaStore.ACTION_IMAGE_CAPTURE);</span><br><span class="line">    <span class="comment">// Ensure that there&#x27;s a camera activity to handle the intent</span></span><br><span class="line">    <span class="keyword">if</span> (takePictureIntent.resolveActivity(getPackageManager()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">// Create the File where the photo should go</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">photoFile</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            photoFile = createImageFile();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException ex) &#123;</span><br><span class="line">            <span class="comment">// Error occurred while creating the File</span></span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Continue only if the File was successfully created</span></span><br><span class="line">        <span class="keyword">if</span> (photoFile != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="type">Uri</span> <span class="variable">photoURI</span> <span class="operator">=</span> FileProvider.getUriForFile(<span class="built_in">this</span>,</span><br><span class="line">                                                  <span class="string">&quot;com.example.android.fileprovider&quot;</span>,</span><br><span class="line">                                                  photoFile);</span><br><span class="line">            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);</span><br><span class="line">            startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><strong>注意：</strong> 从Android7.0开始，通过<code>getUriForFile(Context, String, File)</code> 返回的<code>content://</code> URI来访问数据，使用过去的<code>file://</code>URI将产生<code>FileUriExposedException</code>异常，现在一般使用<code>FileProvider</code>这种更加通用的方式来存储文件。</p>
+<ul>
+<li>配置<code>FileProvider</code><br> 在清单文件中：<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span>&gt;</span></span><br><span class="line">   ...</span><br><span class="line">   <span class="tag">&lt;<span class="name">provider</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">&quot;android.support.v4.content.FileProvider&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:authorities</span>=<span class="string">&quot;com.example.android.fileprovider&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:exported</span>=<span class="string">&quot;false&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:grantUriPermissions</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta-data</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">&quot;android.support.FILE_PROVIDER_PATHS&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:resource</span>=<span class="string">&quot;@xml/file_paths&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">meta-data</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">provider</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+必须确保<code>android:authorities</code>里面的值和class文件中的 <code>getUriForFile(Context, String, File)</code> 方法的值保持一致。<code>exported:</code>要求必须为<code>false</code>，为<code>true</code>则会报安全异常。<code>grantUriPermissions:true</code>，表示授予 URI 临时访问权限。<br>为了指定共享的目录我们需要在资源(res)目录下创建一个xml目录，然后创建一个名为“file_paths”(名字可以随便起，只要和在manifest注册的provider所引用的resource保持一致即可)的资源文件。</li>
+</ul>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">paths</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">external-path</span> <span class="attr">name</span>=<span class="string">&quot;my_images&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">path</span>=<span class="string">&quot;Android/data/com.example.package.name/files/Pictures&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">paths</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>上述代码中<code>path=&quot;&quot;</code>，是有特殊意义的，它代码根目录，也就是说你可以向其它的应用共享根目录及其子目录下任何一个文件了，如果你将<code>path</code>设为<code>path=&quot;pictures&quot;</code>，<br>那么它代表着根目录下的<strong>pictures</strong>目录(eg:&#x2F;storage&#x2F;emulated&#x2F;0&#x2F;pictures)，如果你向其它应用分享<strong>pictures</strong>目录范围之外的文件是不行的。</p>
+<h3 id="将图片保存到相册"><a href="#将图片保存到相册" class="headerlink" title="将图片保存到相册"></a>将图片保存到相册</h3><p><strong>注意：</strong> 如果你是用<code>getExternalFilesDir()</code>方法保存的文件，那么媒体将无法扫描到，因为它只对你的app私有化。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">galleryAddPic</span><span class="params">()</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">Intent</span> <span class="variable">mediaScanIntent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);</span><br><span class="line">    <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(mCurrentPhotoPath);</span><br><span class="line">    <span class="type">Uri</span> <span class="variable">contentUri</span> <span class="operator">=</span> Uri.fromFile(f);</span><br><span class="line">    mediaScanIntent.setData(contentUri);</span><br><span class="line">    <span class="built_in">this</span>.sendBroadcast(mediaScanIntent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="按比例缩小图片"><a href="#按比例缩小图片" class="headerlink" title="按比例缩小图片"></a>按比例缩小图片</h3><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">setPic</span><span class="params">()</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Get the dimensions of the View</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">targetW</span> <span class="operator">=</span> mImageView.getWidth();</span><br><span class="line">    <span class="type">int</span> <span class="variable">targetH</span> <span class="operator">=</span> mImageView.getHeight();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Get the dimensions of the bitmap</span></span><br><span class="line">    BitmapFactory.<span class="type">Options</span> <span class="variable">bmOptions</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BitmapFactory</span>.Options();</span><br><span class="line">    bmOptions.inJustDecodeBounds = <span class="literal">true</span>;</span><br><span class="line">    BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);</span><br><span class="line">    <span class="type">int</span> <span class="variable">photoW</span> <span class="operator">=</span> bmOptions.outWidth;</span><br><span class="line">    <span class="type">int</span> <span class="variable">photoH</span> <span class="operator">=</span> bmOptions.outHeight;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Determine how much to scale down the image</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">scaleFactor</span> <span class="operator">=</span> Math.min(photoW/targetW, photoH/targetH);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Decode the image file into a Bitmap sized to fill the View</span></span><br><span class="line">    bmOptions.inJustDecodeBounds = <span class="literal">false</span>;</span><br><span class="line">    bmOptions.inSampleSize = scaleFactor;</span><br><span class="line">    bmOptions.inPurgeable = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">Bitmap</span> <span class="variable">bitmap</span> <span class="operator">=</span> BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);</span><br><span class="line">    mImageView.setImageBitmap(bitmap);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：Android拍照适配到Android7.0</li>
+        <li>本文作者：JustOneBean</li>
+        <li>创建时间：2018-04-19 00:00:00</li>
+        <li>
+            本文链接：https://just-girl.github.io/2018/04/19/Android拍照，适配到Android7.0/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Android/">#Android</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2018/05/12/EditText%E6%98%BE%E7%A4%BA%E6%98%8E%E6%96%87%E4%B8%8E%E5%AF%86%E7%A0%81/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">EditText显示明文与密码</span>
+                                    <span class="post-nav-item">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2018/03/17/Android%E7%9A%84adb%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">Android的adb调试命令集合</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">Android拍照适配到Android7.0</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E7%9B%B8%E6%9C%BA%E6%9D%83%E9%99%90"><span class="nav-text">获得相机权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E7%BC%A9%E7%95%A5%E5%9B%BE"><span class="nav-text">获得缩略图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E5%A4%A7%E5%B0%BA%E5%AF%B8%E5%9B%BE%E7%89%87"><span class="nav-text">保存大尺寸图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E5%88%B0%E7%9B%B8%E5%86%8C"><span class="nav-text">将图片保存到相册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E6%AF%94%E4%BE%8B%E7%BC%A9%E5%B0%8F%E5%9B%BE%E7%89%87"><span class="nav-text">按比例缩小图片</span></a></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-cog fa-spin fa-spin-reverse"></i>&nbsp;&nbsp;<a href="/">JustOneBean</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
+                <br> 
+            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v1.2.3</a>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="unfolded-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="fa-regular fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="folded-tools-list">
+        <li class="right-bottom-tools tool-toggle-show flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/menu-shrink.js"></script>
+
+<script src="/js/tools/go-top-bottom.js"></script>
+
+<script src="/js/tools/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/tools/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/tools/code-block.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

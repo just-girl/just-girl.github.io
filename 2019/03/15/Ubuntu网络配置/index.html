@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta name="author" content="JustOneBean">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://just-girl.github.io/2019/03/15/ubuntu网络配置/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ubuntu网络配置">
+    <meta property="og:description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta property="og:url" content="https://just-girl.github.io2019/03/15/Ubuntu网络配置/">
+    
+    <meta property="og:site_name" content="个人博客">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ubuntu网络配置">
+    <meta name="twitter:description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta name="twitter:image" content="/images/favicon.png">
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <meta name="theme-color" content="#005080">
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Ubuntu网络配置 -
+        
+        个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"just-girl.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar.jpg","favicon":"/images/favicon.png","og_image":{"enable":false,"image_url":null},"article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":false,"background_image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"font_sizes":{"title":"2.8rem","subtitle":"1.5rem"},"line_height":1.2,"title":"Theme Redefine","subtitle":{"enable":false,"list":[]},"custom_font":{"enable":false,"font_family":null,"font_url":null}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_block":{"copy":true,"style":"simple","custom_font":{"enable":false,"font_family":null,"font_url":null}},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.2.3","friend_links":{"columns":2},"home_article":{"date_format":"YYYY-MM-DD","category":{"enable":false,"limit":3},"tag":{"enable":true,"limit":3}},"plugins":{"aplayer":{"enable":false,"audio":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}}};
+    REDEFINE.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="menu-wrapper">
+    
+    <div class="menu-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        归档
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/tags"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-tag"></i>
+                                        
+                                        标签
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="menu-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                归档
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/tags"  >
+                             
+                                
+                                    <i class="fa-regular fa-tag"></i>
+                                
+                                标签
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">Ubuntu网络配置</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.jpg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">JustOneBean</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2019-03-15</span>
+        <span class="mobile">2019-03-15 00</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="pc">2023-03-22 17:36:47</span>
+            <span class="mobile">2023-03-22 17:36</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h2 id="以太网接口"><a href="#以太网接口" class="headerlink" title="以太网接口"></a>以太网接口</h2><h3 id="识别以太网接口的两种方法："><a href="#识别以太网接口的两种方法：" class="headerlink" title="识别以太网接口的两种方法："></a>识别以太网接口的两种方法：</h3> <span id="more"></span>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">justme@justserver:$ ifconfig -a</span><br><span class="line">eno1np0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</span><br><span class="line">        inet 192.168.1.125  netmask 255.255.255.0  broadcast 192.168.1.255</span><br><span class="line">        inet6 fe80::4ed9:8fff:fe2c:cb98  prefixlen 64  scopeid 0x20&lt;link&gt;</span><br><span class="line">        ether 4c:d9:8f:2c:cb:98  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 24440107  bytes 35187073438 (35.1 GB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 11198489  bytes 800420673 (800.4 MB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line"></span><br><span class="line">eno2np1: flags=4098&lt;BROADCAST,MULTICAST&gt;  mtu 1500</span><br><span class="line">        ether 4c:d9:8f:2c:cb:99  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 0  bytes 0 (0.0 B)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 0  bytes 0 (0.0 B)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line"></span><br><span class="line">lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536</span><br><span class="line">        inet 127.0.0.1  netmask 255.0.0.0</span><br><span class="line">        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;</span><br><span class="line">        loop  txqueuelen 1000  (Local Loopback)</span><br><span class="line">        RX packets 7094  bytes 793776 (793.7 KB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 7094  bytes 793776 (793.7 KB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">justme@justserver:~/AndroidSource/lineage_17.0$ sudo lshw -class network</span><br><span class="line">[sudo] password for justme:</span><br><span class="line">  *-network:0</span><br><span class="line">       description: Ethernet interface</span><br><span class="line">       product: BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller</span><br><span class="line">       vendor: Broadcom Inc. and subsidiaries</span><br><span class="line">       physical id: 0</span><br><span class="line">       bus info: pci@0000:18:00.0</span><br><span class="line">       logical name: eno1np0</span><br><span class="line">       version: 01</span><br><span class="line">       serial: 4c:d9:8f:2c:cb:98</span><br><span class="line">       size: 1Gbit/s</span><br><span class="line">       capacity: 10Gbit/s</span><br><span class="line">       width: 64 bits</span><br><span class="line">       clock: 33MHz</span><br><span class="line">       capabilities: pm vpd msi msix pciexpress bus_master cap_list rom ethernet physical tp 1000bt-fd 10000bt-fd autonegotiation</span><br><span class="line">       configuration: autonegotiation=on broadcast=yes driver=bnxt_en driverversion=1.10.0 duplex=full firmware=214.0.222.1/pkg 21.40.22.21 ip=192.168.1.125 latency=0 link=yes multicast=yes port=twisted pair speed=1Gbit/s</span><br><span class="line">       resources: irq:72 memory:9da10000-9da1ffff memory:9d900000-9d9fffff memory:9da22000-9da23fff memory:9de00000-9de7ffff</span><br><span class="line">  *-network:1 DISABLED</span><br><span class="line">       description: Ethernet interface</span><br><span class="line">       product: BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller</span><br><span class="line">       vendor: Broadcom Inc. and subsidiaries</span><br><span class="line">       physical id: 0.1</span><br><span class="line">       bus info: pci@0000:18:00.1</span><br><span class="line">       logical name: eno2np1</span><br><span class="line">       version: 01</span><br><span class="line">       serial: 4c:d9:8f:2c:cb:99</span><br><span class="line">       capacity: 10Gbit/s</span><br><span class="line">       width: 64 bits</span><br><span class="line">       clock: 33MHz</span><br><span class="line">       capabilities: pm vpd msi msix pciexpress bus_master cap_list rom ethernet physical tp 1000bt-fd 10000bt-fd autonegotiation</span><br><span class="line">       configuration: autonegotiation=on broadcast=yes driver=bnxt_en driverversion=1.10.0 duplex=half firmware=214.0.222.1/pkg 21.40.22.21 latency=0 link=no multicast=yes port=twisted pair</span><br><span class="line">       resources: irq:81 memory:9da00000-9da0ffff memory:9d800000-9d8fffff memory:9da20000-9da21fff memory:9de80000-9defffff</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="以太网接口逻辑名称"><a href="#以太网接口逻辑名称" class="headerlink" title="以太网接口逻辑名称"></a>以太网接口逻辑名称</h3><p>接口逻辑名称也可以通过 <code>netplan</code> 配置进行配置。如果要控制哪个接口收到特定的逻辑名称，请使用 <code>match</code> 和 <code>set-name</code> 键。<code>match</code> 键用于根据某些条件（例如MAC地址，驱动程序等）查找适配器。然后，<code>set-name</code> 键可用于将设备更改为所需的逻辑名称。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">  version: 2</span><br><span class="line">  renderer: networkd</span><br><span class="line">  ethernets:</span><br><span class="line">    eth_lan0:</span><br><span class="line">      dhcp4: true</span><br><span class="line">	  match:</span><br><span class="line">	    macaddress: 00:11:22:33:44:55</span><br><span class="line">	  set-name: eth_lan0</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="以太网接口设置"><a href="#以太网接口设置" class="headerlink" title="以太网接口设置"></a>以太网接口设置</h3><p>ethtool 是一个程序，用于显示和更改以太网卡设置，例如自动协商，端口速度，双工模式和局域网唤醒。以下是如何查看以太网接口的受支持功能和配置设置：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">sudo ethtool eth4</span><br><span class="line">Settings for eth4:</span><br><span class="line">	Supported ports: [ FIBRE ]</span><br><span class="line">	Supported link modes:   10000baseT/Full</span><br><span class="line">	Supported pause frame use: No</span><br><span class="line">	Supports auto-negotiation: No</span><br><span class="line">	Supported FEC modes: Not reported</span><br><span class="line">	Advertised link modes:  10000baseT/Full</span><br><span class="line">	Advertised pause frame use: No</span><br><span class="line">	Advertised auto-negotiation: No</span><br><span class="line">	Advertised FEC modes: Not reported</span><br><span class="line">	Speed: 10000Mb/s</span><br><span class="line">	Duplex: Full</span><br><span class="line">	Port: FIBRE</span><br><span class="line">	PHYAD: 0</span><br><span class="line">	Transceiver: internal</span><br><span class="line">	Auto-negotiation: off</span><br><span class="line">	Supports Wake-on: d</span><br><span class="line">	Wake-on: d</span><br><span class="line">	Current message level: 0x00000014 (20)</span><br><span class="line">			               link ifdown</span><br><span class="line">	Link detected: yes</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="IP-地址"><a href="#IP-地址" class="headerlink" title="IP 地址"></a>IP 地址</h2><h3 id="临时IP地址分配"><a href="#临时IP地址分配" class="headerlink" title="临时IP地址分配"></a>临时IP地址分配</h3><p>对于临时网络配置，可以使用 <code>ip</code> 命令，该命令在大多数其他 GNU &#x2F; Linux 操作系统上也可以找到。 ip 命令使您可以配置立即生效的设置，但是这些设置不是永久性的，并且在重启后将丢失。</p>
+<p>要临时配置 IP 地址，可以按以下方式使用 <code>ip</code> 命令。修改 IP 地址和子网掩码以符合您的网络要求。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ip addr add 10.102.66.200/24 dev enp0s25</span><br></pre></td></tr></table></figure></div>
+
+<p>然后可以使用 <code>ip</code> 来设置链接 up 或 down</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip link set dev enp0s25 up</span><br><span class="line">ip link set dev enp0s25 down</span><br></pre></td></tr></table></figure></div>
+
+<p>要验证 enp0s25 的 IP 地址配置，可以按以下方式使用 <code>ip</code> 命令。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ip address show dev enp0s25</span><br><span class="line">10: enp0s25: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000</span><br><span class="line">    link/ether 00:16:3e:e2:52:42 brd ff:ff:ff:ff:ff:ff link-netnsid 0</span><br><span class="line">    inet 10.102.66.200/24 brd 10.102.66.255 scope global dynamic eth0</span><br><span class="line">       valid_lft 2857sec preferred_lft 2857sec</span><br><span class="line">    inet6 fe80::216:3eff:fee2:5242/64 scope link</span><br><span class="line">       valid_lft forever preferred_lft forever6</span><br></pre></td></tr></table></figure></div>
+
+<p>要<strong>配置默认网关</strong>，可以按以下方式使用ip命令。修改默认网关地址以符合您的网络要求。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ip route add default via 10.102.66.1</span><br></pre></td></tr></table></figure></div>
+
+<p>要验证默认网关配置，可以按以下方式使用 <code>ip</code> 命令。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ip route show</span><br><span class="line">default via 10.102.66.1 dev eth0 proto dhcp src 10.102.66.200 metric 100</span><br><span class="line">10.102.66.0/24 dev eth0 proto kernel scope link src 10.102.66.200</span><br><span class="line">10.102.66.1 dev eth0 proto dhcp scope link src 10.102.66.200 metric 100 </span><br></pre></td></tr></table></figure></div>
+
+<p>如果您需要 DNS 进行临时网络配置，则可以在文件 <code>/etc/resolv.con</code>f 中添加 DNS 服务器 IP 地址。通常，不建议直接编辑 <code>/etc/resolv.conf</code> ，但这是一个<strong>临时且非永久的配置</strong>。下例显示了如何在 <code>/etc/resolv.conf</code> 中输入两个 DNS 服务器，应将其更改为适合您网络的服务器。下一节将更详细地描述进行 DNS 客户端配置的正确的持久方法。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 8.8.8.8</span><br><span class="line">nameserver 8.8.4.4</span><br></pre></td></tr></table></figure></div>
+
+<p>如果您不再需要此配置，并且希望从接口清除所有 IP 配置，则可以将 <code>ip</code> 命令与 <code>flush</code> 选项一起使用，如下所示。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr flush eth0</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>使用 <code>ip</code> 命令刷新IP配置不会清除 <code>/etc/resolv.conf</code> 的内容。您必须手动删除或修改这些条目，或者重新引导，这也将导致 <code>/etc/resolv.conf</code>（它是 <code>/run/systemd/resolve/stub-resolv.conf</code>的符号链接）被重写。</p>
+</blockquote>
+<h2 id="动态IP地址分配（DHCP客户端）"><a href="#动态IP地址分配（DHCP客户端）" class="headerlink" title="动态IP地址分配（DHCP客户端）"></a>动态IP地址分配（DHCP客户端）</h2><p>要将服务器配置为使用 DHCP 进行动态地址分配，请在文件 <code>/etc/netplan/99_config.yaml</code> 中创建一个 <code>netplan</code> 配置。下面的示例假定您正在配置标识为 <code>enp3s0</code> 的第一个以太网接口。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">  version: 2</span><br><span class="line">  renderer: networkd</span><br><span class="line">  ethernets:</span><br><span class="line">    enp3s0:</span><br><span class="line">      dhcp4: true</span><br></pre></td></tr></table></figure></div>
+
+<p>然后可以使用 <code>netplan</code> 命令应用该配置。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan apply</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="静态IP地址分配"><a href="#静态IP地址分配" class="headerlink" title="静态IP地址分配"></a>静态IP地址分配</h3><p>要将系统配置为使用静态地址分配，请在文件 <code>/etc/netplan/99_config.yaml</code> 中创建一个 <code>netplan</code> 配置。下面的示例假定您正在配置标识为 <code>eth0</code> 的第一个以太网接口。更改地址，<code>gateway4</code> 和名称服务器值，以满足您的网络要求。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">  version: 2</span><br><span class="line">  renderer: networkd</span><br><span class="line">  ethernets:</span><br><span class="line">     eno1np0:</span><br><span class="line">        dhcp4: no</span><br><span class="line">        dhcp6: no</span><br><span class="line">        addresses:</span><br><span class="line">           - 192.168.1.125/24</span><br><span class="line">        gateway4: 192.168.1.1</span><br><span class="line">        nameservers:</span><br><span class="line">           search: []</span><br><span class="line">           addresses: [192.168.1.1]</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>eno1np0：指定需配置网络接口的名称。</p>
+<p>dhcp4：是否打开 IPv4 的 dhcp。</p>
+<p>dhcp6：是否打开 IPv6 的 dhcp。</p>
+<p>addresses：定义网络接口的静态 IP 地址。</p>
+<p>gateway4：指定默认网关的 IPv4 地址。</p>
+<p>nameservers：指定域名服务器的 IP 地址。</p>
+</blockquote>
+<p>然后可以使用 <code>netplan</code> 命令应用该配置。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan apply</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="环回接口"><a href="#环回接口" class="headerlink" title="环回接口"></a>环回接口</h2><p>系统将环回接口标识为 <code>lo</code> ，其默认 IP 地址为 127.0.0.1。可以使用 <code>ip</code> 命令查看它。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ip address show lo</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 ::1/128 scope host</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="名称解析"><a href="#名称解析" class="headerlink" title="名称解析"></a>名称解析</h2><p>与 IP 网络相关的名称解析是将 IP 地址映射到主机名的过程，从而更容易识别网络上的资源。下一节将说明如何使用 DNS 和静态主机名记录正确配置系统以进行名称解析。</p>
+<h3 id="DNS客户端配置"><a href="#DNS客户端配置" class="headerlink" title="DNS客户端配置"></a>DNS客户端配置</h3><p>传统上，文件 <code>/etc/resolv.conf</code> 是静态配置文件，很少需要通过 DCHP 客户端挂接进行更改或自动更改。 <code>Systemd-resolved</code> 处理名称服务器配置，并且应该通过 <code>systemd-resolve</code> 命令与之交互。 <code>Netplan</code> 配置<code>systemd-resolved</code> 生成一个名称服务器和域的列表，以放入 <code>/etc/resolv.conf</code> 中，这是一个符号链接：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/resolv.conf -&gt; ../run/systemd/resolve/stub-resolv.conf</span><br></pre></td></tr></table></figure></div>
+
+<p>要配置解析器，请将适合您的网络的名称服务器的 IP 地址添加到 <code>netplan</code> 配置文件中。您还可以添加可选的 DNS 后缀搜索列表以匹配您的网络域名。生成的文件可能如下所示：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">  version: 2</span><br><span class="line">  renderer: networkd</span><br><span class="line">  ethernets:</span><br><span class="line">    enp0s25:</span><br><span class="line">      addresses:</span><br><span class="line">        - 192.168.0.100/24</span><br><span class="line">      gateway4: 192.168.0.1</span><br><span class="line">      nameservers:</span><br><span class="line">          search: [mydomain, otherdomain]</span><br><span class="line">          addresses: [1.1.1.1, 8.8.8.8, 4.4.4.4]</span><br></pre></td></tr></table></figure></div>
+
+<p>搜索选项也可以与多个域名一起使用，以便将 DNS 查询按输入顺序附加。例如，您的网络可能有多个子域可供搜索； example.com 的父域，以及两个子域 sales.example.com 和 dev.example.com 。</p>
+<p>如果您要搜索多个域，则配置可能如下所示：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">  version: 2</span><br><span class="line">  renderer: networkd</span><br><span class="line">  ethernets:</span><br><span class="line">    enp0s25:</span><br><span class="line">      addresses:</span><br><span class="line">        - 192.168.0.100/24</span><br><span class="line">      gateway4: 192.168.0.1</span><br><span class="line">      nameservers:</span><br><span class="line">          search: [example.com, sales.example.com, dev.example.com]</span><br><span class="line">          addresses: [1.1.1.1, 8.8.8.8, 4.4.4.4]</span><br></pre></td></tr></table></figure></div>
+
+<p>如果尝试对名称为 <code>server1</code> 的主机执行 <code>ping</code> 操作，系统将按照以下顺序自动查询DNS的完全合格域名（FQDN）：</p>
+<ol>
+<li><p>server1.example.com</p>
+</li>
+<li><p>server1.sales.example.com</p>
+</li>
+<li><p>server1.dev.example.com</p>
+</li>
+</ol>
+<p>如果找不到匹配项，则 DNS 服务器将提供 <code>notfound</code> 的结果，并且 DNS 查询将失败。</p>
+<h4 id="静态主机名"><a href="#静态主机名" class="headerlink" title="静态主机名"></a>静态主机名</h4><p>静态主机名是本地定义的主机名到 IP 的映射，位于文件 <code>/etc/hosts</code> 中。默认情况下，<code>hosts</code> 文件中的条目将优先于 DNS 。这意味着，如果您的系统尝试解析主机名并且与 <code>/etc/hosts</code> 中的条目匹配，它将不会尝试在 DNS 中查找记录。在某些配置中，尤其是当不需要 Internet 访问时，可以方便地将与有限数量的资源进行通信的服务器设置为使用静态主机名而不是 DNS 。</p>
+<p>以下是主机文件的示例，其中已通过简单的主机名，别名及其等效的完全限定域名（FQDN）标识了许多本地服务器。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1	localhost</span><br><span class="line">127.0.1.1	ubuntu-server</span><br><span class="line">10.0.0.11	server1 server1.example.com vpn</span><br><span class="line">10.0.0.12	server2 server2.example.com mail</span><br><span class="line">10.0.0.13	server3 server3.example.com www</span><br><span class="line">10.0.0.14	server4 server4.example.com file</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>在上面的示例中，请注意，除了它们的专有名称和 FQDN 之外，还为每个服务器指定了别名。 Server1 已映射为名称 vpn ，server2 被称为 mail ，server3 被称为 www ， server4 被称为 file 。</p>
+</blockquote>
+<h4 id="名称服务交换机配置"><a href="#名称服务交换机配置" class="headerlink" title="名称服务交换机配置"></a>名称服务交换机配置</h4><p>系统选择将主机名解析为 IP 地址的方法的顺序由名称服务交换机（NSS）配置文件 <code>/etc/nsswitch.conf</code> 控制。如上一节所述，通常，在系统 <code>/etc/hosts</code> 文件中定义的静态主机名优先于从 DNS 解析的名称。以下是文件 <code>/etc/nsswitch.conf</code> 中负责主机名查找此顺序的行的示例。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4</span><br></pre></td></tr></table></figure></div>
+
+<ol>
+<li><strong>files</strong> ：首先尝试解析 <code>/etc/hosts</code> 中的静态主机名。</li>
+<li><strong>mdns4_minimal</strong> ：尝试使用多播 DNS 解析名称。</li>
+<li><strong>[NOTFOUND&#x3D;return]</strong> ：意味着前面的 <code>mdns4_minimal</code> 进程未找到的任何响应都应视为权威，并且系统不应尝试继续寻找答案。</li>
+<li><strong>dns</strong> ：表示旧式单播 DNS 查询。</li>
+<li><strong>mdns4</strong>  ：表示多播 DNS 查询。</li>
+</ol>
+<p>要修改上述名称解析方法的顺序，只需将 hosts：字符串更改为您选择的值即可。例如，如果您更喜欢使用传统的单播 DNS 而不是多播 DNS ，则可以在 <code>/etc/nsswitch.conf</code> 中更改字符串，如下所示。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hosts:          files dns [NOTFOUND=return] mdns4_minimal mdns4</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="桥接"><a href="#桥接" class="headerlink" title="桥接"></a>桥接</h2><p>桥接多个接口是一种更高级的配置，但在多种情况下非常有用。一种情况是建立具有多个网络接口的网桥，然后使用防火墙过滤两个网段之间的流量。另一种情况是在具有一个接口的系统上使用网桥，以允许虚拟机直接访问外部网络。以下示例涵盖了后一种情况。</p>
+<p>通过编辑 <code>/etc/netplan/</code> 中的 <code>netplan</code> 配置来配置网桥：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">  version: 2</span><br><span class="line">  renderer: networkd</span><br><span class="line">  ethernets:</span><br><span class="line">    enp3s0:</span><br><span class="line">      dhcp4: no</span><br><span class="line">  bridges:</span><br><span class="line">    br0:</span><br><span class="line">      dhcp4: yes</span><br><span class="line">      interfaces:</span><br><span class="line">        - enp3s0</span><br></pre></td></tr></table></figure></div>
+
+<p>为您的物理接口和网络输入适当的值。</p>
+<p>现在应用配置以启用网桥：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan apply</span><br></pre></td></tr></table></figure></div>
+
+<p>现在，新的网桥接口应已启动并正在运行。 <code>brctl</code> 提供有关网桥状态的有用信息，控制哪些接口是网桥的一部分，等等。有关更多信息，请参见 <code>man brctl</code> 。</p>
+<h2 id="YAML-语言基本语法规则"><a href="#YAML-语言基本语法规则" class="headerlink" title="YAML 语言基本语法规则"></a>YAML 语言基本语法规则</h2><p>YAML 语言的设计目标，就是方便人类读写。它实质上是一种通用的数据串行化格式。 YAML 基本语法规则如下:</p>
+<blockquote>
+<p>大小写敏感<br>使用缩进表示层级关系<br>缩进时不允许使用Tab键，只允许使用空格。<br>缩进的空格数目不重要，只要相同层级的元素左侧对齐即可<br>#表示注释，从这个字符一直到行尾，都会被解析器忽略。</p>
+</blockquote>
+<h3 id="根据-Netplan-的描述文件手动创建网络守护程序的配置信息"><a href="#根据-Netplan-的描述文件手动创建网络守护程序的配置信息" class="headerlink" title="根据 Netplan 的描述文件手动创建网络守护程序的配置信息"></a>根据 Netplan 的描述文件手动创建网络守护程序的配置信息</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan generate</span><br></pre></td></tr></table></figure></div>
+
+<p>执行后会使用  <code>/etc/netplan/*.yaml</code> 生成对应网络守护程序的配置信息。例如：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cat</span> /run/systemd/network/10-netplan-enp0s5.network</span></span><br><span class="line">[Match]</span><br><span class="line">Name=enp0s5</span><br><span class="line"></span><br><span class="line">[Link]</span><br><span class="line">RequiredForOnline=no</span><br><span class="line"></span><br><span class="line">[Network]</span><br><span class="line">Address=192.168.100.211/23</span><br><span class="line">Gateway=192.168.100.1</span><br><span class="line">DNS=8.8.8.8</span><br><span class="line">DNS=8.8.4.4</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="查看当前系统的-DNS-Servers"><a href="#查看当前系统的-DNS-Servers" class="headerlink" title="查看当前系统的 DNS Servers"></a>查看当前系统的 DNS Servers</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">systemd-resolve --status</span></span><br><span class="line">Global</span><br><span class="line">          DNSSEC NTA: 10.in-addr.arpa</span><br><span class="line">                      16.172.in-addr.arpa</span><br><span class="line">                      168.192.in-addr.arpa</span><br><span class="line">                      17.172.in-addr.arpa</span><br><span class="line">                      18.172.in-addr.arpa</span><br><span class="line">                      19.172.in-addr.arpa</span><br><span class="line">                      20.172.in-addr.arpa</span><br><span class="line">                      21.172.in-addr.arpa</span><br><span class="line">                      22.172.in-addr.arpa</span><br><span class="line">                      23.172.in-addr.arpa</span><br><span class="line">                      24.172.in-addr.arpa</span><br><span class="line">                      25.172.in-addr.arpa</span><br><span class="line">                      26.172.in-addr.arpa</span><br><span class="line">                      27.172.in-addr.arpa</span><br><span class="line">                      28.172.in-addr.arpa</span><br><span class="line">                      29.172.in-addr.arpa</span><br><span class="line">                      30.172.in-addr.arpa</span><br><span class="line">                      31.172.in-addr.arpa</span><br><span class="line">                      corp</span><br><span class="line">                      d.f.ip6.arpa</span><br><span class="line">                      home</span><br><span class="line">                      internal</span><br><span class="line">                      intranet</span><br><span class="line">                      lan</span><br><span class="line">                      local</span><br><span class="line">                      private</span><br><span class="line">                      test</span><br><span class="line"></span><br><span class="line">Link 2 (enp0s5)</span><br><span class="line">      Current Scopes: DNS</span><br><span class="line">       LLMNR setting: yes</span><br><span class="line">MulticastDNS setting: no</span><br><span class="line">      DNSSEC setting: no</span><br><span class="line">    DNSSEC supported: no</span><br><span class="line">         DNS Servers: 8.8.8.8</span><br><span class="line">                      8.8.4.4</span><br></pre></td></tr></table></figure></div>
+
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：Ubuntu网络配置</li>
+        <li>本文作者：JustOneBean</li>
+        <li>创建时间：2019-03-15 00:00:00</li>
+        <li>
+            本文链接：https://just-girl.github.io/2019/03/15/Ubuntu网络配置/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Linux/">#Linux</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2019/04/11/%E6%90%AD%E5%BB%BASamba%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB%E6%9C%8D%E5%8A%A1%E7%AB%AF/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">搭建Samba文件共享服务端</span>
+                                    <span class="post-nav-item">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2019/03/14/Java%20NIO%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">Java NIO工作原理及代码示例</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">Ubuntu网络配置</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E6%8E%A5%E5%8F%A3"><span class="nav-text">以太网接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%86%E5%88%AB%E4%BB%A5%E5%A4%AA%E7%BD%91%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-text">识别以太网接口的两种方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E6%8E%A5%E5%8F%A3%E9%80%BB%E8%BE%91%E5%90%8D%E7%A7%B0"><span class="nav-text">以太网接口逻辑名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E6%8E%A5%E5%8F%A3%E8%AE%BE%E7%BD%AE"><span class="nav-text">以太网接口设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP-%E5%9C%B0%E5%9D%80"><span class="nav-text">IP 地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%B4%E6%97%B6IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D"><span class="nav-text">临时IP地址分配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%EF%BC%88DHCP%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%89"><span class="nav-text">动态IP地址分配（DHCP客户端）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81IP%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D"><span class="nav-text">静态IP地址分配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%9B%9E%E6%8E%A5%E5%8F%A3"><span class="nav-text">环回接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8D%E7%A7%B0%E8%A7%A3%E6%9E%90"><span class="nav-text">名称解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-text">DNS客户端配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="nav-text">静态主机名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8D%E7%A7%B0%E6%9C%8D%E5%8A%A1%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="nav-text">名称服务交换机配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%A5%E6%8E%A5"><span class="nav-text">桥接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YAML-%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="nav-text">YAML 语言基本语法规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE-Netplan-%E7%9A%84%E6%8F%8F%E8%BF%B0%E6%96%87%E4%BB%B6%E6%89%8B%E5%8A%A8%E5%88%9B%E5%BB%BA%E7%BD%91%E7%BB%9C%E5%AE%88%E6%8A%A4%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="nav-text">根据 Netplan 的描述文件手动创建网络守护程序的配置信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9F%E7%9A%84-DNS-Servers"><span class="nav-text">查看当前系统的 DNS Servers</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-cog fa-spin fa-spin-reverse"></i>&nbsp;&nbsp;<a href="/">JustOneBean</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
+                <br> 
+            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v1.2.3</a>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="unfolded-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="fa-regular fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="folded-tools-list">
+        <li class="right-bottom-tools tool-toggle-show flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/menu-shrink.js"></script>
+
+<script src="/js/tools/go-top-bottom.js"></script>
+
+<script src="/js/tools/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/tools/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/tools/code-block.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

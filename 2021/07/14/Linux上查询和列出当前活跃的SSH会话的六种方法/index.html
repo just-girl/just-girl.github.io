@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta name="author" content="JustOneBean">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://just-girl.github.io/2021/07/14/linux上查询和列出当前活跃的ssh会话的六种方法/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Linux上查询和列出当前活跃的SSH会话的六种方法">
+    <meta property="og:description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta property="og:url" content="https://just-girl.github.io2021/07/14/Linux上查询和列出当前活跃的SSH会话的六种方法/">
+    
+    <meta property="og:site_name" content="个人博客">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Linux上查询和列出当前活跃的SSH会话的六种方法">
+    <meta name="twitter:description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta name="twitter:image" content="/images/favicon.png">
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <meta name="theme-color" content="#005080">
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Linux上查询和列出当前活跃的SSH会话的六种方法 -
+        
+        个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"just-girl.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar.jpg","favicon":"/images/favicon.png","og_image":{"enable":false,"image_url":null},"article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":false,"background_image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"font_sizes":{"title":"2.8rem","subtitle":"1.5rem"},"line_height":1.2,"title":"Theme Redefine","subtitle":{"enable":false,"list":[]},"custom_font":{"enable":false,"font_family":null,"font_url":null}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_block":{"copy":true,"style":"simple","custom_font":{"enable":false,"font_family":null,"font_url":null}},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.2.3","friend_links":{"columns":2},"home_article":{"date_format":"YYYY-MM-DD","category":{"enable":false,"limit":3},"tag":{"enable":true,"limit":3}},"plugins":{"aplayer":{"enable":false,"audio":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}}};
+    REDEFINE.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="menu-wrapper">
+    
+    <div class="menu-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        归档
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/tags"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-tag"></i>
+                                        
+                                        标签
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="menu-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                归档
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/tags"  >
+                             
+                                
+                                    <i class="fa-regular fa-tag"></i>
+                                
+                                标签
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">Linux上查询和列出当前活跃的SSH会话的六种方法</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.jpg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">JustOneBean</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2021-07-14</span>
+        <span class="mobile">2021-07-14 00</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="pc">2023-03-22 17:27:28</span>
+            <span class="mobile">2023-03-22 17:27</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <p>本文阐述了以下内容：</p>
+<ol>
+<li>检查并列出所有当前活跃的 SSH 会话；</li>
+<li>使用日志文件查看 SSH 连接历史记录。</li>
+</ol>
+ <span id="more"></span>
+
+<h2 id="查询当前活跃的-SSH-连接"><a href="#查询当前活跃的-SSH-连接" class="headerlink" title="查询当前活跃的 SSH 连接"></a>查询当前活跃的 SSH 连接</h2><p>There are various commands and tools available in Linux which can be used to check active SSH connections or sessions on your Linux node. In this article I will share a list of tools which can be used to get the list of active SSH connections. If you are aware of any more commands to show active ssh sessions then please let me know via comment section.</p>
+<h3 id="Using-ss-command"><a href="#Using-ss-command" class="headerlink" title="Using ss command"></a>Using <code>ss</code> command</h3><p><code>ss</code> is used to dump socket statistics. It allows showing information similar to <code>netstat</code>. It can display more TCP and state information than other tools. We will use grep function to only get the list of active SSH sessions on our local host</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@node3 ~]# ss | grep -i ssh</span><br><span class="line">tcp    ESTAB      0      0      10.0.2.32:ssh                  10.0.2.31:37802</span><br><span class="line">tcp    ESTAB      0      64     10.0.2.32:ssh                  10.0.2.2:49966</span><br><span class="line">tcp    ESTAB      0      0      10.0.2.32:ssh                  10.0.2.30:56088</span><br></pre></td></tr></table></figure></div>
+
+<p>From the above example we know that there are three hosts which are currently connected to our node3. We have active SSH connections from 10.0.2.31, 10.0.2.30 and 10.0.2.2</p>
+<h3 id="Using-last-command"><a href="#Using-last-command" class="headerlink" title="Using last command"></a>Using <code>last</code> command</h3><p><code>last</code> searches back through the file <code>/var/log/wtmp</code> (or the file designated by the <code>-f</code> flag) and displays a list of all users logged in (and out) since that file was created. Names of users and tty’s can be given, in which case last will show only those entries matching the arguments.</p>
+<p>Using this command you can also get the information about the user using which the SSH connection was created between server and client. So below we know the connection from 10.0.2.31 is done using ‘<strong>deepak</strong>‘ user, while for other two hosts, ‘<strong>root</strong>‘ user was used for connecting to node3.</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@node3 ~]# last -a | grep -i still</span><br><span class="line">deepak   pts/1        Fri May 31 16:58   still logged in    10.0.2.31</span><br><span class="line">root     pts/2        Fri May 31 16:50   still logged in    10.0.2.30</span><br><span class="line">root     pts/0        Fri May 31 09:17   still logged in    10.0.2.2</span><br></pre></td></tr></table></figure></div>
+
+<p>Here I am grepping for a string “still” to get all the patterns with “<strong>still logged in</strong>“. So now we know we have three active SSH connections from 10.0.2.31, 10.0.2.30 and 10.0.2.2</p>
+<h3 id="Using-who-command"><a href="#Using-who-command" class="headerlink" title="Using who command"></a>Using <code>who</code> command</h3><p><code>who</code> is used to show who is logged on on your Linux host. This tool can also give this information</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@node3 ~]# who</span><br><span class="line">root     pts/0        2019-05-31 09:17 (10.0.2.2)</span><br><span class="line">root     pts/1        2019-05-31 16:47 (10.0.2.31)</span><br><span class="line">root     pts/2        2019-05-31 16:50 (10.0.2.30)</span><br></pre></td></tr></table></figure></div>
+
+<p>Using this command we also get similar information as from <code>last</code> command. Now you get the user details used for connecting to node3 from source host, also we have terminal information on which the session is still active.</p>
+<h3 id="Using-w-command"><a href="#Using-w-command" class="headerlink" title="Using w command"></a>Using <code>w</code> command</h3><p><code>w</code> displays information about the users currently on the machine, and their processes. This gives more information than who and last command and also serves our purpose to get the list of active SSH connections. Additionally it also gives us the information of the running process on those sessions.</p>
+<p>Using <code>w</code> command you will also get the idle time details, i.e. for how long the session is idle. If the SSH session is idle for long period then it is a security breach and it is recommended that such idle SSH session must be killed, you can configure your Linux host to automatically kill such idle SSH session.</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@node3 ~]# w</span><br><span class="line"> 17:01:41 up  7:44,  3 users,  load average: 0.00, 0.01, 0.05</span><br><span class="line">USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT</span><br><span class="line">root     pts/0    10.0.2.2         09:17    9:41   0.31s  0.00s less -s</span><br><span class="line">deepak   pts/1    10.0.2.31        16:58    3:06   0.03s  0.03s -bash</span><br><span class="line">root     pts/2    10.0.2.30        16:50    5.00s  0.07s  0.02s w</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Using-netstat-command"><a href="#Using-netstat-command" class="headerlink" title="Using netstat command"></a>Using <code>netstat</code> command</h3><p>Similar to <code>ss</code> we have <code>netstat</code> command to show active ssh sessions. Actually we can also say that ss is the new version of netstat. Here we can see all the ESTABLISHED SSH sessions from remote hosts to our localhost node3. it is also possible that one or some of these active ssh connections are in hung state so you can configure your host to automatically disconnect or kill these hung or unresponsive ssh sessions in Linux.</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@node3 ~]# netstat -tnpa | grep &#x27;ESTABLISHED.*sshd&#x27;</span><br><span class="line">tcp   0   0  10.0.2.32:22   10.0.2.31:37806  ESTABLISHED 10295/sshd: deepak</span><br><span class="line">tcp   0   0  10.0.2.32:22   10.0.2.2:49966   ESTABLISHED 4329/sshd: root@pts</span><br><span class="line">tcp   0   0  10.0.2.32:22   10.0.2.30:56088  ESTABLISHED 10125/sshd: root@pt</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Using-ps-command"><a href="#Using-ps-command" class="headerlink" title="Using ps command"></a>Using <code>ps</code> command</h3><p>Now to show active ssh sessions, <code>ps</code> command may not give you accurate results like other commands we discussed in this article but it can give you some more additional information i.e. <code>PID</code> of the <code>SSHD</code> process which are currently active and connected.</p>
+<h2 id="查看-SSH-连接历史记录"><a href="#查看-SSH-连接历史记录" class="headerlink" title="查看 SSH 连接历史记录"></a>查看 SSH 连接历史记录</h2><p>To get the ssh connection history you can always check your SSHD logs for more information on connected or disconnected SSH session. Now the sshd log file may vary from distribution to distribution. On my RHEL 7.4 my sshd logs are stored inside <code>/var/log/sshd</code>.</p>
+<p>Lastly I hope the steps from the article to check active SSH connections and ssh connection history in Linux was helpful. So, let me know your suggestions and feedback using the comment section.</p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：Linux上查询和列出当前活跃的SSH会话的六种方法</li>
+        <li>本文作者：JustOneBean</li>
+        <li>创建时间：2021-07-14 00:00:00</li>
+        <li>
+            本文链接：https://just-girl.github.io/2021/07/14/Linux上查询和列出当前活跃的SSH会话的六种方法/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Linux/">#Linux</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2021/08/07/Linux%E4%B9%8B%E9%97%B4%E5%AE%9E%E7%8E%B0SSH%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">Linux之间实现SSH免密登录</span>
+                                    <span class="post-nav-item">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2021/06/24/Container%20%E7%9A%84%E5%B8%83%E5%B1%80%E8%A1%A8%E7%8E%B0%E8%A1%8C%E4%B8%BA/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">Container 的布局表现行为</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">Linux上查询和列出当前活跃的SSH会话的六种方法</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E5%BD%93%E5%89%8D%E6%B4%BB%E8%B7%83%E7%9A%84-SSH-%E8%BF%9E%E6%8E%A5"><span class="nav-text">查询当前活跃的 SSH 连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-ss-command"><span class="nav-text">Using ss command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-last-command"><span class="nav-text">Using last command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-who-command"><span class="nav-text">Using who command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-w-command"><span class="nav-text">Using w command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-netstat-command"><span class="nav-text">Using netstat command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-ps-command"><span class="nav-text">Using ps command</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B-SSH-%E8%BF%9E%E6%8E%A5%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95"><span class="nav-text">查看 SSH 连接历史记录</span></a></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-cog fa-spin fa-spin-reverse"></i>&nbsp;&nbsp;<a href="/">JustOneBean</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
+                <br> 
+            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v1.2.3</a>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="unfolded-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="fa-regular fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="folded-tools-list">
+        <li class="right-bottom-tools tool-toggle-show flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/menu-shrink.js"></script>
+
+<script src="/js/tools/go-top-bottom.js"></script>
+
+<script src="/js/tools/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/tools/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/tools/code-block.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

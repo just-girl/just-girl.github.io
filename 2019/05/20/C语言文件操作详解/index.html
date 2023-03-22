@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta name="author" content="JustOneBean">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://just-girl.github.io/2019/05/20/c语言文件操作详解/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="C语言文件操作详解">
+    <meta property="og:description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta property="og:url" content="https://just-girl.github.io2019/05/20/C语言文件操作详解/">
+    
+    <meta property="og:site_name" content="个人博客">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="C语言文件操作详解">
+    <meta name="twitter:description" content="做一个通透的人，理解复杂，选择简单。">
+    <meta name="twitter:image" content="/images/favicon.png">
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <meta name="theme-color" content="#005080">
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            C语言文件操作详解 -
+        
+        个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"just-girl.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar.jpg","favicon":"/images/favicon.png","og_image":{"enable":false,"image_url":null},"article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":false,"background_image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"font_sizes":{"title":"2.8rem","subtitle":"1.5rem"},"line_height":1.2,"title":"Theme Redefine","subtitle":{"enable":false,"list":[]},"custom_font":{"enable":false,"font_family":null,"font_url":null}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_block":{"copy":true,"style":"simple","custom_font":{"enable":false,"font_family":null,"font_url":null}},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.2.3","friend_links":{"columns":2},"home_article":{"date_format":"YYYY-MM-DD","category":{"enable":false,"limit":3},"tag":{"enable":true,"limit":3}},"plugins":{"aplayer":{"enable":false,"audio":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}}};
+    REDEFINE.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="menu-wrapper">
+    
+    <div class="menu-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                个人博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        归档
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/tags"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-tag"></i>
+                                        
+                                        标签
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="menu-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                归档
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/tags"  >
+                             
+                                
+                                    <i class="fa-regular fa-tag"></i>
+                                
+                                标签
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">C语言文件操作详解</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.jpg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">JustOneBean</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2019-05-20</span>
+        <span class="mobile">2019-05-20 00</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="pc">2023-03-22 17:08:06</span>
+            <span class="mobile">2023-03-22 17:08</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/C%E8%AF%AD%E8%A8%80/">C语言</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <p>C语言中没有输入输出语句，所有的输入输出功能都用 <code>ANSI C</code> 提供的一组标准库函数来实现。文件操作标准库函数有：</p>
+<span id="more"></span>
+<ul>
+<li>文件的打开操作 <code>fopen</code> 打开一个文件</li>
+<li>文件的关闭操作 <code>fclose</code> 关闭一个文件</li>
+<li>文件的读写操作：<ol>
+<li><code>fgetc</code> 从文件中读取一个字符</li>
+<li><code>fputc</code> 写一个字符到文件中去</li>
+<li><code>fgets</code> 从文件中读取一个字符串</li>
+<li><code>fputs</code> 写一个字符串到文件中去</li>
+<li><code>fprintf</code> 往文件中写格式化数据</li>
+<li><code>fscanf</code> 格式化读取文件中数据</li>
+<li><code>fread</code> 以二进制形式读取文件中的数据</li>
+<li><code>fwrite</code> 以二进制形式写数据到文件中去</li>
+<li><code>getw</code> 以二进制形式读取一个整数</li>
+<li><code>putw</code> 以二进制形式存贮一个整数</li>
+</ol>
+</li>
+<li>文件状态检查函数<ol>
+<li><code>feof</code> 文件结束</li>
+<li><code>ferror</code> 文件读、写出错</li>
+<li><code>clearerr</code> 清除文件错误标志</li>
+<li><code>ftell</code> 了解文件指针的当前位置</li>
+</ol>
+</li>
+<li>文件定位函数<ol>
+<li><code>rewind</code> 反绕</li>
+<li><code>fseek</code> 随机定位</li>
+</ol>
+</li>
+</ul>
+<h3 id="文件的打开"><a href="#文件的打开" class="headerlink" title="文件的打开"></a>文件的打开</h3><h4 id="函数原型"><a href="#函数原型" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FILE *<span class="title function_">fopen</span><span class="params">(<span class="type">char</span> *pname,<span class="type">char</span> *mode)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明"><a href="#功能说明" class="headerlink" title="功能说明"></a>功能说明</h4><p>按照 <code>mode</code> 规定的方式，打开由 <code>pname</code> 指定的文件。若找不到由 <code>pname</code> 指定的相应文件，就按以下方式之一处理：</p>
+<ol>
+<li>此时如 <code>mode</code> 规定按写方式打开文件，就按由 <code>pname</code> 指定的名字建立一个新文件；</li>
+<li>此时如 <code>mode</code> 规定按读方式打开文件，就会产生一个错误。</li>
+</ol>
+<p>打开文件的作用是：</p>
+<ol>
+<li>分配给打开文件一个 <code>FILE</code> 类型的文件结构体变量，并将有关信息填入文件结构体变量；</li>
+<li>开辟一个缓冲区；</li>
+<li>调用操作系统提供的打开文件或建立新文件功能，打开或建立指定文件；</li>
+</ol>
+<p>**FILE ***：指出 <code>fopen</code> 是一个返回文件类型的指针函数；</p>
+<h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>pname</strong>：是一个字符指针，它将指向要打开或建立的文件的文件名字符串。<br><strong>mode</strong>：是一个指向文件处理方式字符串的字符指针。</p>
+<h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>：被打开文件的文件指针。<br><strong>异常返回</strong>：NULL，表示打开操作不成功。</p>
+<p>例如：</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个名叫fp文件指针</span></span><br><span class="line">FILE *fp；</span><br><span class="line"><span class="comment">//判断按读方式打开一个名叫test的文件是否失败</span></span><br><span class="line"><span class="keyword">if</span>((fp=fopen（<span class="string">&quot;test&quot;</span>，<span class="string">&quot;r&quot;</span>）) == <span class="literal">NULL</span>)<span class="comment">//打开操作不成功</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The file can not be opened.\n&quot;</span>)；    　</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">1</span>);<span class="comment">//结束程序的执行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>要说明的是：C 语言将计算机的输入输出设备都看作是文件。例如，键盘文件、屏幕文件等。<code>ANSI C</code> 标准规定，在执行程序时系统先自动打开键盘、屏幕、错误三个文件。这三个文件的文件指针分别是：标准输入 <code>stdin</code>、标准输出 <code>stdout</code> 和标准出错 <code>stderr</code>。</p>
+<h3 id="文件的关闭"><a href="#文件的关闭" class="headerlink" title="文件的关闭"></a>文件的关闭</h3><h4 id="函数原型-1"><a href="#函数原型-1" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fclose</span><span class="params">(FILE *fp)</span>；</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-1"><a href="#功能说明-1" class="headerlink" title="功能说明"></a>功能说明</h4><p>关闭由 <code>fp</code> 指出的文件。此时调用操作系统提供的文件关闭功能，关闭由 <code>fp-&gt;fd</code> 指出的文件；释放由 <code>fp</code> 指出的文件类型结构体变量；返回操作结果，即 <code>0</code> 或 <code>EOF</code> 。</p>
+<h4 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>fp</strong>：一个已打开文件的文件指针。</p>
+<h4 id="返回值-1"><a href="#返回值-1" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>：0。<br><strong>异常返回</strong>：<code>EOF</code>，表示文件在关闭时发生错误。</p>
+<p>例如：</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n=fclose(fp);</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="文件的读写操作"><a href="#文件的读写操作" class="headerlink" title="文件的读写操作"></a>文件的读写操作</h3><p>从文件中读取一个字符</p>
+<h4 id="函数原型-2"><a href="#函数原型-2" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fgetc</span><span class="params">(FILE *fp)</span>；</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-2"><a href="#功能说明-2" class="headerlink" title="功能说明"></a>功能说明</h4><p>从 <code>fp</code> 所指文件中读取一个字符。</p>
+<h4 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>fp</strong>：这是个文件指针，它指出要从中读取字符的文件。</p>
+<h4 id="返回值-2"><a href="#返回值-2" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>： 返回读取字符的代码。<br><strong>非正常返回</strong>：返回 <code>EOF</code> 。例如，要从”写打开”文件中读取一个字符时，会发生错误而返回一个 <code>EOF</code> 。</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>显示指定文件的内容：</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//程序名为：display.c</span></span><br><span class="line"><span class="comment">//执行时可用：display filename1 形式的命令行运行。显示文件filename1中的内容。例如，执行命令行display display.c将在屏幕上显示display的原代码。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//File display program.</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span> <span class="comment">//命令行参数</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> ch;<span class="comment">//定义文件类型指针</span></span><br><span class="line">    FILE *fp;<span class="comment">//判断命令行是否正确</span></span><br><span class="line">    <span class="keyword">if</span>(argc!=<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Error format,Usage: display filename1\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//键入了错误的命令行，结束程序的执行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//按读方式打开由argv[1]指出的文件</span></span><br><span class="line">    <span class="keyword">if</span>((fp=fopen(argv[<span class="number">1</span>],<span class="string">&quot;r&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file &lt;%s&gt; can not be opened.\n&quot;</span>,argv[<span class="number">1</span>]);<span class="comment">//打开操作不成功</span></span><br><span class="line">        <span class="keyword">return</span>;<span class="comment">//结束程序的执行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//成功打开了argv[1]所指文件</span></span><br><span class="line">    ch=fgetc(fp); <span class="comment">//从fp所指文件的当前指针位置读取一个字符</span></span><br><span class="line">    <span class="keyword">while</span>(ch!=EOF) <span class="comment">//判断刚读取的字符是否是文件结束符</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">putchar</span>(ch); <span class="comment">//若不是结束符，将它输出到屏幕上显示</span></span><br><span class="line">        ch=fgetc(fp); <span class="comment">//继续从fp所指文件中读取下一个字符</span></span><br><span class="line">    &#125; <span class="comment">//完成将fp所指文件的内容输出到屏幕上显示</span></span><br><span class="line">    fclose(fp); <span class="comment">//关闭fp所指文件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="写一个字符到文件中去"><a href="#写一个字符到文件中去" class="headerlink" title="写一个字符到文件中去"></a>写一个字符到文件中去</h3><h4 id="函数原型-3"><a href="#函数原型-3" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fputc</span><span class="params">(<span class="type">int</span> ch,FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+<h4 id="功能说明-3"><a href="#功能说明-3" class="headerlink" title="功能说明"></a>功能说明</h4><p>把 <code>ch</code> 中的字符写入由 <code>fp</code> 指出的文件中去。</p>
+<h4 id="参数说明-3"><a href="#参数说明-3" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>ch</strong>：是一个整型变量，内存要写到文件中的字符（C语言中整型量和字符量可以通用）。<br><strong>fp</strong>：这是个文件指针，指出要在其中写入字符的文件。</p>
+<h4 id="返回值-3"><a href="#返回值-3" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>： 要写入字符的代码。<br><strong>非正常返回</strong>：返回 <code>EOF</code> 。例如，要往”读打开”文件中写一个字符时，会发生错误而返回一个 <code>EOF</code> 。</p>
+<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><p>将一个文件的内容复制到另一个文件中去：</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//程序名为：copyfile.c</span></span><br><span class="line"><span class="comment">//执行时可用：copyfile filename1 filename2形式的命令行运行，将文件filename1中的内容复制到文件filename2中去。</span></span><br><span class="line"><span class="comment">//file copy program.</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span> <span class="comment">//命令行参数</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> ch;</span><br><span class="line">    FILE *in,*out; <span class="comment">//定义in和out两个文件类型指针</span></span><br><span class="line">    <span class="keyword">if</span>(argc!=<span class="number">3</span>) <span class="comment">//判断命令行是否正确</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Error in format,Usage: copyfile filename1 filename2\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//命令行错，结束程序的执行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//按读方式打开由argv[1]指出的文件</span></span><br><span class="line">    <span class="keyword">if</span>((in=fopen(argv[<span class="number">1</span>],<span class="string">&quot;r&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file &lt;%s&gt; can not be opened.\n&quot;</span>,argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//打开失败，结束程序的执行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//成功打开了argv[1]所指文件，再</span></span><br><span class="line">    <span class="comment">//按写方式打开由argv[2]指出的文件</span></span><br><span class="line">    <span class="keyword">if</span>((out=fopen(argv[<span class="number">2</span>],<span class="string">&quot;w&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,argv[<span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//打开失败，结束程序的执行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//成功打开了argv[2]所指文件</span></span><br><span class="line">    ch=fgetc(in); <span class="comment">//从in所指文件的当前指针位置读取一个字符</span></span><br><span class="line">    <span class="keyword">while</span>(ch!=EOF) <span class="comment">//判断刚读取的字符是否是文件结束符</span></span><br><span class="line">    &#123;</span><br><span class="line">        fputc(ch,out); <span class="comment">//若不是结束符，将它写入out所指文件</span></span><br><span class="line">        ch=fgetc(in); <span class="comment">//继续从in所指文件中读取下一个字符</span></span><br><span class="line">    &#125; <span class="comment">//完成将in所指文件的内容写入（复制）到out所指文件中</span></span><br><span class="line">    fclose(in); <span class="comment">//关闭in所指文件</span></span><br><span class="line">    fclose(out); <span class="comment">//关闭out所指文件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h4><p>按十进制和字符显示文件代码，若遇不可示字符就用井号”#”字符代替之：</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//程序名为：dumpf.c</span></span><br><span class="line"><span class="comment">//执行时可用：dumpf filename1 形式的命令行运行。</span></span><br><span class="line"><span class="comment">// File dump program.</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> str[<span class="number">9</span>];</span><br><span class="line">    <span class="type">int</span> ch,count,i;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="keyword">if</span>(argc!=<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Error format,Usage: dumpf filename\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((fp=fopen(argv[<span class="number">1</span>],<span class="string">&quot;r&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        i=<span class="number">0</span>;</span><br><span class="line">        <span class="comment">//按八进制输出第一列，作为一行八个字节的首地址</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%06o: &quot;</span>,count*<span class="number">8</span>);</span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">            <span class="comment">// 从打开的文件中读取一个字符</span></span><br><span class="line">            ch=fgetc(fp);</span><br><span class="line">            <span class="comment">// 按十进制方式输出这个字符的ASCII码</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%4d&quot;</span>,ch);</span><br><span class="line">            <span class="comment">// 如果是不可示字符就用&quot;#&quot;字符代替</span></span><br><span class="line">            <span class="keyword">if</span>(ch&lt;<span class="string">&#x27; &#x27;</span>||ch&gt;<span class="string">&#x27;~&#x27;</span>) str[i]=<span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">            <span class="comment">// 如果是可示字符，就将它存入数组str以便形成字符串</span></span><br><span class="line">            <span class="keyword">else</span> str[i]=ch;</span><br><span class="line">            <span class="comment">// 保证每一行输出八个字符</span></span><br><span class="line">            <span class="keyword">if</span>(++i==<span class="number">8</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;<span class="keyword">while</span>(ch!=EOF); <span class="comment">// 遇到文件尾标志，结束读文件操作</span></span><br><span class="line">        str[i]=<span class="string">&#x27;\0&#x27;</span>; <span class="comment">// 在数组str加字符串结束标志</span></span><br><span class="line">        <span class="keyword">for</span>(;i&lt;<span class="number">8</span>;i++) <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>); <span class="comment">// 一行不足八个字符用空格填充</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot; %s\n&quot;</span>,str); <span class="comment">// 输出字符串</span></span><br><span class="line">        count++; <span class="comment">// 准备输出下一行</span></span><br><span class="line">    &#125;<span class="keyword">while</span>(ch!=EOF); <span class="comment">// 直到文件结束</span></span><br><span class="line">    fclose(fp); <span class="comment">// 关闭fp所指文件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="从文件中读取一个字符串"><a href="#从文件中读取一个字符串" class="headerlink" title="从文件中读取一个字符串"></a>从文件中读取一个字符串</h3><h4 id="函数原型-4"><a href="#函数原型-4" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> *<span class="title function_">fgets</span><span class="params">(<span class="type">char</span> *str,<span class="type">int</span> n,FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-4"><a href="#功能说明-4" class="headerlink" title="功能说明"></a>功能说明</h4><p>从由 <code>fp</code> 指出的文件中读取 <code>n-1</code> 个字符，并把它们存放到由 <code>str</code> 指出的字符数组中去，最后加上一个字符串结束符 <code>&#39;\0&#39;</code> 。</p>
+<h4 id="参数说明-4"><a href="#参数说明-4" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>str</strong>：接收字符串的内存地址，可以是数组名，也可以是指针。<br><strong>n</strong>： 指出要读取字符的个数。<br><strong>fp</strong>：这是个文件指针，指出要从中读取字符的文件。</p>
+<h4 id="返回值-4"><a href="#返回值-4" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>：返回字符串的内存首地址，即 <code>str</code> 的值。<br><strong>非正常返回</strong>：返回一个 <code>NULL</code> 值，此时应当用 <code>feof()</code> 或 <code>ferror()</code> 函数来判别是读取到了文件尾，还是发生了错误。例如，要从”写打开”文件中读取字符串，将发生错误而返回一个 <code>NULL</code> 值。</p>
+<h3 id="写一个字符串到文件中去"><a href="#写一个字符串到文件中去" class="headerlink" title="写一个字符串到文件中去"></a>写一个字符串到文件中去</h3><h4 id="函数原型-5"><a href="#函数原型-5" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fputs</span><span class="params">(<span class="type">char</span> *str,FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-5"><a href="#功能说明-5" class="headerlink" title="功能说明"></a>功能说明</h4><p>把由 <code>str</code> 指出的字符串写入到 <code>fp</code> 所指的文件中去。</p>
+<h4 id="参数说明-5"><a href="#参数说明-5" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>str</strong>：指出要写到文件中去的字符串。<br><strong>fp</strong>：这是个文件指针，指出字符串要写入其中的文件。</p>
+<h4 id="返回值-5"><a href="#返回值-5" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>： 写入文件的字符个数，即字符串的长度。<br><strong>非正常返回</strong>：返回一个 <code>NULL</code> 值，此时应当用 <code>feof()</code> 或 <code>ferror()</code> 函数来判别是读取到了文件尾，还是发生了错误。例如，要往一个”读打开” 文件中写字符串时，会发生错误而返回一个 <code>NULL</code> 值。</p>
+<h4 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h4><p>以下程序将一个文件的内容附加到另一个文件中去：</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//程序名：linkfile.c</span></span><br><span class="line"><span class="comment">//执行时可用：linkfile filename1 filename2形式的命令行运行，将文件filename2的内容附加在文件filename1之后。</span></span><br><span class="line"><span class="comment">// file linked program.</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIZE 512</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> buffer[SIZE];</span><br><span class="line">    FILE *fp1,*fp2;</span><br><span class="line">    <span class="keyword">if</span>(argc!=<span class="number">3</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Usage: linkfile filename1 filename2\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 按追加方式打开argv[1] 所指文件</span></span><br><span class="line">    <span class="keyword">if</span>((fp1=fopen(argv[<span class="number">1</span>],<span class="string">&quot;a&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((fp2=fopen(argv[<span class="number">2</span>],<span class="string">&quot;r&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,argv[<span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 读入一行立即写出，直到文件结束</span></span><br><span class="line">    <span class="keyword">while</span>(fgets(buffer,SIZE,fp1)!=<span class="literal">NULL</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,buffer);</span><br><span class="line">    <span class="keyword">while</span>(fgets(buffer,SIZE,fp2)!=<span class="literal">NULL</span>)</span><br><span class="line">        <span class="built_in">fputs</span>(buffer,fp1);</span><br><span class="line">    fclose(fp1);</span><br><span class="line">    fclose(fp2);</span><br><span class="line">    <span class="keyword">if</span>((fp1=fopen(argv[<span class="number">1</span>],<span class="string">&quot;r&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(fgets(buffer,SIZE,fp1)!=<span class="literal">NULL</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,buffer);</span><br><span class="line">    fclose(fp1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="往文件中写格式化数据"><a href="#往文件中写格式化数据" class="headerlink" title="往文件中写格式化数据"></a>往文件中写格式化数据</h3><h4 id="函数原型-6"><a href="#函数原型-6" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fprintf</span><span class="params">(FILE *fp,<span class="type">char</span> *format,arg_list)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-6"><a href="#功能说明-6" class="headerlink" title="功能说明"></a>功能说明</h4><p>将变量表列<code>（arg_list）</code>中的数据，按照 <code>format</code> 指出的格式，写入由 <code>fp</code> 指定的文件。<code>fprintf()</code> 函数与 <code>printf()</code> 函数的功能相同，只是 <code>printf()</code> 函数是将数据写入屏幕文件<code>（stdout）</code>。</p>
+<h4 id="参数说明-6"><a href="#参数说明-6" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>fp</strong>：这是个文件指针，指出要将数据写入的文件。<br><strong>format</strong>：这是个指向字符串的字符指针，字符串中含有要写出数据的格式，所以该字符串成为格式串。格式串描述的规则与 <code>printf()</code> 函数中的格式串相同。<br><strong>arg_list</strong>：是要写入文件的变量表列，各变量之间用逗号分隔。</p>
+<h4 id="返回值-6"><a href="#返回值-6" class="headerlink" title="返回值"></a>返回值</h4><p>无。</p>
+<h4 id="实例-4"><a href="#实例-4" class="headerlink" title="实例"></a>实例</h4><p>下列程序的执行文件为 <code>display.exe</code> ，执行时键入命令行：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display [-i][-s] filename</span><br></pre></td></tr></table></figure></div>
+
+<p>下面的表格列出了命令行参数的含义及其功能：</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//存储文件名：save.txt</span></span><br><span class="line"><span class="comment">//程序代码如下：</span></span><br><span class="line"><span class="comment">// file display program.</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">10</span>];</span><br><span class="line">    <span class="type">int</span> nAge,nClass;</span><br><span class="line">    <span class="type">long</span> number;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="keyword">if</span>((fp=fopen(<span class="string">&quot;student.txt&quot;</span>,<span class="string">&quot;w&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,<span class="string">&quot;student.txt&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">fscanf</span>(<span class="built_in">stdin</span>,<span class="string">&quot;%s %d %d %ld&quot;</span>,name,&amp;nClass,&amp;nAge,&amp;number);</span><br><span class="line">    <span class="built_in">fprintf</span>(fp,<span class="string">&quot;%s %5d %4d %8ld&quot;</span>,name,nClass,nAge,number);</span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">if</span>((fp=fopen(<span class="string">&quot;student.txt&quot;</span>,<span class="string">&quot;r&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,<span class="string">&quot;student.txt&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">fscanf</span>(fp,<span class="string">&quot;%s %d %d %ld&quot;</span>,name,&amp;nClass,&amp;nAge,&amp;number);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;name nClass nAge number\n&quot;</span>);</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stdout</span>,<span class="string">&quot;%-10s%-8d%-6d%-8ld\n&quot;</span>,name,nClass,nAge,number);</span><br><span class="line">    fclose(fp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="以二进制形式读取文件中的数据"><a href="#以二进制形式读取文件中的数据" class="headerlink" title="以二进制形式读取文件中的数据"></a>以二进制形式读取文件中的数据</h3><h4 id="函数原型-7"><a href="#函数原型-7" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fread</span><span class="params">(<span class="type">void</span> *buffer,<span class="type">unsigned</span> sife,<span class="type">unsigned</span> count,FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-7"><a href="#功能说明-7" class="headerlink" title="功能说明"></a>功能说明</h4><p>从由 <code>fp</code> 指定的文件中，按二进制形式将 <code>sife*count</code> 个数据读到由 <code>buffer</code> 指出的数据区中。</p>
+<h4 id="参数说明-7"><a href="#参数说明-7" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>buffer</strong>：这是一个 <code>void</code> 型指针，指出要将读入数据存放在其中的存储区首地址。<br><strong>sife</strong>：指出一个数据块的字节数，即一个数据块的大小尺寸。<br><strong>count</strong>：指出一次读入多少个数据块<code>（sife）</code>。<br><strong>fp</strong>：这是个文件指针，指出要从其中读出数据的文件。</p>
+<h4 id="返回值-7"><a href="#返回值-7" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>：实际读取数据块的个数，即 <code>count</code> 。<br><strong>异常返回</strong>：如果文件中剩下的数据块个数少于参数中 <code>count</code> 指出的个数，或者发生了错误，返回0值。此时可以用 <code>feof()</code> 和 <code>ferror()</code> 来判定到底出现了什么情况。</p>
+<h3 id="以二进制形式写数据到文件中去"><a href="#以二进制形式写数据到文件中去" class="headerlink" title="以二进制形式写数据到文件中去"></a>以二进制形式写数据到文件中去</h3><h4 id="函数原型-8"><a href="#函数原型-8" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fwrite</span><span class="params">(<span class="type">void</span> *buffer,<span class="type">unsigned</span> sife,<span class="type">unsigned</span> count,FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-8"><a href="#功能说明-8" class="headerlink" title="功能说明"></a>功能说明</h4><p>按二进制形式，将由 <code>buffer</code> 指定的数据缓冲区内的 <code>sife*count</code> 个数据写入由 <code>fp</code> 指定的文件中去。</p>
+<h4 id="参数说明-8"><a href="#参数说明-8" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>buffer</strong>：这是一个 <code>void</code> 型指针，指出要将其中数据输出到文件的缓冲区首地址。<br><strong>sife</strong>：指出一个数据块的字节数，即一个数据块的大小尺寸。<br><strong>count</strong>：一次输出多少个数据块<code>（sife）</code>。<br><strong>fp</strong>：这是个文件指针，指出要从其中读出数据的文件。</p>
+<h4 id="返回值-8"><a href="#返回值-8" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>：实际输出数据块的个数，即 <code>count</code> 。<br><strong>异常返回</strong>：返回0值，表示输出结束或发生了错误。</p>
+<h4 id="实例-5"><a href="#实例-5" class="headerlink" title="实例"></a>实例</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIZE 4</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">worker</span></span></span><br><span class="line"><span class="class">&#123;</span> <span class="type">int</span> number;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">worker</span> <span class="title">wk</span>;</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    FILE *in,*out;</span><br><span class="line">    <span class="keyword">if</span>((in=fopen(<span class="string">&quot;file1.txt&quot;</span>,<span class="string">&quot;rb&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,<span class="string">&quot;file1.txt&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((out=fopen(<span class="string">&quot;file2.txt&quot;</span>,<span class="string">&quot;wb&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,<span class="string">&quot;file2.txt&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(fread(&amp;wk,<span class="keyword">sizeof</span>(<span class="keyword">struct</span> worker),<span class="number">1</span>,in)==<span class="number">1</span>)</span><br><span class="line">        fwrite(&amp;wk,<span class="keyword">sizeof</span>(<span class="keyword">struct</span> worker),<span class="number">1</span>,out);</span><br><span class="line">    fclose(in);</span><br><span class="line">    fclose(out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="以二进制形式读取一个整数"><a href="#以二进制形式读取一个整数" class="headerlink" title="以二进制形式读取一个整数"></a>以二进制形式读取一个整数</h3><h4 id="函数原型-9"><a href="#函数原型-9" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getw</span><span class="params">(FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-9"><a href="#功能说明-9" class="headerlink" title="功能说明"></a>功能说明</h4><p>从由 <code>fp</code> 指定的文件中，以二进制形式读取一个整数。</p>
+<h4 id="参数说明-9"><a href="#参数说明-9" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>fp</strong>：是文件指针。</p>
+<h4 id="返回值-9"><a href="#返回值-9" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>：所读取整数的值。<br><strong>异常返回</strong>：返回 <code>EOF</code> ，即 <code>-1</code> 。由于读取的整数值有可能是 <code>-1</code> ，所以必须用 <code>feof()</code> 或 <code>ferror()</code> 来判断是到了文件结束，还是出现了一个出错。</p>
+<h4 id="实例-6"><a href="#实例-6" class="headerlink" title="实例"></a>实例</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i,sum=<span class="number">0</span>;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="keyword">if</span>(argc!=<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Command error,Usage: readfile filename\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!(fp=fopen(argv[<span class="number">1</span>],<span class="string">&quot;rb&quot;</span>)))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++) sum+=getw(fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The sum is %d\n&quot;</span>,sum);</span><br><span class="line">    fclose(fp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="以二进制形式存贮一个整数"><a href="#以二进制形式存贮一个整数" class="headerlink" title="以二进制形式存贮一个整数"></a>以二进制形式存贮一个整数</h3><h4 id="函数原型-10"><a href="#函数原型-10" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">putw</span><span class="params">(<span class="type">int</span> n,FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-10"><a href="#功能说明-10" class="headerlink" title="功能说明"></a>功能说明</h4><p>以二进制形式把由变量 <code>n</code> 指出的整数值存放到由 <code>fp</code> 指定的文件中。</p>
+<h4 id="参数说明-10"><a href="#参数说明-10" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>n</strong>：要存入文件的整数。<br><strong>fp</strong>：是文件指针。</p>
+<h4 id="返回值-10"><a href="#返回值-10" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>：所输出的整数值。<br><strong>异常返回</strong>：返回 <code>EOF</code> ，即 <code>-1</code> 。由于输出的整数值有可能是 <code>-1</code>，所以必须用 <code>feof()</code> 或 <code>ferror()</code> 来判断是到了文件结束，还是出现了一个出错。</p>
+<h4 id="实例-7"><a href="#实例-7" class="headerlink" title="实例"></a>实例</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="keyword">if</span>(argc!=<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Command error,Usage: writefile filename\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(!(fp=fopen(argv[<span class="number">1</span>],<span class="string">&quot;wb&quot;</span>)))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, putw(i,fp));</span><br><span class="line">    fclose(fp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="文件状态检查"><a href="#文件状态检查" class="headerlink" title="文件状态检查"></a>文件状态检查</h3><p>文件结束</p>
+<h4 id="函数原型-11"><a href="#函数原型-11" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">feof</span><span class="params">(FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-11"><a href="#功能说明-11" class="headerlink" title="功能说明"></a>功能说明</h4><p>该函数用来判断文件是否结束。</p>
+<h4 id="参数说明-11"><a href="#参数说明-11" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>fp</strong>：文件指针。</p>
+<h4 id="返回值-11"><a href="#返回值-11" class="headerlink" title="返回值"></a>返回值</h4><p><strong>0</strong>：假值，表示文件未结束。<br><strong>1</strong>：真值，表示文件结束。</p>
+<h4 id="实例-8"><a href="#实例-8" class="headerlink" title="实例"></a>实例</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    FILE *in,*out;</span><br><span class="line">    <span class="type">char</span> ch;</span><br><span class="line">    <span class="keyword">if</span>(argc!=<span class="number">3</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Usage: copyfile filename1 filename2\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((in=fopen(argv[<span class="number">1</span>],<span class="string">&quot;rb&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((out=fopen(argv[<span class="number">2</span>],<span class="string">&quot;wb&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,argv[<span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(!feof(in))</span><br><span class="line">    &#123;</span><br><span class="line">        ch=fgetc(in);</span><br><span class="line">        <span class="keyword">if</span>(ferror(in))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;read error!\n&quot;</span>);</span><br><span class="line">            clearerr(in);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            fputc(ch,out);</span><br><span class="line">            <span class="keyword">if</span>(ferror(out))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;write error!\n&quot;</span>);</span><br><span class="line">                clearerr(out);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(in);</span><br><span class="line">    fclose(out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="文件读-x2F-写出错"><a href="#文件读-x2F-写出错" class="headerlink" title="文件读&#x2F;写出错"></a>文件读&#x2F;写出错</h3><h4 id="函数原型-12"><a href="#函数原型-12" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">ferror</span><span class="params">(FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-12"><a href="#功能说明-12" class="headerlink" title="功能说明"></a>功能说明</h4><p>检查由 <code>fp</code> 指定的文件在读写时是否出错。</p>
+<h4 id="参数说明-12"><a href="#参数说明-12" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>fp</strong>：文件指针。</p>
+<h4 id="返回值-12"><a href="#返回值-12" class="headerlink" title="返回值"></a>返回值</h4><p><strong>0</strong>：假值，表示无错误。<br><strong>1</strong>：真值，表示出错。</p>
+<h3 id="清除文件错误标志"><a href="#清除文件错误标志" class="headerlink" title="清除文件错误标志"></a>清除文件错误标志</h3><h4 id="函数原型-13"><a href="#函数原型-13" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">clearerr</span><span class="params">(FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-13"><a href="#功能说明-13" class="headerlink" title="功能说明"></a>功能说明</h4><p>清除由 <code>fp</code> 指定文件的错误标志。</p>
+<h4 id="参数说明-13"><a href="#参数说明-13" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>fp</strong>：文件指针。</p>
+<h4 id="返回值-13"><a href="#返回值-13" class="headerlink" title="返回值"></a>返回值</h4><p>无。</p>
+<h4 id="实例-9"><a href="#实例-9" class="headerlink" title="实例"></a>实例</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    FILE *in,*out;</span><br><span class="line">    <span class="type">char</span> ch;</span><br><span class="line">    <span class="keyword">if</span>(argc!=<span class="number">3</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Usage: copyfile filename1 filename2\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((in=fopen(argv[<span class="number">1</span>],<span class="string">&quot;rb&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((out=fopen(argv[<span class="number">2</span>],<span class="string">&quot;wb&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file %s can not be opened.\n&quot;</span>,argv[<span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(!feof(in))</span><br><span class="line">    &#123;</span><br><span class="line">        ch=fgetc(in);</span><br><span class="line">        <span class="keyword">if</span>(ferror(in))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;read error!\n&quot;</span>);</span><br><span class="line">            clearerr(in);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            fputc(ch,out);</span><br><span class="line">            <span class="keyword">if</span>(ferror(out))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;write error!\n&quot;</span>);</span><br><span class="line">                clearerr(out);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(in);</span><br><span class="line">    fclose(out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="了解文件指针的当前位置"><a href="#了解文件指针的当前位置" class="headerlink" title="了解文件指针的当前位置"></a>了解文件指针的当前位置</h3><h4 id="函数原型-14"><a href="#函数原型-14" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="title function_">ftell</span><span class="params">(FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-14"><a href="#功能说明-14" class="headerlink" title="功能说明"></a>功能说明</h4><p>取得由 <code>fp</code> 指定文件的当前读&#x2F;写位置，该位置值用相对于文件开头的位移量来表示。</p>
+<h4 id="参数说明-14"><a href="#参数说明-14" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>fp</strong>：文件指针。</p>
+<h4 id="返回值-14"><a href="#返回值-14" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>：位移量（这是个长整数）。<br><strong>异常返回</strong>：-1，表示出错。</p>
+<h3 id="文件定位"><a href="#文件定位" class="headerlink" title="文件定位"></a>文件定位</h3><p>反绕</p>
+<h4 id="函数原型-15"><a href="#函数原型-15" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">rewind</span><span class="params">(FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-15"><a href="#功能说明-15" class="headerlink" title="功能说明"></a>功能说明</h4><p>使由文件指针 <code>fp</code> 指定的文件的位置指针重新指向文件的开头位置。</p>
+<h4 id="参数说明-15"><a href="#参数说明-15" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>fp</strong>：文件指针。</p>
+<h4 id="返回值-15"><a href="#返回值-15" class="headerlink" title="返回值"></a>返回值</h4><p>无。</p>
+<h4 id="实例-10"><a href="#实例-10" class="headerlink" title="实例"></a>实例</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    FILE *in,*out;</span><br><span class="line">    in=fopen(<span class="string">&quot;filename1&quot;</span>,<span class="string">&quot;r&quot;</span>);</span><br><span class="line">    out=fopen(<span class="string">&quot;filename2&quot;</span>,<span class="string">&quot;w&quot;</span>);</span><br><span class="line">    <span class="keyword">while</span>(!feof(in)) fputc(fgetc(in),out);</span><br><span class="line">    rewind(out);</span><br><span class="line">    <span class="keyword">while</span>(!feof(in)) <span class="built_in">putchar</span>(fgetc(in));</span><br><span class="line">    fclose(in);</span><br><span class="line">    fclose(out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="随机定位"><a href="#随机定位" class="headerlink" title="随机定位"></a>随机定位</h3><h4 id="函数原型-16"><a href="#函数原型-16" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fseek</span><span class="params">(FILE *fp,<span class="type">long</span> offset,<span class="type">int</span> base)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-16"><a href="#功能说明-16" class="headerlink" title="功能说明"></a>功能说明</h4><p>使文件指针 <code>fp</code> 移到基于 <code>base</code> 的相对位置 <code>offset</code> 处。</p>
+<h4 id="参数说明-16"><a href="#参数说明-16" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>fp</strong>：文件指针。<br><strong>offset</strong>：相对 <code>base</code> 的字节位移量。这是个长整数，用以支持大于 <code>64KB</code> 的文件。<br><strong>base</strong>：文件位置指针移动的基准位置，是计算文件位置指针位移的基点。<code>ANSI C</code> 定义了<code>base</code>的可能取值，以及这些取值的符号常量。</p>
+<h4 id="返回值-16"><a href="#返回值-16" class="headerlink" title="返回值"></a>返回值</h4><p><strong>正常返回</strong>：当前指针位置。<br><strong>异常返回</strong>：-1，表示定位操作出错。</p>
+<h4 id="实例-11"><a href="#实例-11" class="headerlink" title="实例"></a>实例</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">std_type</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> num;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="type">char</span> <span class="class"><span class="keyword">class</span>;</span></span><br><span class="line">&#125;stud;</span><br><span class="line"><span class="type">int</span> <span class="title function_">cstufile</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="keyword">if</span>((fp=fopen(<span class="string">&quot;stufile&quot;</span>,<span class="string">&quot;wb&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file can&#x27;t be opened for write.\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">100</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        stud.num=i;</span><br><span class="line">        <span class="built_in">strcpy</span>(stud.name,<span class="string">&quot;aaaa&quot;</span>);</span><br><span class="line">        stud.age=<span class="number">17</span>;</span><br><span class="line">        stud.class=<span class="string">&#x27;8&#x27;</span>;</span><br><span class="line">        fwrite(&amp;stud,<span class="keyword">sizeof</span>(<span class="keyword">struct</span> std_type),<span class="number">1</span>,fp);</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fp);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="keyword">if</span>(cstufile()==<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>((fp=fopen(<span class="string">&quot;stufile&quot;</span>,<span class="string">&quot;rb&quot;</span>))==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;The file can not be opened.\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(n=<span class="number">0</span>;n&lt;<span class="number">100</span>;n+=<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        fseek(fp,n*<span class="keyword">sizeof</span>(<span class="keyword">struct</span> std_type),SEEK_SET);</span><br><span class="line">        fread(&amp;stud,<span class="keyword">sizeof</span>(<span class="keyword">struct</span> std_type),<span class="number">1</span>,fp);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%10d%20s%10d%4c\n&quot;</span>,stud.num,stud.name,stud.age,stud.class);</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(fp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="关于exit-函数"><a href="#关于exit-函数" class="headerlink" title="关于exit()函数"></a>关于exit()函数</h3><h4 id="函数原型-17"><a href="#函数原型-17" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">exit</span><span class="params">(<span class="type">int</span> status)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-17"><a href="#功能说明-17" class="headerlink" title="功能说明"></a>功能说明</h4><p><code>exit()</code> 函数使程序立即终止执行，同时将缓冲区中剩余的数据输出并关闭所有已经打开的文件。</p>
+<h4 id="参数说明-17"><a href="#参数说明-17" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>status</strong>：为0值表示程序正常终止，为非0值表示一个定义错误。</p>
+<h4 id="返回值-17"><a href="#返回值-17" class="headerlink" title="返回值"></a>返回值</h4><p>无。</p>
+<h3 id="关于feof-函数"><a href="#关于feof-函数" class="headerlink" title="关于feof()函数"></a>关于feof()函数</h3><h4 id="函数原型-18"><a href="#函数原型-18" class="headerlink" title="函数原型"></a>函数原型</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">feof</span><span class="params">(FILE *fp)</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="功能说明-18"><a href="#功能说明-18" class="headerlink" title="功能说明"></a>功能说明</h4><p>在文本文件（ASCII文件）中可以用值为 <code>-1</code> 的符号常量 <code>EOF</code> 来作为文件的结束符。但是在二进制文件中 <code>-1</code> 往往可能是一个有意义的数据，因此不能用它来作为文件的结束标志。为了能有效判别文件是否结束，<code>ANSI C</code> 提供了标准函数 <code>feof()</code> ，用来识别文件是否结束。</p>
+<h4 id="参数说明-18"><a href="#参数说明-18" class="headerlink" title="参数说明"></a>参数说明</h4><p><strong>fp</strong>：文件指针。</p>
+<h4 id="返回值-18"><a href="#返回值-18" class="headerlink" title="返回值"></a>返回值</h4><p><strong>返回为非0值</strong>：已到文件尾。<br><strong>返回为0值</strong>：表示还未到文件尾。</p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：C语言文件操作详解</li>
+        <li>本文作者：JustOneBean</li>
+        <li>创建时间：2019-05-20 00:00:00</li>
+        <li>
+            本文链接：https://just-girl.github.io/2019/05/20/C语言文件操作详解/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">#C语言</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2019/06/15/%E7%A6%81%E6%AD%A2%E7%94%B5%E8%84%91%E7%89%88%E9%92%89%E9%92%89%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E5%8D%87%E7%BA%A7/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">禁止电脑版钉钉软件提示升级</span>
+                                    <span class="post-nav-item">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2019/05/17/%E8%B6%85%E4%BA%94%E7%B1%BB%E5%92%8C%E5%85%AD%E7%B1%BB%E7%BD%91%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">超五类和六类网线的区别</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">C语言文件操作详解</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E6%89%93%E5%BC%80"><span class="nav-text">文件的打开</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-text">返回值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E5%85%B3%E9%97%AD"><span class="nav-text">文件的关闭</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-1"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-1"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-1"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-1"><span class="nav-text">返回值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C"><span class="nav-text">文件的读写操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-2"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-2"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-2"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-2"><span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E5%88%B0%E6%96%87%E4%BB%B6%E4%B8%AD%E5%8E%BB"><span class="nav-text">写一个字符到文件中去</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-3"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-3"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-3"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-3"><span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="nav-text">实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">从文件中读取一个字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-4"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-4"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-4"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-4"><span class="nav-text">返回值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%B0%E6%96%87%E4%BB%B6%E4%B8%AD%E5%8E%BB"><span class="nav-text">写一个字符串到文件中去</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-5"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-5"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-5"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-5"><span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-3"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%80%E6%96%87%E4%BB%B6%E4%B8%AD%E5%86%99%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%95%B0%E6%8D%AE"><span class="nav-text">往文件中写格式化数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-6"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-6"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-6"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-6"><span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-4"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%BD%A2%E5%BC%8F%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-text">以二进制形式读取文件中的数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-7"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-7"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-7"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-7"><span class="nav-text">返回值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%BD%A2%E5%BC%8F%E5%86%99%E6%95%B0%E6%8D%AE%E5%88%B0%E6%96%87%E4%BB%B6%E4%B8%AD%E5%8E%BB"><span class="nav-text">以二进制形式写数据到文件中去</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-8"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-8"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-8"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-8"><span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-5"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%BD%A2%E5%BC%8F%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0"><span class="nav-text">以二进制形式读取一个整数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-9"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-9"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-9"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-9"><span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-6"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%BD%A2%E5%BC%8F%E5%AD%98%E8%B4%AE%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0"><span class="nav-text">以二进制形式存贮一个整数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-10"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-10"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-10"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-10"><span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-7"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81%E6%A3%80%E6%9F%A5"><span class="nav-text">文件状态检查</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-11"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-11"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-11"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-11"><span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-8"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB-x2F-%E5%86%99%E5%87%BA%E9%94%99"><span class="nav-text">文件读&#x2F;写出错</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-12"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-12"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-12"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-12"><span class="nav-text">返回值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E6%96%87%E4%BB%B6%E9%94%99%E8%AF%AF%E6%A0%87%E5%BF%97"><span class="nav-text">清除文件错误标志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-13"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-13"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-13"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-13"><span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-9"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88%E7%9A%84%E5%BD%93%E5%89%8D%E4%BD%8D%E7%BD%AE"><span class="nav-text">了解文件指针的当前位置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-14"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-14"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-14"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-14"><span class="nav-text">返回值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AE%9A%E4%BD%8D"><span class="nav-text">文件定位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-15"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-15"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-15"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-15"><span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-10"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%AE%9A%E4%BD%8D"><span class="nav-text">随机定位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-16"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-16"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-16"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-16"><span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-11"><span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Eexit-%E5%87%BD%E6%95%B0"><span class="nav-text">关于exit()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-17"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-17"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-17"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-17"><span class="nav-text">返回值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Efeof-%E5%87%BD%E6%95%B0"><span class="nav-text">关于feof()函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B-18"><span class="nav-text">函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E-18"><span class="nav-text">功能说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-18"><span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC-18"><span class="nav-text">返回值</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2018</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-cog fa-spin fa-spin-reverse"></i>&nbsp;&nbsp;<a href="/">JustOneBean</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
+                <br> 
+            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v1.2.3</a>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="unfolded-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="fa-regular fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="folded-tools-list">
+        <li class="right-bottom-tools tool-toggle-show flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/menu-shrink.js"></script>
+
+<script src="/js/tools/go-top-bottom.js"></script>
+
+<script src="/js/tools/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/tools/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/tools/code-block.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
