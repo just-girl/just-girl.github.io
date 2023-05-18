@@ -45,6 +45,109 @@
       </tags>
   </entry>
   <entry>
+    <title>Android Studio配置</title>
+    <url>/2023/01/11/Android%20Studio%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>当我首次使用Android Studio的时候，会采用如下配置，下面的一些配置技巧或许对你有一定的帮助。</p>
+<span id="more"></span>
+
+<h3 id="显示行号"><a href="#显示行号" class="headerlink" title="显示行号"></a>显示行号</h3><ol>
+<li>File | Settings 打开设置</li>
+<li>选择 Editor | General | Appearance</li>
+<li>勾选 Show line numbers</li>
+</ol>
+<h3 id="命名前缀"><a href="#命名前缀" class="headerlink" title="命名前缀"></a>命名前缀</h3><ol>
+<li>File | Settings 打开设置</li>
+<li>选择 Editor | Code Style | Java</li>
+<li>选择 Code Generation 标签</li>
+<li>给普通 Field 添加一个 <code>m</code> 前缀，给 Static filed 添加一个 <code>s</code> 前缀</li>
+</ol>
+<h3 id="快速导包"><a href="#快速导包" class="headerlink" title="快速导包"></a>快速导包</h3><ol>
+<li>File | Settings 打开设置</li>
+<li>选择 Editor | General | Auto Import</li>
+<li>勾选 Optimize imports on the fly</li>
+<li>勾选 Add unambiguous imports on the fly</li>
+</ol>
+<h3 id="Logcat-颜色"><a href="#Logcat-颜色" class="headerlink" title="Logcat 颜色"></a>Logcat 颜色</h3><ol>
+<li>File | Settings 打开设置</li>
+<li>选择 Editor | Color &amp; Fonts | Android Logcat</li>
+<li>点击 Click on Save As…按钮创建一个新的配色 Scheme</li>
+<li>按照下面的表格修改对应的颜色(修改之前需要取消勾选 Use inherited attributes)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Logcat级别</th>
+<th>颜色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Assert</td>
+<td>#AA66CC</td>
+</tr>
+<tr>
+<td>Debug</td>
+<td>#33B5E5</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>#FF4444</td>
+</tr>
+<tr>
+<td>Info</td>
+<td>#99CC00</td>
+</tr>
+<tr>
+<td>Verbose</td>
+<td>#BBBBBB</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>#FFBB33</td>
+</tr>
+</tbody></table>
+<h3 id="取消代码注释中的显示"><a href="#取消代码注释中的显示" class="headerlink" title="取消代码注释中的显示"></a>取消代码注释中的<p>显示</h3><ol>
+<li>File | Settings 打开设置</li>
+<li>选择 Editor | Code Style | Java | JavaDoc</li>
+<li>打开 Other 节点</li>
+<li>取消勾选 Generate “<p>“ on empty lines</li>
+</ol>
+<h3 id="代码配色"><a href="#代码配色" class="headerlink" title="代码配色"></a>代码配色</h3><ol>
+<li>File | Settings 打开设置</li>
+<li>选择 Editor | Color &amp; Fonts | Java</li>
+<li>点击 Click on Save As…按钮创建一个新的配色 Scheme</li>
+<li>展开下方的 Variables 选择 Local variable</li>
+<li>设置右侧的 Foreground 颜色 <code>#68B5EE</code></li>
+</ol>
+<h3 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h3><ol>
+<li>File | Settings 打开设置</li>
+<li>选择 Editor | Font</li>
+<li>设置右侧的 Font 选择<code>Consolas</code>，Size选择<code>14</code></li>
+</ol>
+<h3 id="文件编码设置"><a href="#文件编码设置" class="headerlink" title="文件编码设置"></a>文件编码设置</h3><ol>
+<li>File | Settings 打开设置</li>
+<li>选择 Editor | File Encodings</li>
+<li>设置右侧的 Global Encoding、Project Encoding、Default encoding for properties files 为 <code>UTF-8</code></li>
+</ol>
+<h3 id="显示快速文档"><a href="#显示快速文档" class="headerlink" title="显示快速文档"></a>显示快速文档</h3><ol>
+<li>File | Settings 打开设置</li>
+<li>选择 Editor | General</li>
+<li>勾选 Show quick documentation on mouse move</li>
+</ol>
+<h3 id="设置启动项"><a href="#设置启动项" class="headerlink" title="设置启动项"></a>设置启动项</h3><ol>
+<li>File | Settings 打开设置</li>
+<li>选择 Appearance &amp; Behavior | System Settings</li>
+<li>取消勾选 Reopen last project on startup 和 Confirm application exit</li>
+<li>选择 Open project in new window</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Android的Activities四种启动模式</title>
     <url>/2018/07/25/Android%E7%9A%84Activities%E5%9B%9B%E7%A7%8D%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p>Android的Activities四种启动模式：<code>Standerd</code>、<code>SingleTop</code>、<code>SingleTask</code>、<code>SingleInstance</code>。</p>
@@ -302,127 +405,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Android Studio配置</title>
-    <url>/2023/01/11/Android%20Studio%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>当我首次使用Android Studio的时候，会采用如下配置，下面的一些配置技巧或许对你有一定的帮助。</p>
-<span id="more"></span>
-
-<h3 id="显示行号"><a href="#显示行号" class="headerlink" title="显示行号"></a>显示行号</h3><ol>
-<li>File | Settings 打开设置</li>
-<li>选择 Editor | General | Appearance</li>
-<li>勾选 Show line numbers</li>
-</ol>
-<h3 id="命名前缀"><a href="#命名前缀" class="headerlink" title="命名前缀"></a>命名前缀</h3><ol>
-<li>File | Settings 打开设置</li>
-<li>选择 Editor | Code Style | Java</li>
-<li>选择 Code Generation 标签</li>
-<li>给普通 Field 添加一个 <code>m</code> 前缀，给 Static filed 添加一个 <code>s</code> 前缀</li>
-</ol>
-<h3 id="快速导包"><a href="#快速导包" class="headerlink" title="快速导包"></a>快速导包</h3><ol>
-<li>File | Settings 打开设置</li>
-<li>选择 Editor | General | Auto Import</li>
-<li>勾选 Optimize imports on the fly</li>
-<li>勾选 Add unambiguous imports on the fly</li>
-</ol>
-<h3 id="Logcat-颜色"><a href="#Logcat-颜色" class="headerlink" title="Logcat 颜色"></a>Logcat 颜色</h3><ol>
-<li>File | Settings 打开设置</li>
-<li>选择 Editor | Color &amp; Fonts | Android Logcat</li>
-<li>点击 Click on Save As…按钮创建一个新的配色 Scheme</li>
-<li>按照下面的表格修改对应的颜色(修改之前需要取消勾选 Use inherited attributes)</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>Logcat级别</th>
-<th>颜色</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Assert</td>
-<td>#AA66CC</td>
-</tr>
-<tr>
-<td>Debug</td>
-<td>#33B5E5</td>
-</tr>
-<tr>
-<td>Error</td>
-<td>#FF4444</td>
-</tr>
-<tr>
-<td>Info</td>
-<td>#99CC00</td>
-</tr>
-<tr>
-<td>Verbose</td>
-<td>#BBBBBB</td>
-</tr>
-<tr>
-<td>Warning</td>
-<td>#FFBB33</td>
-</tr>
-</tbody></table>
-<h3 id="取消代码注释中的显示"><a href="#取消代码注释中的显示" class="headerlink" title="取消代码注释中的显示"></a>取消代码注释中的<p>显示</h3><ol>
-<li>File | Settings 打开设置</li>
-<li>选择 Editor | Code Style | Java | JavaDoc</li>
-<li>打开 Other 节点</li>
-<li>取消勾选 Generate “<p>“ on empty lines</li>
-</ol>
-<h3 id="代码配色"><a href="#代码配色" class="headerlink" title="代码配色"></a>代码配色</h3><ol>
-<li>File | Settings 打开设置</li>
-<li>选择 Editor | Color &amp; Fonts | Java</li>
-<li>点击 Click on Save As…按钮创建一个新的配色 Scheme</li>
-<li>展开下方的 Variables 选择 Local variable</li>
-<li>设置右侧的 Foreground 颜色 <code>#68B5EE</code></li>
-</ol>
-<h3 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h3><ol>
-<li>File | Settings 打开设置</li>
-<li>选择 Editor | Font</li>
-<li>设置右侧的 Font 选择<code>Consolas</code>，Size选择<code>14</code></li>
-</ol>
-<h3 id="文件编码设置"><a href="#文件编码设置" class="headerlink" title="文件编码设置"></a>文件编码设置</h3><ol>
-<li>File | Settings 打开设置</li>
-<li>选择 Editor | File Encodings</li>
-<li>设置右侧的 Global Encoding、Project Encoding、Default encoding for properties files 为 <code>UTF-8</code></li>
-</ol>
-<h3 id="显示快速文档"><a href="#显示快速文档" class="headerlink" title="显示快速文档"></a>显示快速文档</h3><ol>
-<li>File | Settings 打开设置</li>
-<li>选择 Editor | General</li>
-<li>勾选 Show quick documentation on mouse move</li>
-</ol>
-<h3 id="设置启动项"><a href="#设置启动项" class="headerlink" title="设置启动项"></a>设置启动项</h3><ol>
-<li>File | Settings 打开设置</li>
-<li>选择 Appearance &amp; Behavior | System Settings</li>
-<li>取消勾选 Reopen last project on startup 和 Confirm application exit</li>
-<li>选择 Open project in new window</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>EditText显示明文与密码</title>
-    <url>/2018/05/12/EditText%E6%98%BE%E7%A4%BA%E6%98%8E%E6%96%87%E4%B8%8E%E5%AF%86%E7%A0%81/</url>
-    <content><![CDATA[<h4 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h4><span id="more"></span>
-
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initListener</span><span class="params">()</span></span><br><span class="line"> &#123;</span><br><span class="line">        mCbDisplayPassword.setOnCheckedChangeListener(<span class="keyword">new</span> <span class="title class_">CompoundButton</span>.OnCheckedChangeListener()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="meta">@Override</span>  </span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCheckedChanged</span><span class="params">(CompoundButton buttonView, <span class="type">boolean</span> isChecked)</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (isChecked)</span><br><span class="line">                &#123;</span><br><span class="line">                    mEtPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    mEtPassword.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_NUMBER_VARIATION_PASSWORD);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></div>
-<h4 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h4><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initListener</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">       mCbDisplayPassword.setOnCheckedChangeListener(<span class="keyword">new</span> <span class="title class_">CompoundButton</span>.OnCheckedChangeListener()</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCheckedChanged</span><span class="params">(CompoundButton buttonView, <span class="type">boolean</span> isChecked)</span></span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">if</span> (isChecked)</span><br><span class="line">               &#123;</span><br><span class="line">                   mEtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">else</span></span><br><span class="line">               &#123;</span><br><span class="line">                   mEtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C语言文件操作详解</title>
     <url>/2019/05/20/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<p>C语言中没有输入输出语句，所有的输入输出功能都用 <code>ANSI C</code> 提供的一组标准库函数来实现。文件操作标准库函数有：</p>
@@ -632,6 +614,121 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>EditText显示明文与密码</title>
+    <url>/2018/05/12/EditText%E6%98%BE%E7%A4%BA%E6%98%8E%E6%96%87%E4%B8%8E%E5%AF%86%E7%A0%81/</url>
+    <content><![CDATA[<h4 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h4><span id="more"></span>
+
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initListener</span><span class="params">()</span></span><br><span class="line"> &#123;</span><br><span class="line">        mCbDisplayPassword.setOnCheckedChangeListener(<span class="keyword">new</span> <span class="title class_">CompoundButton</span>.OnCheckedChangeListener()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="meta">@Override</span>  </span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCheckedChanged</span><span class="params">(CompoundButton buttonView, <span class="type">boolean</span> isChecked)</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (isChecked)</span><br><span class="line">                &#123;</span><br><span class="line">                    mEtPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    mEtPassword.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_NUMBER_VARIATION_PASSWORD);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></div>
+<h4 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h4><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initListener</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">       mCbDisplayPassword.setOnCheckedChangeListener(<span class="keyword">new</span> <span class="title class_">CompoundButton</span>.OnCheckedChangeListener()</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCheckedChanged</span><span class="params">(CompoundButton buttonView, <span class="type">boolean</span> isChecked)</span></span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">if</span> (isChecked)</span><br><span class="line">               &#123;</span><br><span class="line">                   mEtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">else</span></span><br><span class="line">               &#123;</span><br><span class="line">                   mEtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo的next主题个性化教程</title>
+    <url>/2019/02/15/Hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h3 id="设置中文"><a href="#设置中文" class="headerlink" title="设置中文"></a>设置中文</h3><p>修改配置文件(_config.yml)</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure></div>
+
+<span id="more"></span>
+
+<h3 id="酷炫的动态背景"><a href="#酷炫的动态背景" class="headerlink" title="酷炫的动态背景"></a>酷炫的动态背景</h3><p>打开<code>\themes\NexT\_config.yml</code>，修改以下内容：　　　</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">背景特效以下4项，是NexT主题集成的，只需将 <span class="literal">false</span> 改为 <span class="literal">true</span>，即可启用</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">不用向网上说的，到模板文件里加引用js的脚本，NexT已经集成了，开启即用</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Canvas-nest 浮动线条</span></span><br><span class="line">canvas_nest:</span><br><span class="line">  enable: true</span><br><span class="line">  onmobile: true # display on mobile or not</span><br><span class="line">  color: &#x27;0,0,255&#x27; # RGB values, use &#x27;,&#x27; to separate</span><br><span class="line">  opacity: 0.5 # the opacity of line: 0~1</span><br><span class="line">  zIndex: -1 # z-index property of the background</span><br><span class="line">  count: 99 # the number of lines</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">three_waves 水波粒子</span></span><br><span class="line">three_waves: false</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">canvas_lines 这个是一根线连接两个小点，组成的一个随鼠标放大缩小的东西</span></span><br><span class="line">canvas_lines: false</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">canvas_sphere 这个是一个很多刺组成的一个球</span></span><br><span class="line">canvas_sphere: false</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="主页文章添加阴影效果"><a href="#主页文章添加阴影效果" class="headerlink" title="主页文章添加阴影效果"></a>主页文章添加阴影效果</h3><p>打开<code>themes/next/source/css/_custom/custom.styl</code>文件添加：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">.post &#123;</span><br><span class="line">   margin-top: 60px;</span><br><span class="line">   margin-bottom: 60px;</span><br><span class="line">   padding: 25px;</span><br><span class="line">   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="启用：页面加载过程中顶部的进度条"><a href="#启用：页面加载过程中顶部的进度条" class="headerlink" title="启用：页面加载过程中顶部的进度条"></a>启用：页面加载过程中顶部的进度条</h3><p>打开<code>\themes\NexT\_config.yml</code>，找到字段 <code>pace</code>，设为<code>true</code>。还可以将<code>pace_theme:</code>的值，改成相应的名字,变更不同样式的加载条。</p>
+<h3 id="修改文章底部的那个带-号的标签"><a href="#修改文章底部的那个带-号的标签" class="headerlink" title="修改文章底部的那个带#号的标签"></a>修改文章底部的那个带#号的标签</h3><p>修改模板<code>/themes/next/layout/_macro/post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 <code>#</code> 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
+<h3 id="在每篇文章末尾统一添加“本文结束”标记"><a href="#在每篇文章末尾统一添加“本文结束”标记" class="headerlink" title="在每篇文章末尾统一添加“本文结束”标记"></a>在每篇文章末尾统一添加“本文结束”标记</h3><p>在路径<code>\themes\next\layout\_macro</code>中新建 <code>passage-end-tag.swig</code> 文件，并添加以下内容：</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;text-align:center;color: #ccc;font-size:14px;&quot;</span>&gt;</span>-------------本文结束<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-paw&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>感谢您的阅读-------------<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>接着打开<code>\themes\next\layout\_macro\post.swig</code>文件，在<code>post-body</code> 之后， <code>post-footer</code> 之前添加如下画红色部分代码（<code>post-footer</code>之前两个DIV），代码如下：</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">    &#123;% include &#x27;passage-end-tag.swig&#x27; %&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>然后打开主题配置文件（_config.yml)，在末尾添加：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">文章末尾添加“本文结束”标记</span></span><br><span class="line">passage_end_tag:</span><br><span class="line">  enabled: true</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="主页文章添加阴影效果-1"><a href="#主页文章添加阴影效果-1" class="headerlink" title="主页文章添加阴影效果"></a>主页文章添加阴影效果</h3><p>打开<code>\themes\next\source\css\_custom\custom.styl</code>，向里面加入：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">// 主页文章添加阴影效果</span><br><span class="line"> .post &#123;</span><br><span class="line">   margin-top: 60px;</span><br><span class="line">   margin-bottom: 60px;</span><br><span class="line">   padding: 25px;</span><br><span class="line">   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="设置网站的图标Favicon"><a href="#设置网站的图标Favicon" class="headerlink" title="设置网站的图标Favicon"></a>设置网站的图标Favicon</h3><p>一张（32*32）的ico图标，或者去别的网站下载或者制作，并将图标名称改为favicon.ico，然后把图标放在<code>/themes/next/source/images</code>里，并且修改主题配置文件：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Put your favicon.ico into `hexo-site/source/` directory.</span></span><br><span class="line">favicon: /favicon.ico</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="在文章底部增加版权信息"><a href="#在文章底部增加版权信息" class="headerlink" title="在文章底部增加版权信息"></a>在文章底部增加版权信息</h3><p>在目录 <code>next/layout/_macro/</code>下添加 <code>my-copyright.swig</code>：</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% if page.copyright %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;my_post_copyright&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">&lt;!-- JS库 sweetalert 可修改路径 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/sweetalert/dist/sweetalert.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>本文标题:<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;&#123; url_for(page.path) &#125;&#125;&quot;</span>&gt;</span>&#123;&#123; page.title &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>文章作者:<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/&quot;</span> <span class="attr">title</span>=<span class="string">&quot;访问 &#123;&#123; theme.author &#125;&#125; 的个人博客&quot;</span>&gt;</span>&#123;&#123; theme.author &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>发布时间:<span class="tag">&lt;/<span class="name">span</span>&gt;</span>&#123;&#123; page.date.format(&quot;YYYY年MM月DD日 - HH:mm&quot;) &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>最后更新:<span class="tag">&lt;/<span class="name">span</span>&gt;</span>&#123;&#123; page.updated.format(&quot;YYYY年MM月DD日 - HH:mm&quot;) &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>原始链接:<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;&#123; url_for(page.path) &#125;&#125;&quot;</span> <span class="attr">title</span>=<span class="string">&quot;&#123;&#123; page.title &#125;&#125;&quot;</span>&gt;</span>&#123;&#123; page.permalink &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;copy-path&quot;</span>  <span class="attr">title</span>=<span class="string">&quot;点击复制文章链接&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-clipboard&quot;</span> <span class="attr">data-clipboard-text</span>=<span class="string">&quot;&#123;&#123; page.permalink &#125;&#125;&quot;</span>  <span class="attr">aria-label</span>=<span class="string">&quot;复制成功！&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>许可协议:<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-creative-commons&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> <span class="tag">&lt;<span class="name">a</span> <span class="attr">rel</span>=<span class="string">&quot;license&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">title</span>=<span class="string">&quot;Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)&quot;</span>&gt;</span>署名-非商业性使用-禁止演绎 4.0 国际<span class="tag">&lt;/<span class="name">a</span>&gt;</span> 转载请保留原文链接及作者。<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"> </span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> clipboard = <span class="keyword">new</span> <span class="title class_">Clipboard</span>(<span class="string">&#x27;.fa-clipboard&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    $(<span class="string">&quot;.fa-clipboard&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">      clipboard.<span class="title function_">on</span>(<span class="string">&#x27;success&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">swal</span>(&#123;   </span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title</span>: <span class="string">&quot;&quot;</span>,   </span></span><br><span class="line"><span class="language-javascript">          <span class="attr">text</span>: <span class="string">&#x27;复制成功&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">icon</span>: <span class="string">&quot;success&quot;</span>, </span></span><br><span class="line"><span class="language-javascript">          <span class="attr">showConfirmButton</span>: <span class="literal">true</span></span></span><br><span class="line"><span class="language-javascript">          &#125;);</span></span><br><span class="line"><span class="language-javascript">	&#125;);</span></span><br><span class="line"><span class="language-javascript">    &#125;);  </span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>在目录<code>next/source/css/_common/components/post/</code>下添加<code>my-post-copyright.styl</code>：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">.my_post_copyright &#123;</span><br><span class="line">  width: 85%;</span><br><span class="line">  max-width: 45em;</span><br><span class="line">  margin: 2.8em auto 0;</span><br><span class="line">  padding: 0.5em 1.0em;</span><br><span class="line">  border: 1px solid #d3d3d3;</span><br><span class="line">  font-size: 0.93rem;</span><br><span class="line">  line-height: 1.6em;</span><br><span class="line">  word-break: break-all;</span><br><span class="line">  background: rgba(255,255,255,0.4);</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright p&#123;margin:0;&#125;</span><br><span class="line">.my_post_copyright span &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: 5.2em;</span><br><span class="line">  color: #b5b5b5;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .raw &#123;</span><br><span class="line">  margin-left: 1em;</span><br><span class="line">  width: 5em;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright a &#123;</span><br><span class="line">  color: #808080;</span><br><span class="line">  border-bottom:0;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright a:hover &#123;</span><br><span class="line">  color: #a3d2a3;</span><br><span class="line">  text-decoration: underline;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright:hover .fa-clipboard &#123;</span><br><span class="line">  color: #000;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .post-url:hover &#123;</span><br><span class="line">  font-weight: normal;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .copy-path &#123;</span><br><span class="line">  margin-left: 1em;</span><br><span class="line">  width: 1em;</span><br><span class="line">  +mobile()&#123;display:none;&#125;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .copy-path:hover &#123;</span><br><span class="line">  color: #808080;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>修改<code>next/layout/_macro/post.swig</code>，在代码</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">      &#123;% if not is_index %&#125;</span><br><span class="line">        &#123;% include &#x27;wechat-subscriber.swig&#x27; %&#125;</span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>之前添加增加如下代码：</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      &#123;% if not is_index %&#125;</span><br><span class="line">        &#123;% include &#x27;my-copyright.swig&#x27; %&#125;</span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>修改<code>next/source/css/_common/components/post/post.styl</code>文件，在最后一行增加代码：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">@import &quot;my-post-copyright&quot;</span><br></pre></td></tr></table></figure></div>
+
+<p>保存重新生成即可。<br>如果要在该博文下面增加版权信息的显示，需要在 Markdown 中增加<code>copyright: true</code>的设置</p>
+<p>如果你觉得每次都要输入<code>copyright: true</code>很麻烦的话,那么在<code>/scaffolds/post.md</code>文件中添加：</p>
+<div class="highlight-container" data-rel="Markdown"><figure class="iseeu highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">categories: </span><br><span class="line"><span class="section">copyright:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></div>
+
+<p>这样每次hexo new “你的内容”之后，生成的md文件会自动把<code>copyright:</code>加到里面去</p>
+<h3 id="隐藏网页底部powered-By-Hexo-x2F-强力驱动"><a href="#隐藏网页底部powered-By-Hexo-x2F-强力驱动" class="headerlink" title="隐藏网页底部powered By Hexo &#x2F; 强力驱动"></a>隐藏网页底部powered By Hexo &#x2F; 强力驱动</h3><p>打开<code>themes/next/layout/_partials/footer.swig</code>，注释或者直接删除以下代码：</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% if theme.footer.powered.enable %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;powered-by&quot;</span>&gt;</span>&#123;#</span><br><span class="line">  #&#125;&#123;&#123; __(&#x27;footer.powered&#x27;, next_url(&#x27;https://hexo.io&#x27;, &#x27;Hexo&#x27;, &#123;class: &#x27;theme-link&#x27;&#125;)) &#125;&#125;&#123;#</span><br><span class="line">  #&#125;&#123;% if theme.footer.powered.version %&#125; v&#123;&#123; hexo_env(&#x27;version&#x27;) &#125;&#125;&#123;% endif %&#125;&#123;#</span><br><span class="line"> #&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if theme.footer.powered.enable and theme.footer.theme.enable %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;post-meta-divider&quot;</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if theme.footer.theme.enable %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;theme-info&quot;</span>&gt;</span>&#123;#</span><br><span class="line">  #&#125;&#123;&#123; __(&#x27;footer.theme&#x27;) &#125;&#125; – &#123;&#123; next_url(&#x27;https://theme-next.org&#x27;, &#x27;NexT.&#x27; + theme.scheme, &#123;class: &#x27;theme-link&#x27;&#125;) &#125;&#125;&#123;#</span><br><span class="line">  #&#125;&#123;% if theme.footer.theme.version %&#125; v&#123;&#123; version &#125;&#125;&#123;% endif %&#125;&#123;#</span><br><span class="line">#&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="添加站内搜索"><a href="#添加站内搜索" class="headerlink" title="添加站内搜索"></a>添加站内搜索</h3><p>安装<code>hexo-generator-searchdb</code>插件</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></div>
+
+<p>编辑<code>_config.yml</code>站点配置文件，新增以下内容到任意位置：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure></div>
+
+<p>编辑<code>themes/next/_config.yml</code> 主题配置文件，启用本地搜索功能,将<code>local_search:</code>下面的<code>enable:</code>的值，改成<code>true</code></p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Local search</span></span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="首页不显示全文-只显示预览"><a href="#首页不显示全文-只显示预览" class="headerlink" title="首页不显示全文(只显示预览)"></a>首页不显示全文(只显示预览)</h3><p>打开主题配置文件<code>/themes/next/_config.yml</code>，将<code>auto_excerpt</code>下面的<code>enable:</code>的值，改成<code>true</code></p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Automatically Excerpt. Not recommand.</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Please use &lt;!-- more --&gt; <span class="keyword">in</span> the post to control excerpt accurately.</span></span><br><span class="line">auto_excerpt:</span><br><span class="line">enable: true</span><br><span class="line">length: 150</span><br></pre></td></tr></table></figure></div>
+
+<p>除了这个方法，还有一个更灵活的方法，直接在编辑的文章中添加<!--more-->标记。这样只会显示<!--more-->标记之前的那部份。</p>
+<h3 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h3><p>打开<code>themes/next/_config.yml</code>站点配置文件，找到<code># Reward</code>把<code>wechatpay:</code>和<code>alipay:</code>前面的<code>#</code>号删除。然后将自己的二维码文件<code>wechatpay.jpg</code>、<code>alipay.jpg</code>图片放入<code>themes/next/source/images</code>中即可。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Reward</span></span><br><span class="line">reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！</span><br><span class="line">wechatpay: /images/wechatpay.jpg</span><br><span class="line">alipay: /images/alipay.jpg</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Hexo载入动画效果"><a href="#Hexo载入动画效果" class="headerlink" title="Hexo载入动画效果"></a>Hexo载入动画效果</h3><p>编辑<code>themes/netx/_config.yml</code>找到<code>motion</code>,将<code>enable</code>的值，改成<code>true</code></p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Use velocity to animate everything.</span></span><br><span class="line">motion:</span><br><span class="line">  enable: true</span><br><span class="line">  async: false</span><br><span class="line">  transition:</span><br><span class="line">    # Transition variants:</span><br><span class="line">    # fadeIn | fadeOut | flipXIn | flipXOut | flipYIn | flipYOut | flipBounceXIn | flipBounceXOut | flipBounceYIn | flipBounceYOut</span><br><span class="line">    # swoopIn | swoopOut | whirlIn | whirlOut | shrinkIn | shrinkOut | expandIn | expandOut</span><br><span class="line">    # bounceIn | bounceOut | bounceUpIn | bounceUpOut | bounceDownIn | bounceDownOut | bounceLeftIn | bounceLeftOut | bounceRightIn | bounceRightOut</span><br><span class="line">    # slideUpIn | slideUpOut | slideDownIn | slideDownOut | slideLeftIn | slideLeftOut | slideRightIn | slideRightOut</span><br><span class="line">    # slideUpBigIn | slideUpBigOut | slideDownBigIn | slideDownBigOut | slideLeftBigIn | slideLeftBigOut | slideRightBigIn | slideRightBigOut</span><br><span class="line">    # perspectiveUpIn | perspectiveUpOut | perspectiveDownIn | perspectiveDownOut | perspectiveLeftIn | perspectiveLeftOut | perspectiveRightIn | perspectiveRightOut</span><br><span class="line">    post_block: fadeIn</span><br><span class="line">    post_header: slideDownIn</span><br><span class="line">    post_body: slideDownIn</span><br><span class="line">    coll_header: slideLeftIn</span><br><span class="line">    # Only for Pisces | Gemini.</span><br><span class="line">    sidebar: slideUpIn</span><br></pre></td></tr></table></figure></div>
+
+<p><code>#</code>号里都是载入效果，有时间可以自己多试一试！</p>
+<h3 id="美化右侧滚动条"><a href="#美化右侧滚动条" class="headerlink" title="美化右侧滚动条"></a>美化右侧滚动条</h3><p>打开<code>themes\next\source\css\_custom\custom.styl</code>文件，将下面的代码添加进去。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">//设置滚动条的样式</span><br><span class="line">//参考https://segmentfault.com/a/1190000003708894</span><br><span class="line">::-webkit-scrollbar &#123;</span><br><span class="line">      width: 5px;</span><br><span class="line">      height: 5px;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//滚动槽</span><br><span class="line">::-webkit-scrollbar-track &#123;</span><br><span class="line">      background: #eee;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//滚动条滑块</span><br><span class="line">::-webkit-scrollbar-thumb &#123;</span><br><span class="line">      border-radius: 5px;</span><br><span class="line">        background-color: #ccc;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">::-webkit-scrollbar-thumb:hover &#123;</span><br><span class="line">      background-color: rgb(247, 149, 51);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="优化鼠标选择文字的样式"><a href="#优化鼠标选择文字的样式" class="headerlink" title="优化鼠标选择文字的样式"></a>优化鼠标选择文字的样式</h3><p>打开<code>themes\next\source\css\_custom\custom.styl</code>文件，将下面的代码添加进去。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">::selection &#123;</span><br><span class="line">      background-color: rgb(255, 241, 89);</span><br><span class="line">        color: #555;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="网页中文乱码解决办法"><a href="#网页中文乱码解决办法" class="headerlink" title="网页中文乱码解决办法"></a>网页中文乱码解决办法</h3><p>所有配置文件都可以用记事本打开，如果输入中文后网页显示乱码，则需要将该文件另存为<code>utf-8</code>编码文件</p>
+<p>即打开后点击左上角 文件—&gt;另存为，然后在弹出的窗口下方有一个 编码 的下拉菜单，点击选择<code>UTF-8</code>选项，然后点击保存，会提示 是否替换，选择 是 即可。以后出现中文乱码问题都这样解决</p>
+<h3 id="设置侧边栏头像"><a href="#设置侧边栏头像" class="headerlink" title="设置侧边栏头像"></a>设置侧边栏头像</h3><p>将头像图片放在主题目录的<code>source/images/</code>目录下，尺寸是正方形即可，然后将照片改名为avatar.jpg，或者其他后缀名的图片。<br>编辑 <code>主题配置文件</code>，找到关键字avatar，删掉前面的#号，值设置成头像的链接地址，比如</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">avatar: /images/avatar.jpg</span><br></pre></td></tr></table></figure></div>
+
+<p>保存后可用hexo s打开本地服务器预览一下效果</p>
+<h3 id="修改链接样式"><a href="#修改链接样式" class="headerlink" title="修改链接样式"></a>修改链接样式</h3><p>在<code>themes\next\source\css\_common\components\post\post.styl</code>在末尾添加如下css样式：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">// 文章内链接文本样式</span><br><span class="line">.post-body p a&#123;</span><br><span class="line">  color: #0593d3;</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid #0593d3;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: #fc6423;</span><br><span class="line">    border-bottom: none;</span><br><span class="line">    border-bottom: 1px solid #fc6423;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -902,136 +999,6 @@
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java单例模式</title>
-    <url>/2018/07/16/Java%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<blockquote>
-<p>这种模式涉及到一个<code>单一</code>的类，该类负责创建自己的对象，同时确保只有<code>单个对象</code>被创建。这个类提供了一种访问其<code>唯一</code>的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
-</blockquote>
-<span id="more"></span>
-
-<p><strong><code>注意：</code></strong><br> 1.单例类只能有一个实例<br> 2.单例类必须自己创建自己的唯一实例<br> 3.单例类必须给所有其他对象提供这一实例</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong><code>意　　图：</code></strong> 保证一个类仅有一个实例，并提供一个访问它的全局访问点。<br><strong><code>主要解决：</code></strong> 一个全局使用的类频繁地创建与销毁。<br>**<code>何时使用：</code>**当您想控制实例数目，节省系统资源的时候。<br><strong><code>如何解决：</code></strong> 判断系统是否已经有这个单例，如果有则返回，如果没有则创建。<br><strong><code>关键代码：</code></strong> 构造函数是私有的。<br><strong><code>应用实例：</code></strong>  1.一个党只能有一个主席。 2.Windows 是多进程多线程的，在操作一个文件的时候，就不可避免地出现多个进程或线程同时操作一个文件的现象，所以所有文件的处理必须通过唯一的实例来进行。 3.一些设备管理器常常设计为单例模式，比如一个电脑有两台打印机，在输出的时候就要处理不能两台打印机打印同一个文件。<br><strong><code>优点：</code></strong>  1.在内存里只有一个实例，减少了内存的开销，尤其是频繁的创建和销毁实例（比如管理学院首页页面缓存）。 2.避免对资源的多重占用（比如写文件操作）。<br><strong><code>缺点：</code></strong> 没有接口，不能继承，与单一职责原则冲突，一个类应该只关心内部逻辑，而不关心外面怎么样来实例化。<br><strong><code>使用场景：</code></strong>  1.要求生产唯一序列号。2.WEB中的计数器，不用每次刷新都在数据库里加一次，用单例先缓存起来。3.创建的一个对象需要消耗的资源过多，比如 I&#x2F;O 与数据库的连接等。<br><strong><code>注意事项：</code></strong> getInstance() 方法中需要使用同步锁 synchronized (Singleton.class) 防止多线程同时进入造成 instance 被多次实例化。<br><strong><code>核心知识点如下：</code></strong> 1.将采用单例设计模式的类的构造方法私有化（采用private修饰）。2.在其内部产生该类的实例化对象，并将其封装成private static类型。3.定义一个静态方法返回该类的实例。</p>
-<h2 id="几种实现方式"><a href="#几种实现方式" class="headerlink" title="几种实现方式"></a>几种实现方式</h2><h3 id="懒汉式，线程不安全"><a href="#懒汉式，线程不安全" class="headerlink" title="懒汉式，线程不安全"></a>懒汉式，线程不安全</h3><p><strong><code>是否 Lazy 初始化：</code></strong> 是<br><strong><code>是否多线程安全：</code></strong> 否<br><strong><code>实现难度：</code></strong> 易<br><strong><code>描述：</code></strong> 这种方式是最基本的实现方式，这种实现最大的问题就是不支持多线程。因为没有加锁 synchronized，所以严格意义上它并不算单例模式。<br>这种方式 lazy loading 很明显，不要求线程安全，在多线程不能正常工作。</p>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span> <span class="params">()</span>&#123;&#125;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">    　　<span class="keyword">if</span> (instance == <span class="literal">null</span>) &#123;  </span><br><span class="line">    	　　instance = <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    　　&#125;  </span><br><span class="line">    　　<span class="keyword">return</span> instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
-<h3 id="懒汉式，线程安全"><a href="#懒汉式，线程安全" class="headerlink" title="懒汉式，线程安全"></a>懒汉式，线程安全</h3><p><strong><code>是否 Lazy 初始化：</code></strong> 是<br><strong><code>是否多线程安全：</code></strong> 是<br><strong><code>实现难度：</code></strong> 易<br><strong><code>描述：</code></strong> 这种方式具备很好的 lazy loading，能够在多线程中很好的工作，但是，效率很低，99% 情况下不需要同步。<br><strong><code>优点：</code></strong> 第一次调用才初始化，避免内存浪费。<br><strong><code>缺点：</code></strong> 必须加锁 synchronized 才能保证单例，但加锁会影响效率。<br>getInstance() 的性能对应用程序不是很关键（该方法使用不太频繁）。</p>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span> <span class="params">()</span>&#123; &#125;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">    　　<span class="keyword">if</span> (instance == <span class="literal">null</span>) &#123;  </span><br><span class="line">    	　　instance = <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    　　&#125;  </span><br><span class="line">    　　<span class="keyword">return</span> instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
-<h3 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h3><p><strong><code>是否 Lazy 初始化：</code></strong> 否<br><strong><code>是否多线程安全：</code></strong> 是<br><strong><code>实现难度：</code></strong> 易<br><strong><code>描述：</code></strong> 这种方式比较常用，但容易产生垃圾对象。<br><strong><code>优点：</code></strong> 没有加锁，执行效率会提高。<br><strong><code>缺点：</code></strong> 类加载时就初始化，浪费内存。<br>它基于 classloder 机制避免了多线程的同步问题，不过，instance 在类装载时就实例化，虽然导致类装载的原因有很多种，在单例模式中大多数都是调用 getInstance 方法， 但是也不能确定有其他的方式（或者其他的静态方法）导致类装载，这时候初始化 instance 显然没有达到 lazy loading 的效果。</p>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Singleton</span> <span class="variable">instance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span> <span class="params">()</span>&#123;&#125;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">    	<span class="keyword">return</span> instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
-<h3 id="双检锁-x2F-双重校验锁（DCL，即-double-checked-locking）"><a href="#双检锁-x2F-双重校验锁（DCL，即-double-checked-locking）" class="headerlink" title="双检锁&#x2F;双重校验锁（DCL，即 double-checked locking）"></a>双检锁&#x2F;双重校验锁（DCL，即 double-checked locking）</h3><p><strong><code>JDK 版本：</code></strong> JDK1.5 起<br><strong><code>是否 Lazy 初始化：</code></strong> 是<br><strong><code>是否多线程安全：</code></strong> 是<br><strong><code>实现难度：</code></strong> 较复杂<br><strong><code>描述：</code></strong> 这种方式采用双锁机制，安全且在多线程情况下能保持高性能。<br>getInstance() 的性能对应用程序很关键。</p>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton singleton;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span> <span class="params">()</span>&#123;&#125;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getSingleton</span><span class="params">()</span> &#123;  </span><br><span class="line">   	        <span class="keyword">if</span> (singleton != <span class="literal">null</span>) &#123;  </span><br><span class="line">		           <span class="keyword">return</span> singleton;  </span><br><span class="line">	        &#125;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;  </span><br><span class="line">    　　        <span class="keyword">if</span> (singleton == <span class="literal">null</span>) &#123;  </span><br><span class="line">    　　　        　singleton = <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    　　         &#125; </span><br><span class="line">	         &#125;</span><br><span class="line">　         <span class="keyword">return</span> singleton;    </span><br><span class="line">    &#125;  　</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
-
-
-<h3 id="登记式-x2F-静态内部类"><a href="#登记式-x2F-静态内部类" class="headerlink" title="登记式&#x2F;静态内部类"></a>登记式&#x2F;静态内部类</h3><p><strong><code>是否 Lazy 初始化：</code></strong> 是<br><strong><code>是否多线程安全：</code></strong> 是<br><strong><code>实现难度：</code></strong> 一般<br><strong><code>描述：</code></strong> 这种方式能达到双检锁方式一样的功效，但实现更简单。对静态域使用延迟初始化，应使用这种方式而不是双检锁方式。这种方式只适用于静态域的情况，双检锁方式可在实例域需要延迟初始化时使用。<br>这种方式同样利用了 classloder 机制来保证初始化 instance 时只有一个线程，它跟第 3 种方式不同的是：第 3 种方式只要 Singleton 类被装载了，那么 instance 就会被实例化（没有达到 lazy loading 效果），而这种方式是 Singleton 类被装载了，instance 不一定被初始化。因为 SingletonHolder 类没有被主动使用，只有显示通过调用 getInstance 方法时，才会显示装载 SingletonHolder 类，从而实例化 instance。想象一下，如果实例化 instance 很消耗资源，所以想让它延迟加载，另外一方面，又不希望在 Singleton 类加载时就实例化，因为不能确保 Singleton 类还可能在其他的地方被主动使用从而被加载，那么这个时候实例化 instance 显然是不合适的。这个时候，这种方式相比第 3 种方式就显得很合理。</p>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">SingletonHolder</span> &#123;  </span><br><span class="line">    	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Singleton</span> <span class="variable">INSTANCE</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span> <span class="params">()</span>&#123;&#125;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">    	<span class="keyword">return</span> SingletonHolder.INSTANCE;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
-<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p><strong><code>JDK 版本：</code></strong> JDK1.5 起<br><strong><code>是否 Lazy 初始化：</code></strong> 否<br><strong><code>是否多线程安全：</code></strong> 是<br><strong><code>实现难度：</code></strong> 易<br><strong><code>描述：</code></strong> 这种实现方式还没有被广泛采用，但这是实现单例模式的最佳方法。它更简洁，自动支持序列化机制，绝对防止多次实例化。<br>这种方式是 Effective Java 作者 Josh Bloch 提倡的方式，它不仅能避免多线程同步问题，而且还自动支持序列化机制，防止反序列化重新创建新的对象，绝对防止多次实例化。不过，由于 JDK1.5 之后才加入 enum 特性，用这种方式写不免让人感觉生疏，在实际工作中，也很少用。不能通过 reflection attack 来调用私有构造方法。</p>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    INSTANCE;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">whateverMethod</span><span class="params">()</span> &#123;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
-<p><strong><code>经验之谈：</code></strong> 一般情况下，不建议使用第 1 种和第 2 种懒汉方式，建议使用第 3 种饿汉方式。只有在要明确实现 lazy loading 效果时，才会使用第 5 种登记方式。如果涉及到反序列化创建对象时，可以尝试使用第 6 种枚举方式。如果有其他特殊的需求，可以考虑使用第 4 种双检锁方式。</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo的next主题个性化教程</title>
-    <url>/2019/02/15/Hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h3 id="设置中文"><a href="#设置中文" class="headerlink" title="设置中文"></a>设置中文</h3><p>修改配置文件(_config.yml)</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure></div>
-
-<span id="more"></span>
-
-<h3 id="酷炫的动态背景"><a href="#酷炫的动态背景" class="headerlink" title="酷炫的动态背景"></a>酷炫的动态背景</h3><p>打开<code>\themes\NexT\_config.yml</code>，修改以下内容：　　　</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">背景特效以下4项，是NexT主题集成的，只需将 <span class="literal">false</span> 改为 <span class="literal">true</span>，即可启用</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">不用向网上说的，到模板文件里加引用js的脚本，NexT已经集成了，开启即用</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Canvas-nest 浮动线条</span></span><br><span class="line">canvas_nest:</span><br><span class="line">  enable: true</span><br><span class="line">  onmobile: true # display on mobile or not</span><br><span class="line">  color: &#x27;0,0,255&#x27; # RGB values, use &#x27;,&#x27; to separate</span><br><span class="line">  opacity: 0.5 # the opacity of line: 0~1</span><br><span class="line">  zIndex: -1 # z-index property of the background</span><br><span class="line">  count: 99 # the number of lines</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">three_waves 水波粒子</span></span><br><span class="line">three_waves: false</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">canvas_lines 这个是一根线连接两个小点，组成的一个随鼠标放大缩小的东西</span></span><br><span class="line">canvas_lines: false</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">canvas_sphere 这个是一个很多刺组成的一个球</span></span><br><span class="line">canvas_sphere: false</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="主页文章添加阴影效果"><a href="#主页文章添加阴影效果" class="headerlink" title="主页文章添加阴影效果"></a>主页文章添加阴影效果</h3><p>打开<code>themes/next/source/css/_custom/custom.styl</code>文件添加：</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">.post &#123;</span><br><span class="line">   margin-top: 60px;</span><br><span class="line">   margin-bottom: 60px;</span><br><span class="line">   padding: 25px;</span><br><span class="line">   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="启用：页面加载过程中顶部的进度条"><a href="#启用：页面加载过程中顶部的进度条" class="headerlink" title="启用：页面加载过程中顶部的进度条"></a>启用：页面加载过程中顶部的进度条</h3><p>打开<code>\themes\NexT\_config.yml</code>，找到字段 <code>pace</code>，设为<code>true</code>。还可以将<code>pace_theme:</code>的值，改成相应的名字,变更不同样式的加载条。</p>
-<h3 id="修改文章底部的那个带-号的标签"><a href="#修改文章底部的那个带-号的标签" class="headerlink" title="修改文章底部的那个带#号的标签"></a>修改文章底部的那个带#号的标签</h3><p>修改模板<code>/themes/next/layout/_macro/post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 <code>#</code> 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
-<h3 id="在每篇文章末尾统一添加“本文结束”标记"><a href="#在每篇文章末尾统一添加“本文结束”标记" class="headerlink" title="在每篇文章末尾统一添加“本文结束”标记"></a>在每篇文章末尾统一添加“本文结束”标记</h3><p>在路径<code>\themes\next\layout\_macro</code>中新建 <code>passage-end-tag.swig</code> 文件，并添加以下内容：</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;text-align:center;color: #ccc;font-size:14px;&quot;</span>&gt;</span>-------------本文结束<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-paw&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>感谢您的阅读-------------<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>接着打开<code>\themes\next\layout\_macro\post.swig</code>文件，在<code>post-body</code> 之后， <code>post-footer</code> 之前添加如下画红色部分代码（<code>post-footer</code>之前两个DIV），代码如下：</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">    &#123;% include &#x27;passage-end-tag.swig&#x27; %&#125;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>然后打开主题配置文件（_config.yml)，在末尾添加：</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">文章末尾添加“本文结束”标记</span></span><br><span class="line">passage_end_tag:</span><br><span class="line">  enabled: true</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="主页文章添加阴影效果-1"><a href="#主页文章添加阴影效果-1" class="headerlink" title="主页文章添加阴影效果"></a>主页文章添加阴影效果</h3><p>打开<code>\themes\next\source\css\_custom\custom.styl</code>，向里面加入：</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">// 主页文章添加阴影效果</span><br><span class="line"> .post &#123;</span><br><span class="line">   margin-top: 60px;</span><br><span class="line">   margin-bottom: 60px;</span><br><span class="line">   padding: 25px;</span><br><span class="line">   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="设置网站的图标Favicon"><a href="#设置网站的图标Favicon" class="headerlink" title="设置网站的图标Favicon"></a>设置网站的图标Favicon</h3><p>一张（32*32）的ico图标，或者去别的网站下载或者制作，并将图标名称改为favicon.ico，然后把图标放在<code>/themes/next/source/images</code>里，并且修改主题配置文件：</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Put your favicon.ico into `hexo-site/source/` directory.</span></span><br><span class="line">favicon: /favicon.ico</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="在文章底部增加版权信息"><a href="#在文章底部增加版权信息" class="headerlink" title="在文章底部增加版权信息"></a>在文章底部增加版权信息</h3><p>在目录 <code>next/layout/_macro/</code>下添加 <code>my-copyright.swig</code>：</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% if page.copyright %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;my_post_copyright&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">&lt;!-- JS库 sweetalert 可修改路径 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/sweetalert/dist/sweetalert.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>本文标题:<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;&#123; url_for(page.path) &#125;&#125;&quot;</span>&gt;</span>&#123;&#123; page.title &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>文章作者:<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/&quot;</span> <span class="attr">title</span>=<span class="string">&quot;访问 &#123;&#123; theme.author &#125;&#125; 的个人博客&quot;</span>&gt;</span>&#123;&#123; theme.author &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>发布时间:<span class="tag">&lt;/<span class="name">span</span>&gt;</span>&#123;&#123; page.date.format(&quot;YYYY年MM月DD日 - HH:mm&quot;) &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>最后更新:<span class="tag">&lt;/<span class="name">span</span>&gt;</span>&#123;&#123; page.updated.format(&quot;YYYY年MM月DD日 - HH:mm&quot;) &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>原始链接:<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&#123;&#123; url_for(page.path) &#125;&#125;&quot;</span> <span class="attr">title</span>=<span class="string">&quot;&#123;&#123; page.title &#125;&#125;&quot;</span>&gt;</span>&#123;&#123; page.permalink &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;copy-path&quot;</span>  <span class="attr">title</span>=<span class="string">&quot;点击复制文章链接&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-clipboard&quot;</span> <span class="attr">data-clipboard-text</span>=<span class="string">&quot;&#123;&#123; page.permalink &#125;&#125;&quot;</span>  <span class="attr">aria-label</span>=<span class="string">&quot;复制成功！&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>许可协议:<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-creative-commons&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> <span class="tag">&lt;<span class="name">a</span> <span class="attr">rel</span>=<span class="string">&quot;license&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">title</span>=<span class="string">&quot;Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)&quot;</span>&gt;</span>署名-非商业性使用-禁止演绎 4.0 国际<span class="tag">&lt;/<span class="name">a</span>&gt;</span> 转载请保留原文链接及作者。<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"> </span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> clipboard = <span class="keyword">new</span> <span class="title class_">Clipboard</span>(<span class="string">&#x27;.fa-clipboard&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    $(<span class="string">&quot;.fa-clipboard&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">      clipboard.<span class="title function_">on</span>(<span class="string">&#x27;success&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">swal</span>(&#123;   </span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title</span>: <span class="string">&quot;&quot;</span>,   </span></span><br><span class="line"><span class="language-javascript">          <span class="attr">text</span>: <span class="string">&#x27;复制成功&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">icon</span>: <span class="string">&quot;success&quot;</span>, </span></span><br><span class="line"><span class="language-javascript">          <span class="attr">showConfirmButton</span>: <span class="literal">true</span></span></span><br><span class="line"><span class="language-javascript">          &#125;);</span></span><br><span class="line"><span class="language-javascript">	&#125;);</span></span><br><span class="line"><span class="language-javascript">    &#125;);  </span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>在目录<code>next/source/css/_common/components/post/</code>下添加<code>my-post-copyright.styl</code>：</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">.my_post_copyright &#123;</span><br><span class="line">  width: 85%;</span><br><span class="line">  max-width: 45em;</span><br><span class="line">  margin: 2.8em auto 0;</span><br><span class="line">  padding: 0.5em 1.0em;</span><br><span class="line">  border: 1px solid #d3d3d3;</span><br><span class="line">  font-size: 0.93rem;</span><br><span class="line">  line-height: 1.6em;</span><br><span class="line">  word-break: break-all;</span><br><span class="line">  background: rgba(255,255,255,0.4);</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright p&#123;margin:0;&#125;</span><br><span class="line">.my_post_copyright span &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: 5.2em;</span><br><span class="line">  color: #b5b5b5;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .raw &#123;</span><br><span class="line">  margin-left: 1em;</span><br><span class="line">  width: 5em;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright a &#123;</span><br><span class="line">  color: #808080;</span><br><span class="line">  border-bottom:0;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright a:hover &#123;</span><br><span class="line">  color: #a3d2a3;</span><br><span class="line">  text-decoration: underline;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright:hover .fa-clipboard &#123;</span><br><span class="line">  color: #000;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .post-url:hover &#123;</span><br><span class="line">  font-weight: normal;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .copy-path &#123;</span><br><span class="line">  margin-left: 1em;</span><br><span class="line">  width: 1em;</span><br><span class="line">  +mobile()&#123;display:none;&#125;</span><br><span class="line">&#125;</span><br><span class="line">.my_post_copyright .copy-path:hover &#123;</span><br><span class="line">  color: #808080;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>修改<code>next/layout/_macro/post.swig</code>，在代码</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">      &#123;% if not is_index %&#125;</span><br><span class="line">        &#123;% include &#x27;wechat-subscriber.swig&#x27; %&#125;</span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></div>
-
-<p>之前添加增加如下代码：</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      &#123;% if not is_index %&#125;</span><br><span class="line">        &#123;% include &#x27;my-copyright.swig&#x27; %&#125;</span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>修改<code>next/source/css/_common/components/post/post.styl</code>文件，在最后一行增加代码：</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">@import &quot;my-post-copyright&quot;</span><br></pre></td></tr></table></figure></div>
-
-<p>保存重新生成即可。<br>如果要在该博文下面增加版权信息的显示，需要在 Markdown 中增加<code>copyright: true</code>的设置</p>
-<p>如果你觉得每次都要输入<code>copyright: true</code>很麻烦的话,那么在<code>/scaffolds/post.md</code>文件中添加：</p>
-<div class="highlight-container" data-rel="Markdown"><figure class="iseeu highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">categories: </span><br><span class="line"><span class="section">copyright:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></div>
-
-<p>这样每次hexo new “你的内容”之后，生成的md文件会自动把<code>copyright:</code>加到里面去</p>
-<h3 id="隐藏网页底部powered-By-Hexo-x2F-强力驱动"><a href="#隐藏网页底部powered-By-Hexo-x2F-强力驱动" class="headerlink" title="隐藏网页底部powered By Hexo &#x2F; 强力驱动"></a>隐藏网页底部powered By Hexo &#x2F; 强力驱动</h3><p>打开<code>themes/next/layout/_partials/footer.swig</code>，注释或者直接删除以下代码：</p>
-<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% if theme.footer.powered.enable %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;powered-by&quot;</span>&gt;</span>&#123;#</span><br><span class="line">  #&#125;&#123;&#123; __(&#x27;footer.powered&#x27;, next_url(&#x27;https://hexo.io&#x27;, &#x27;Hexo&#x27;, &#123;class: &#x27;theme-link&#x27;&#125;)) &#125;&#125;&#123;#</span><br><span class="line">  #&#125;&#123;% if theme.footer.powered.version %&#125; v&#123;&#123; hexo_env(&#x27;version&#x27;) &#125;&#125;&#123;% endif %&#125;&#123;#</span><br><span class="line"> #&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if theme.footer.powered.enable and theme.footer.theme.enable %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;post-meta-divider&quot;</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if theme.footer.theme.enable %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;theme-info&quot;</span>&gt;</span>&#123;#</span><br><span class="line">  #&#125;&#123;&#123; __(&#x27;footer.theme&#x27;) &#125;&#125; – &#123;&#123; next_url(&#x27;https://theme-next.org&#x27;, &#x27;NexT.&#x27; + theme.scheme, &#123;class: &#x27;theme-link&#x27;&#125;) &#125;&#125;&#123;#</span><br><span class="line">  #&#125;&#123;% if theme.footer.theme.version %&#125; v&#123;&#123; version &#125;&#125;&#123;% endif %&#125;&#123;#</span><br><span class="line">#&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="添加站内搜索"><a href="#添加站内搜索" class="headerlink" title="添加站内搜索"></a>添加站内搜索</h3><p>安装<code>hexo-generator-searchdb</code>插件</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></div>
-
-<p>编辑<code>_config.yml</code>站点配置文件，新增以下内容到任意位置：</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure></div>
-
-<p>编辑<code>themes/next/_config.yml</code> 主题配置文件，启用本地搜索功能,将<code>local_search:</code>下面的<code>enable:</code>的值，改成<code>true</code></p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Local search</span></span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="首页不显示全文-只显示预览"><a href="#首页不显示全文-只显示预览" class="headerlink" title="首页不显示全文(只显示预览)"></a>首页不显示全文(只显示预览)</h3><p>打开主题配置文件<code>/themes/next/_config.yml</code>，将<code>auto_excerpt</code>下面的<code>enable:</code>的值，改成<code>true</code></p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Automatically Excerpt. Not recommand.</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Please use &lt;!-- more --&gt; <span class="keyword">in</span> the post to control excerpt accurately.</span></span><br><span class="line">auto_excerpt:</span><br><span class="line">enable: true</span><br><span class="line">length: 150</span><br></pre></td></tr></table></figure></div>
-
-<p>除了这个方法，还有一个更灵活的方法，直接在编辑的文章中添加<!--more-->标记。这样只会显示<!--more-->标记之前的那部份。</p>
-<h3 id="添加打赏功能"><a href="#添加打赏功能" class="headerlink" title="添加打赏功能"></a>添加打赏功能</h3><p>打开<code>themes/next/_config.yml</code>站点配置文件，找到<code># Reward</code>把<code>wechatpay:</code>和<code>alipay:</code>前面的<code>#</code>号删除。然后将自己的二维码文件<code>wechatpay.jpg</code>、<code>alipay.jpg</code>图片放入<code>themes/next/source/images</code>中即可。</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Reward</span></span><br><span class="line">reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！</span><br><span class="line">wechatpay: /images/wechatpay.jpg</span><br><span class="line">alipay: /images/alipay.jpg</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure></div>
-
-<h3 id="Hexo载入动画效果"><a href="#Hexo载入动画效果" class="headerlink" title="Hexo载入动画效果"></a>Hexo载入动画效果</h3><p>编辑<code>themes/netx/_config.yml</code>找到<code>motion</code>,将<code>enable</code>的值，改成<code>true</code></p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Use velocity to animate everything.</span></span><br><span class="line">motion:</span><br><span class="line">  enable: true</span><br><span class="line">  async: false</span><br><span class="line">  transition:</span><br><span class="line">    # Transition variants:</span><br><span class="line">    # fadeIn | fadeOut | flipXIn | flipXOut | flipYIn | flipYOut | flipBounceXIn | flipBounceXOut | flipBounceYIn | flipBounceYOut</span><br><span class="line">    # swoopIn | swoopOut | whirlIn | whirlOut | shrinkIn | shrinkOut | expandIn | expandOut</span><br><span class="line">    # bounceIn | bounceOut | bounceUpIn | bounceUpOut | bounceDownIn | bounceDownOut | bounceLeftIn | bounceLeftOut | bounceRightIn | bounceRightOut</span><br><span class="line">    # slideUpIn | slideUpOut | slideDownIn | slideDownOut | slideLeftIn | slideLeftOut | slideRightIn | slideRightOut</span><br><span class="line">    # slideUpBigIn | slideUpBigOut | slideDownBigIn | slideDownBigOut | slideLeftBigIn | slideLeftBigOut | slideRightBigIn | slideRightBigOut</span><br><span class="line">    # perspectiveUpIn | perspectiveUpOut | perspectiveDownIn | perspectiveDownOut | perspectiveLeftIn | perspectiveLeftOut | perspectiveRightIn | perspectiveRightOut</span><br><span class="line">    post_block: fadeIn</span><br><span class="line">    post_header: slideDownIn</span><br><span class="line">    post_body: slideDownIn</span><br><span class="line">    coll_header: slideLeftIn</span><br><span class="line">    # Only for Pisces | Gemini.</span><br><span class="line">    sidebar: slideUpIn</span><br></pre></td></tr></table></figure></div>
-
-<p><code>#</code>号里都是载入效果，有时间可以自己多试一试！</p>
-<h3 id="美化右侧滚动条"><a href="#美化右侧滚动条" class="headerlink" title="美化右侧滚动条"></a>美化右侧滚动条</h3><p>打开<code>themes\next\source\css\_custom\custom.styl</code>文件，将下面的代码添加进去。</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">//设置滚动条的样式</span><br><span class="line">//参考https://segmentfault.com/a/1190000003708894</span><br><span class="line">::-webkit-scrollbar &#123;</span><br><span class="line">      width: 5px;</span><br><span class="line">      height: 5px;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//滚动槽</span><br><span class="line">::-webkit-scrollbar-track &#123;</span><br><span class="line">      background: #eee;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//滚动条滑块</span><br><span class="line">::-webkit-scrollbar-thumb &#123;</span><br><span class="line">      border-radius: 5px;</span><br><span class="line">        background-color: #ccc;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">::-webkit-scrollbar-thumb:hover &#123;</span><br><span class="line">      background-color: rgb(247, 149, 51);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="优化鼠标选择文字的样式"><a href="#优化鼠标选择文字的样式" class="headerlink" title="优化鼠标选择文字的样式"></a>优化鼠标选择文字的样式</h3><p>打开<code>themes\next\source\css\_custom\custom.styl</code>文件，将下面的代码添加进去。</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">::selection &#123;</span><br><span class="line">      background-color: rgb(255, 241, 89);</span><br><span class="line">        color: #555;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="网页中文乱码解决办法"><a href="#网页中文乱码解决办法" class="headerlink" title="网页中文乱码解决办法"></a>网页中文乱码解决办法</h3><p>所有配置文件都可以用记事本打开，如果输入中文后网页显示乱码，则需要将该文件另存为<code>utf-8</code>编码文件</p>
-<p>即打开后点击左上角 文件—&gt;另存为，然后在弹出的窗口下方有一个 编码 的下拉菜单，点击选择<code>UTF-8</code>选项，然后点击保存，会提示 是否替换，选择 是 即可。以后出现中文乱码问题都这样解决</p>
-<h3 id="设置侧边栏头像"><a href="#设置侧边栏头像" class="headerlink" title="设置侧边栏头像"></a>设置侧边栏头像</h3><p>将头像图片放在主题目录的<code>source/images/</code>目录下，尺寸是正方形即可，然后将照片改名为avatar.jpg，或者其他后缀名的图片。<br>编辑 <code>主题配置文件</code>，找到关键字avatar，删掉前面的#号，值设置成头像的链接地址，比如</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">avatar: /images/avatar.jpg</span><br></pre></td></tr></table></figure></div>
-
-<p>保存后可用hexo s打开本地服务器预览一下效果</p>
-<h3 id="修改链接样式"><a href="#修改链接样式" class="headerlink" title="修改链接样式"></a>修改链接样式</h3><p>在<code>themes\next\source\css\_common\components\post\post.styl</code>在末尾添加如下css样式：</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">// 文章内链接文本样式</span><br><span class="line">.post-body p a&#123;</span><br><span class="line">  color: #0593d3;</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid #0593d3;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: #fc6423;</span><br><span class="line">    border-bottom: none;</span><br><span class="line">    border-bottom: 1px solid #fc6423;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1345,6 +1312,39 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java单例模式</title>
+    <url>/2018/07/16/Java%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<blockquote>
+<p>这种模式涉及到一个<code>单一</code>的类，该类负责创建自己的对象，同时确保只有<code>单个对象</code>被创建。这个类提供了一种访问其<code>唯一</code>的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
+</blockquote>
+<span id="more"></span>
+
+<p><strong><code>注意：</code></strong><br> 1.单例类只能有一个实例<br> 2.单例类必须自己创建自己的唯一实例<br> 3.单例类必须给所有其他对象提供这一实例</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong><code>意　　图：</code></strong> 保证一个类仅有一个实例，并提供一个访问它的全局访问点。<br><strong><code>主要解决：</code></strong> 一个全局使用的类频繁地创建与销毁。<br>**<code>何时使用：</code>**当您想控制实例数目，节省系统资源的时候。<br><strong><code>如何解决：</code></strong> 判断系统是否已经有这个单例，如果有则返回，如果没有则创建。<br><strong><code>关键代码：</code></strong> 构造函数是私有的。<br><strong><code>应用实例：</code></strong>  1.一个党只能有一个主席。 2.Windows 是多进程多线程的，在操作一个文件的时候，就不可避免地出现多个进程或线程同时操作一个文件的现象，所以所有文件的处理必须通过唯一的实例来进行。 3.一些设备管理器常常设计为单例模式，比如一个电脑有两台打印机，在输出的时候就要处理不能两台打印机打印同一个文件。<br><strong><code>优点：</code></strong>  1.在内存里只有一个实例，减少了内存的开销，尤其是频繁的创建和销毁实例（比如管理学院首页页面缓存）。 2.避免对资源的多重占用（比如写文件操作）。<br><strong><code>缺点：</code></strong> 没有接口，不能继承，与单一职责原则冲突，一个类应该只关心内部逻辑，而不关心外面怎么样来实例化。<br><strong><code>使用场景：</code></strong>  1.要求生产唯一序列号。2.WEB中的计数器，不用每次刷新都在数据库里加一次，用单例先缓存起来。3.创建的一个对象需要消耗的资源过多，比如 I&#x2F;O 与数据库的连接等。<br><strong><code>注意事项：</code></strong> getInstance() 方法中需要使用同步锁 synchronized (Singleton.class) 防止多线程同时进入造成 instance 被多次实例化。<br><strong><code>核心知识点如下：</code></strong> 1.将采用单例设计模式的类的构造方法私有化（采用private修饰）。2.在其内部产生该类的实例化对象，并将其封装成private static类型。3.定义一个静态方法返回该类的实例。</p>
+<h2 id="几种实现方式"><a href="#几种实现方式" class="headerlink" title="几种实现方式"></a>几种实现方式</h2><h3 id="懒汉式，线程不安全"><a href="#懒汉式，线程不安全" class="headerlink" title="懒汉式，线程不安全"></a>懒汉式，线程不安全</h3><p><strong><code>是否 Lazy 初始化：</code></strong> 是<br><strong><code>是否多线程安全：</code></strong> 否<br><strong><code>实现难度：</code></strong> 易<br><strong><code>描述：</code></strong> 这种方式是最基本的实现方式，这种实现最大的问题就是不支持多线程。因为没有加锁 synchronized，所以严格意义上它并不算单例模式。<br>这种方式 lazy loading 很明显，不要求线程安全，在多线程不能正常工作。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span> <span class="params">()</span>&#123;&#125;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">    　　<span class="keyword">if</span> (instance == <span class="literal">null</span>) &#123;  </span><br><span class="line">    	　　instance = <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    　　&#125;  </span><br><span class="line">    　　<span class="keyword">return</span> instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
+<h3 id="懒汉式，线程安全"><a href="#懒汉式，线程安全" class="headerlink" title="懒汉式，线程安全"></a>懒汉式，线程安全</h3><p><strong><code>是否 Lazy 初始化：</code></strong> 是<br><strong><code>是否多线程安全：</code></strong> 是<br><strong><code>实现难度：</code></strong> 易<br><strong><code>描述：</code></strong> 这种方式具备很好的 lazy loading，能够在多线程中很好的工作，但是，效率很低，99% 情况下不需要同步。<br><strong><code>优点：</code></strong> 第一次调用才初始化，避免内存浪费。<br><strong><code>缺点：</code></strong> 必须加锁 synchronized 才能保证单例，但加锁会影响效率。<br>getInstance() 的性能对应用程序不是很关键（该方法使用不太频繁）。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span> <span class="params">()</span>&#123; &#125;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">    　　<span class="keyword">if</span> (instance == <span class="literal">null</span>) &#123;  </span><br><span class="line">    	　　instance = <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    　　&#125;  </span><br><span class="line">    　　<span class="keyword">return</span> instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
+<h3 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h3><p><strong><code>是否 Lazy 初始化：</code></strong> 否<br><strong><code>是否多线程安全：</code></strong> 是<br><strong><code>实现难度：</code></strong> 易<br><strong><code>描述：</code></strong> 这种方式比较常用，但容易产生垃圾对象。<br><strong><code>优点：</code></strong> 没有加锁，执行效率会提高。<br><strong><code>缺点：</code></strong> 类加载时就初始化，浪费内存。<br>它基于 classloder 机制避免了多线程的同步问题，不过，instance 在类装载时就实例化，虽然导致类装载的原因有很多种，在单例模式中大多数都是调用 getInstance 方法， 但是也不能确定有其他的方式（或者其他的静态方法）导致类装载，这时候初始化 instance 显然没有达到 lazy loading 的效果。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Singleton</span> <span class="variable">instance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span> <span class="params">()</span>&#123;&#125;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">    	<span class="keyword">return</span> instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
+<h3 id="双检锁-x2F-双重校验锁（DCL，即-double-checked-locking）"><a href="#双检锁-x2F-双重校验锁（DCL，即-double-checked-locking）" class="headerlink" title="双检锁&#x2F;双重校验锁（DCL，即 double-checked locking）"></a>双检锁&#x2F;双重校验锁（DCL，即 double-checked locking）</h3><p><strong><code>JDK 版本：</code></strong> JDK1.5 起<br><strong><code>是否 Lazy 初始化：</code></strong> 是<br><strong><code>是否多线程安全：</code></strong> 是<br><strong><code>实现难度：</code></strong> 较复杂<br><strong><code>描述：</code></strong> 这种方式采用双锁机制，安全且在多线程情况下能保持高性能。<br>getInstance() 的性能对应用程序很关键。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton singleton;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span> <span class="params">()</span>&#123;&#125;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getSingleton</span><span class="params">()</span> &#123;  </span><br><span class="line">   	        <span class="keyword">if</span> (singleton != <span class="literal">null</span>) &#123;  </span><br><span class="line">		           <span class="keyword">return</span> singleton;  </span><br><span class="line">	        &#125;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;  </span><br><span class="line">    　　        <span class="keyword">if</span> (singleton == <span class="literal">null</span>) &#123;  </span><br><span class="line">    　　　        　singleton = <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    　　         &#125; </span><br><span class="line">	         &#125;</span><br><span class="line">　         <span class="keyword">return</span> singleton;    </span><br><span class="line">    &#125;  　</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
+
+
+<h3 id="登记式-x2F-静态内部类"><a href="#登记式-x2F-静态内部类" class="headerlink" title="登记式&#x2F;静态内部类"></a>登记式&#x2F;静态内部类</h3><p><strong><code>是否 Lazy 初始化：</code></strong> 是<br><strong><code>是否多线程安全：</code></strong> 是<br><strong><code>实现难度：</code></strong> 一般<br><strong><code>描述：</code></strong> 这种方式能达到双检锁方式一样的功效，但实现更简单。对静态域使用延迟初始化，应使用这种方式而不是双检锁方式。这种方式只适用于静态域的情况，双检锁方式可在实例域需要延迟初始化时使用。<br>这种方式同样利用了 classloder 机制来保证初始化 instance 时只有一个线程，它跟第 3 种方式不同的是：第 3 种方式只要 Singleton 类被装载了，那么 instance 就会被实例化（没有达到 lazy loading 效果），而这种方式是 Singleton 类被装载了，instance 不一定被初始化。因为 SingletonHolder 类没有被主动使用，只有显示通过调用 getInstance 方法时，才会显示装载 SingletonHolder 类，从而实例化 instance。想象一下，如果实例化 instance 很消耗资源，所以想让它延迟加载，另外一方面，又不希望在 Singleton 类加载时就实例化，因为不能确保 Singleton 类还可能在其他的地方被主动使用从而被加载，那么这个时候实例化 instance 显然是不合适的。这个时候，这种方式相比第 3 种方式就显得很合理。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">SingletonHolder</span> &#123;  </span><br><span class="line">    	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Singleton</span> <span class="variable">INSTANCE</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Singleton</span>();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span> <span class="params">()</span>&#123;&#125;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;  </span><br><span class="line">    	<span class="keyword">return</span> SingletonHolder.INSTANCE;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p><strong><code>JDK 版本：</code></strong> JDK1.5 起<br><strong><code>是否 Lazy 初始化：</code></strong> 否<br><strong><code>是否多线程安全：</code></strong> 是<br><strong><code>实现难度：</code></strong> 易<br><strong><code>描述：</code></strong> 这种实现方式还没有被广泛采用，但这是实现单例模式的最佳方法。它更简洁，自动支持序列化机制，绝对防止多次实例化。<br>这种方式是 Effective Java 作者 Josh Bloch 提倡的方式，它不仅能避免多线程同步问题，而且还自动支持序列化机制，防止反序列化重新创建新的对象，绝对防止多次实例化。不过，由于 JDK1.5 之后才加入 enum 特性，用这种方式写不免让人感觉生疏，在实际工作中，也很少用。不能通过 reflection attack 来调用私有构造方法。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">Singleton</span> &#123;  </span><br><span class="line">    INSTANCE;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">whateverMethod</span><span class="params">()</span> &#123;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure></div>
+<p><strong><code>经验之谈：</code></strong> 一般情况下，不建议使用第 1 种和第 2 种懒汉方式，建议使用第 3 种饿汉方式。只有在要明确实现 lazy loading 效果时，才会使用第 5 种登记方式。如果涉及到反序列化创建对象时，可以尝试使用第 6 种枚举方式。如果有其他特殊的需求，可以考虑使用第 4 种双检锁方式。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1804,32 +1804,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows10使用Robocopy多线程功能加速中的文件复制</title>
-    <url>/2019/04/18/Windows10%E4%BD%BF%E7%94%A8Robocopy%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8A%9F%E8%83%BD%E5%8A%A0%E9%80%9F%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/</url>
-    <content><![CDATA[<p>当用户需要将文件或文件夹复制到另一个驱动器时，通常都使用（GUI 中）标准的选择、复制和粘贴操作。虽然默认的批量文件复制和移动功能在 Windows 10 操作系统中已经历经过微软多次优化，已经能够工作得很好，但当尝试传输大批量文件（特别是大量小文件）时，还是需要很长时间，速度就成了一个瓶颈。<br> <span id="more"></span><br>此时，许多精通技术的 Windows 用户都会使用 <strong>Robocopy</strong>（Robust File Copy，强大的文件复制），这是一个内置于 Windows 10 中的命令行工具，它提供了更多功能来帮助用户更快地将数据移动到不同的位置。</p>
-<p><strong>Robocopy</strong> 最为特殊也经常被忽略的是其支持多线程的能力，允许我们同时复制多个文件，而不像在<strong>文件管理器</strong>中复制文件时只能一次一个（移动多个文件时也只是列队之后一个一个移动）。</p>
-<p>下面介绍在 Windows 10 中如何使用 <strong>Robocopy</strong> 的多线程副本功能来加快文件和文件夹的复制、移动传输过程。</p>
-<h3 id="如何使用Robocopy多线程特性"><a href="#如何使用Robocopy多线程特性" class="headerlink" title="如何使用Robocopy多线程特性"></a>如何使用Robocopy多线程特性</h3><p>如果你要将 Windows 10 中的大量文件和文件夹复制到另一个驱动器，可以仿照如下步骤来实现 <strong>Robocopy</strong> 多线程功能以达到超快的数据复制速度：</p>
-<h4 id="以管理员权限打开「命令提示符」"><a href="#以管理员权限打开「命令提示符」" class="headerlink" title="以管理员权限打开「命令提示符」"></a>以管理员权限打开「命令提示符」</h4><h4 id="执行类似如下命令进行多线程复制"><a href="#执行类似如下命令进行多线程复制" class="headerlink" title="执行类似如下命令进行多线程复制"></a>执行类似如下命令进行多线程复制</h4><div class="highlight-container" data-rel="Powershell"><figure class="iseeu highlight powershell"><table><tr><td class="code"><pre><span class="line">ROBOCOPY source destination [<span class="type">file</span> [<span class="type">file</span>]<span class="type">...</span>] [<span class="type">options</span>]</span><br></pre></td></tr></table></figure></div>
-<p><strong>source</strong> :  源目录(驱动器:\路径或\服务器\共享\路径)。<br><strong>destination</strong> :  目标目录(驱动器:\路径或\服务器\共享\路径)。<br><strong>file</strong> :  要复制的文件(名称&#x2F;通配符: 默认为 “<em>.</em>“)。</p>
-<p>例如：</p>
-<div class="highlight-container" data-rel="Powershell"><figure class="iseeu highlight powershell"><table><tr><td class="code"><pre><span class="line">robocopy D:\Pictures\ E:\收藏\Pictures /S /ZB /<span class="built_in">R</span>:<span class="number">5</span> /W:<span class="number">5</span> /V /MT:<span class="number">8</span></span><br></pre></td></tr></table></figure></div>
-
-<p><strong>注意</strong>：请自行将源路径和目标路径替换成你自己的。</p>
-<h3 id="Robocopy命令行用法解释"><a href="#Robocopy命令行用法解释" class="headerlink" title="Robocopy命令行用法解释"></a>Robocopy命令行用法解释</h3><p>robocopy 的功能非常强大，因此其命令行开关也非常之多，下面我们只列出能够可靠、快速复制文件的常用开关。</p>
-<blockquote>
-<p><strong>&#x2F;S</strong>:  复制子目录，但不复制空的子目录。<br><strong>&#x2F;E</strong>:  复制子目录，包括空的子目录。<br><strong>&#x2F;LEV:n</strong>:  仅复制源目录树的前 n 层。<br><strong>&#x2F;Z</strong>:  在可重新启动模式下复制文件。<br><strong>&#x2F;B</strong>:  在备份模式下复制文件。<br><strong>&#x2F;ZB</strong>:  使用可重新启动模式；如果拒绝访问，请使用备份模式。<br><strong>&#x2F;J</strong>:   复制时使用未缓冲的 I&#x2F;O (推荐在复制大文件时使用)。<br><strong>&#x2F;R:n</strong>:  失败副本的重试次数: 默认为 1 百万。<br><strong>&#x2F;W:n</strong>:  两次重试间的等待时间: 默认为 30 秒。<br><strong>&#x2F;TBD</strong>:   等待定义共享名称(重试错误 67)。<br><strong>&#x2F;NP</strong>:   无进度 – 不显示已复制的百分比。<br><strong>&#x2F;V</strong>:  生成详细输出，同时显示跳过的文件。<br><strong>&#x2F;MOV</strong>:   移动文件(复制后从源中删除)。<br><strong>&#x2F;MOVE</strong>:  移动文件和目录(复制后从源中删除)。<br><strong>&#x2F;MT:32</strong>:  使用 n 个线程进行多线程复制(默认值为 8)。必须至少为 1，但不得大于 128。</p>
-</blockquote>
-<p>上述命令中最为重要的开关就是 &#x2F;MT，它让 robocopy 能够以多线程模式进行复制传输。如果你没为 &#x2F;MT设置数字，那么默认数字是 8，这意味着 Robocopy 将会同时复制 8 个文件。我个人推荐使用 8个线程，虽然可开的线程可以更多，但数字越大，所使用的系统资源和带宽就越多。</p>
-]]></content>
-      <categories>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>int、char、long各占多少字节数</title>
     <url>/2018/12/17/int%E3%80%81char%E3%80%81long%E5%90%84%E5%8D%A0%E5%A4%9A%E5%B0%91%E5%AD%97%E8%8A%82%E6%95%B0/</url>
     <content><![CDATA[<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.println(Byte.SIZE);</span><br><span class="line">    System.out.println(Character.SIZE);</span><br><span class="line">    System.out.println(Short.SIZE);</span><br><span class="line">    System.out.println(Integer.SIZE);</span><br><span class="line">    System.out.println(Float.SIZE);</span><br><span class="line">    System.out.println(Double.SIZE);</span><br><span class="line">    System.out.println(Long.SIZE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
@@ -1902,52 +1876,6 @@
 <li>字节数 : 1，编码：ISO-8859-1</li>
 <li>字节数 : 3，编码：UTF-8</li>
 </ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>int与integer的区别</title>
-    <url>/2018/11/15/int%E4%B8%8Einteger%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<ul>
-<li>Integer是int的包装类，int则是java的一种基本数据类型</li>
-<li>Integer变量必须实例化后才能使用，而int变量不需要</li>
-<li>Integer实际是对象的引用，当new一个Integer时，实际上是生成一个指针指向此对象；而int则是直接存储数据值</li>
-<li>Integer的默认值是null，int的默认值是0</li>
-</ul>
-<span id="more"></span>
-
-<p><strong>关于Integer和int的比较</strong></p>
-<ol>
-<li>由于Integer变量实际上是对一个Integer对象的引用，所以两个通过new生成的Integer变量永远是不相等的（因为new生成的是两个对象，其内存地址不同）。</li>
-</ol>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">100</span>);</span><br><span class="line"><span class="type">Integer</span> <span class="variable">j</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">100</span>);</span><br><span class="line">System.out.print(i == j); <span class="comment">//false</span></span><br></pre></td></tr></table></figure></div>
-
-<ol start="2">
-<li>Integer变量和int变量比较时，只要两个变量的值是向等的，则结果为true（因为包装类Integer和基本数据类型int比较时，java会自动拆包装为int，然后进行比较，实际上就变为两个int变量的比较）</li>
-</ol>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">100</span>);</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">100</span>；</span><br><span class="line">System.out.print(i == j); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></div>
-
-<ol start="3">
-<li>非new生成的Integer变量和new Integer()生成的变量比较时，结果为false。（因为非new生成的Integer变量指向的是java常量池中的对象，而new Integer()生成的变量指向堆中新建的对象，两者在内存中的地址不同）</li>
-</ol>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">100</span>);</span><br><span class="line"><span class="type">Integer</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">System.out.print(i == j); <span class="comment">//false</span></span><br></pre></td></tr></table></figure></div>
-
-<ol start="4">
-<li>对于两个非new生成的Integer对象，进行比较时，如果两个变量的值在区间-128到127之间，则比较结果为true，如果两个变量的值不在此区间，则比较结果为false</li>
-</ol>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">System.out.print(i == j); <span class="comment">//true</span></span><br><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">128</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">128</span>;</span><br><span class="line">System.out.print(i == j); <span class="comment">//false</span></span><br></pre></td></tr></table></figure></div>
-
-<blockquote>
-<p>对于第4条的原因： java在编译Integer i &#x3D; 100 ;时，会翻译成为Integer i &#x3D; Integer.valueOf(100)；，而java API中对Integer类型的valueOf的定义如下：</p>
-</blockquote>
-<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title function_">valueOf</span><span class="params">(<span class="type">int</span> i)</span>&#123;</span><br><span class="line">     <span class="keyword">assert</span> IntegerCache.high &gt;= <span class="number">127</span>;</span><br><span class="line">     <span class="keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)&#123;</span><br><span class="line">         <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>java对于-128到127之间的数，会进行缓存，Integer i &#x3D; 127时，会将127进行缓存，下次再写Integer j &#x3D; 127时，就会直接从缓存中取，就不会new了</p>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -2104,6 +2032,52 @@
       </tags>
   </entry>
   <entry>
+    <title>int与integer的区别</title>
+    <url>/2018/11/15/int%E4%B8%8Einteger%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<ul>
+<li>Integer是int的包装类，int则是java的一种基本数据类型</li>
+<li>Integer变量必须实例化后才能使用，而int变量不需要</li>
+<li>Integer实际是对象的引用，当new一个Integer时，实际上是生成一个指针指向此对象；而int则是直接存储数据值</li>
+<li>Integer的默认值是null，int的默认值是0</li>
+</ul>
+<span id="more"></span>
+
+<p><strong>关于Integer和int的比较</strong></p>
+<ol>
+<li>由于Integer变量实际上是对一个Integer对象的引用，所以两个通过new生成的Integer变量永远是不相等的（因为new生成的是两个对象，其内存地址不同）。</li>
+</ol>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">100</span>);</span><br><span class="line"><span class="type">Integer</span> <span class="variable">j</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">100</span>);</span><br><span class="line">System.out.print(i == j); <span class="comment">//false</span></span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li>Integer变量和int变量比较时，只要两个变量的值是向等的，则结果为true（因为包装类Integer和基本数据类型int比较时，java会自动拆包装为int，然后进行比较，实际上就变为两个int变量的比较）</li>
+</ol>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">100</span>);</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">100</span>；</span><br><span class="line">System.out.print(i == j); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></div>
+
+<ol start="3">
+<li>非new生成的Integer变量和new Integer()生成的变量比较时，结果为false。（因为非new生成的Integer变量指向的是java常量池中的对象，而new Integer()生成的变量指向堆中新建的对象，两者在内存中的地址不同）</li>
+</ol>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">100</span>);</span><br><span class="line"><span class="type">Integer</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">System.out.print(i == j); <span class="comment">//false</span></span><br></pre></td></tr></table></figure></div>
+
+<ol start="4">
+<li>对于两个非new生成的Integer对象，进行比较时，如果两个变量的值在区间-128到127之间，则比较结果为true，如果两个变量的值不在此区间，则比较结果为false</li>
+</ol>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">System.out.print(i == j); <span class="comment">//true</span></span><br><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">128</span>;</span><br><span class="line"><span class="type">Integer</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">128</span>;</span><br><span class="line">System.out.print(i == j); <span class="comment">//false</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>对于第4条的原因： java在编译Integer i &#x3D; 100 ;时，会翻译成为Integer i &#x3D; Integer.valueOf(100)；，而java API中对Integer类型的valueOf的定义如下：</p>
+</blockquote>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title function_">valueOf</span><span class="params">(<span class="type">int</span> i)</span>&#123;</span><br><span class="line">     <span class="keyword">assert</span> IntegerCache.high &gt;= <span class="number">127</span>;</span><br><span class="line">     <span class="keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)&#123;</span><br><span class="line">         <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>java对于-128到127之间的数，会进行缓存，Integer i &#x3D; 127时，会将127进行缓存，下次再写Integer j &#x3D; 127时，就会直接从缓存中取，就不会new了</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用泛型简化findViewById</title>
     <url>/2018/09/26/%E4%BD%BF%E7%94%A8%E6%B3%9B%E5%9E%8B%E7%AE%80%E5%8C%96findViewById/</url>
     <content><![CDATA[<h3 id="简化findViewById"><a href="#简化findViewById" class="headerlink" title="简化findViewById"></a>简化findViewById</h3><p>在Android开发中，通过findViewById来引用资源文件的view，但是资源文件的view过多会导致做很多重复性的工作，代码很冗余，开发效率随之下降。为了减少重复书写findViewById的次数，我们可以这么来写。　　　</p>
@@ -2120,6 +2094,285 @@
       </categories>
       <tags>
         <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从代码到设计的性能优化指南</title>
+    <url>/2023/05/18/%E4%BB%8E%E4%BB%A3%E7%A0%81%E5%88%B0%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h3 id="一-前言"><a href="#一-前言" class="headerlink" title="一. 前言"></a>一. 前言</h3><p>服务性能是指服务在特定条件下的响应速度、吞吐量和资源利用率等方面的表现。据统计，性能优化方面的精力投入，通常占软件开发周期的10%到25%左右，当然这和应用的性质和规模有关。性能对提高用户体验，保证系统可靠性，降低资源使用率，甚至增强市场竞争力等方面，都有着很大的影响。</p>
+<span id="more"></span>
+
+<p><strong>性能优化是个系统性工程，宏观上可分为网络，服务，存储几个方向，每个方向又可以细分为架构，设计，代码，可用性，度量等多个子项。</strong> 本文将重点从代码和设计两个子项展开，谈谈那些提升性能的知识点。当然，很多性能提升策略都是有代价的，适用于某些特定场景，大家在学习和使用的时候，最好带着批判的思维，决策前，做好利弊权衡。</p>
+<p>先简单罗列一下性能优化方向：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/12387462.png"
+                     
+                ></p>
+<h3 id="二-代码优化"><a href="#二-代码优化" class="headerlink" title="二. 代码优化"></a>二. 代码优化</h3><h4 id="2-1-关联代码"><a href="#2-1-关联代码" class="headerlink" title="2.1 关联代码"></a>2.1 关联代码</h4><p>关联代码优化是通过预加载相关代码，避免在运行时加载目标代码，造成运行时负担。我们知道Java有两个类加载器：Bootstrap class loader和Application class loader。Bootstrap class loader负责加载Java API中包含的核心类，而Application class loader则负责加载自定义类。关联代码优化可以通过以下几种方式来实现。</p>
+<h5 id="预加载关联"><a href="#预加载关联" class="headerlink" title="预加载关联"></a>预加载关联</h5><p>预加载关联类是指在程序启动时预先加载目标与关联类，以避免在运行时加载。可以通过静态代码块来实现预加载，如下所示：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainClass</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">// 预加载MyClass，其实现了相关功能</span></span><br><span class="line">        Class.forName(<span class="string">&quot;com.example.MyClass&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 运行相关功能的代码</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="使用线程池"><a href="#使用线程池" class="headerlink" title="使用线程池"></a>使用线程池</h5><p>线程池可以让多个任务使用同一个线程池中的线程，从而减少线程的创建和销毁成本。使用线程池时，可以在程序启动时创建线程池，并在主线程中预加载相关代码。然后以异步方式使用线程池中的线程来执行相关代码，可以提高程序的性能。</p>
+<h5 id="使用静态变量"><a href="#使用静态变量" class="headerlink" title="使用静态变量"></a>使用静态变量</h5><p>可以使用静态变量来缓存与关联代码有关的对象和数据。在程序启动时，可以预先加载关联代码，并将对象或数据存储在静态变量中。然后在程序运行时使用静态变量中缓存的对象或数据，以避免重复加载和生成。这种方式可以有效地提高程序的性能，但需要注意静态变量的使用，确保它们在多线程环境中的安全性。</p>
+<h4 id="2-2-缓存对齐"><a href="#2-2-缓存对齐" class="headerlink" title="2.2 缓存对齐"></a>2.2 缓存对齐</h4><p>在介绍缓存对齐之前，需要先普及一些CPU指令执行的相关知识。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/84061db649.png"
+                     
+                ></p>
+<ul>
+<li><p>缓存行(Cache line) ： CPU读取内存数据时并非一次只读一个字节，一般是会读一段64字节（硬件决定）长度的连续的内存块(chunks of memory)，这些块我们称之为缓存行。</p>
+</li>
+<li><p>伪共享（False Sharing）：当运行在两个不同CPU上的两个线程写入两个不同的变量时，如果这两个变量恰好存储在同一个 CPU 缓存行中，就会发生伪共享（False Sharing）。即当第一个线程修改缓存行中其中一个变量时，其他引用此缓存行变量的线程的缓存行将会无效。如果CPU需要读取失效的缓存行，它必须等待缓存行刷新，这会导致性能下降。</p>
+</li>
+<li><p>CPU停止运转（stall）：当一个核心需要等待另一个核心重新加载缓存行时（出现伪共享时），它无法继续执行下一条指令，只能停止运转等待，这被称之为stall。减少伪共享也就意味着减少了stall的发生。</p>
+</li>
+<li><p>IPC(instructions per cycle)：它表示平均每个 CPU 周期执行的指令数量，很显然该数值越大性能越好。可以基于IPC指标（比如：阈值1.0）来简单判断程序是属于访问密集型还是计算密集型。Linux系统中可以通过tiptop命令来查看每个进程的CPU硬件数据</p>
+</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/23421342.png"
+                     
+                ></p>
+<p><strong>如何简单来区分访存密集型和计算密集型程序？</strong></p>
+<ol>
+<li><p>如果 IPC &lt; 1.0, 很可能是 Memory stall 占主导，多半意味着访存密集型。</p>
+</li>
+<li><p>如果IPC &gt; 1.0, 很可能是计算密集型的程序。</p>
+</li>
+</ol>
+<p><strong>CPU利用率：</strong> 是指系统中CPU处于忙碌状态的时间与总时间的比例。忙碌状态时间又可以进一步拆分为指令（instruction）执行消耗周期cycle(%INS) 和 stalled 的周期cycle(%STL)。perf 采集了10秒内全部 CPU 的运行状态：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/12312334.png"
+                     
+                ></p>
+<blockquote>
+<p>IPC计算</p>
+<p>IPC &#x3D; instructions&#x2F;cycles</p>
+<p>上图中，可以计算出结果为：0.79</p>
+<p>现代处理器一般有多条流水线（比如：4核心），运行 perf 的那台机器，IPC的理论值可达到4.0。</p>
+<p>如果我们从 IPC的角度来看，这台机器只运行到其处理器最高速度的 19.7%（0.79 &#x2F; 4.0)。</p>
+</blockquote>
+<p>总之，通过Top命令，看到CPU使用率之后，可以进一步分析指令执行消耗周期和 stalled 周期，有这些更详细的指标之后，就能够知道该如何更好地对应用和系统进行调优。</p>
+<p><strong>缓存对齐：</strong> 是通过调整数据在内存中的分布，让数据在被缓存时，更有利于CPU从缓存中读取，从而避免了频繁的内存读取，提高了数据访问的速度。</p>
+<h5 id="缓存填充-Padding"><a href="#缓存填充-Padding" class="headerlink" title="缓存填充(Padding)"></a>缓存填充(Padding)</h5><p>减少伪共享也就意味着减少了stall的发生，其中一个手段就是通过填充(Padding)数据的形式，即在适当的距离处插入一些对齐的空间来填充缓存行，从而使每个线程的修改不会脏污同一个缓存行。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 缓存行填充测试</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> liuhuiqing</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2023年04月28日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FalseSharingTest</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">LOOP_NUM</span> <span class="operator">=</span> <span class="number">1000000000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">        <span class="type">Struct</span> <span class="variable">struct</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Struct</span>();</span><br><span class="line">        <span class="type">long</span> <span class="variable">start</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">t1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; LOOP_NUM; i++) &#123;</span><br><span class="line">                struct.x++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="type">Thread</span> <span class="variable">t2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; LOOP_NUM; i++) &#123;</span><br><span class="line">                struct.y++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        t1.start();</span><br><span class="line">        t2.start();</span><br><span class="line">        t1.join();</span><br><span class="line">        t2.join();</span><br><span class="line">        System.out.println(<span class="string">&quot;cost time [&quot;</span> + (System.currentTimeMillis() - start) + <span class="string">&quot;] ms&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Struct</span> &#123;</span><br><span class="line">        <span class="comment">// 共享变量</span></span><br><span class="line">        <span class="keyword">volatile</span> <span class="type">long</span> x;</span><br><span class="line">        <span class="comment">// 一个long占用8个字节，此处定义7个填充数据，来保证业务数据x和y分布在不同的缓存行中</span></span><br><span class="line">        <span class="type">long</span> p1, p2, p3, p4, p5, p6, p7;</span><br><span class="line">        <span class="comment">// long[] paddings = new long[7];// 使用数组代替不会生效，思考一下，为什么？</span></span><br><span class="line">        <span class="comment">// 共享变量</span></span><br><span class="line">        <span class="keyword">volatile</span> <span class="type">long</span> y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>经过本地测试，这种以空间换时间的方式，即实现了缓存行数据对齐的方式，在执行效率方面，比没有对齐之前，提高了5倍！</p>
+<h5 id="Contended注解"><a href="#Contended注解" class="headerlink" title="@Contended注解"></a>@Contended注解</h5><p>在Java 8中，引入了@Contended注解，该注解可以用来告诉JVM对字段进行缓存对齐（将字段放入不同的缓存行），从而提高程序的性能。使用@Contended注解时，需要在JVM启动时添加参数-XX:-RestrictContended，实现如下所示：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sun.misc.Contended;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ContendedTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Contended</span></span><br><span class="line">    <span class="keyword">volatile</span> <span class="type">long</span> a;</span><br><span class="line">    <span class="meta">@Contended</span></span><br><span class="line">    <span class="keyword">volatile</span> <span class="type">long</span> b;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">        <span class="type">ContendedTest</span> <span class="variable">c</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ContendedTest</span>();</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000_0000L</span>; i++) &#123;</span><br><span class="line">                c.a = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000_0000L</span>; i++) &#123;</span><br><span class="line">                c.b = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">final</span> <span class="type">long</span> <span class="variable">start</span> <span class="operator">=</span> System.nanoTime();</span><br><span class="line">        thread1.start();</span><br><span class="line">        thread2.start();</span><br><span class="line">        thread1.join();</span><br><span class="line">        thread2.join();</span><br><span class="line">        System.out.println((System.nanoTime() - start) / <span class="number">100_0000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="对齐内存与本地变量"><a href="#对齐内存与本地变量" class="headerlink" title="对齐内存与本地变量"></a>对齐内存与本地变量</h5><p>缓存填充是解决CPU伪共享问题的解决方案之一，在实际应用中，是否还有其它方案来解决这一问题呢？答案是有的：即对齐内存和本地变量。</p>
+<ul>
+<li><p><strong>对齐内存：</strong> 内存行的大小一般为64个字节，这个大小是硬件决定的，但大多数编译器默认情况下都以4字节的边界对齐，通过将变量按照内存行的大小对齐，可以避免伪共享问题；</p>
+</li>
+<li><p><strong>本地变量：</strong> 在不同线程之间使用不同的变量存储数据，避免不同的线程之间共享同一块内存，Java中的ThreadLocal就是一种典型的实现方式；</p>
+</li>
+</ul>
+<h4 id="2-3-分支预测"><a href="#2-3-分支预测" class="headerlink" title="2.3 分支预测"></a>2.3 分支预测</h4><p>分支预测是CPU动态执行技术中的主要内容，是通过猜测程序中的分支语句（如if-else语句或者循环语句）的执行路径来提高CPU执行效率的技术。其原理是根据之前的历史记录和统计数据，预测程序下一步要执行的指令是分支跳转指令还是顺序执行指令，从而提前加载相关数据，减少CPU等待指令执行的空闲时间。预测准确率越高，CPU的性能提升就越高。那么如何提高预测的准确率呢？</p>
+<ul>
+<li>关注圈复杂度</li>
+</ul>
+<p>过多的条件语句和嵌套的条件语句会导致分支的预测难度大幅上升，从而降低分支预测的准确率和效率。一般来说，可以通过优化代码逻辑结构、减少冗余等方式来避免过多的条件语句和嵌套的条件语句。</p>
+<ul>
+<li>优先处理常用路径</li>
+</ul>
+<p>在编写代码时，应该优先处理常用路径，以减少CPU对分支的预测，提高预测准确率和效率。例如，在if-else语句中，应该将常用的路径放在if语句中，而将不常用的路径放在else语句中。</p>
+<h4 id="2-4-写时复制"><a href="#2-4-写时复制" class="headerlink" title="2.4 写时复制"></a>2.4 写时复制</h4><p>Copy-On-Write (COW)是一种内存管理机制，也被称为写时复制。其主要思想是在需要写入数据时，先进行数据拷贝，然后再进行操作，从而避免了对数据进行不必要的复制和操作。COW机制可以有效地降低内存使用率，提高程序的性能。</p>
+<p>在创建进程或线程的时候，操作系统为其分配内存时，不是复制一个完整的物理地址空间，而是创建一个指向父进程&#x2F;线程物理地址空间的虚拟地址空间，并为它们的所有页面设置”只读”标志。当子进程&#x2F;线程需要修改页面时，会触发一个缺页异常，并将涉及到的页面进行数据的复制，并为复制的页面重新分配内存。子进程&#x2F;线程只能够操作复制后的地址空间，父进程&#x2F;线程的原始内存空间则被保留。</p>
+<p>由于COW机制在写入之前进行数据拷贝，所以可以有效地避免频繁的内存拷贝和分配操作，降低了内存的占用率，提高了程序的性能。并且，COW机制也避免了数据的不必要复制，从而减少了内存的消耗和内存碎片的产生，提高了系统中可用内存的数量。</p>
+<p>ArrayList类可以使用Copy-On-Write机制来提高性能。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 初始化数组</span></span><br><span class="line"><span class="keyword">private</span> List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">CopyOnWriteArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向数组中添加元素</span></span><br><span class="line">list.add(<span class="string">&quot;value&quot;</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>需要注意的是，Copy-On-Write机制适用于读操作比写操作多的情况，因为它假定写操作的频率较低，从而可以通过牺牲复制的开销来减少锁的操作和内存分配的消耗。</p>
+<h4 id="2-5-内联优化"><a href="#2-5-内联优化" class="headerlink" title="2.5 内联优化"></a>2.5 内联优化</h4><p>在Java中，每次调用方法都需要进行一些额外的操作，例如创建堆栈帧、保存寄存器状态等，这些额外的操作会消耗一定的时间和内存资源。内联优化是一种编译器优化技术，Java虚拟机通常使用即时编译器（JIT）来进行方法内联，用于提高程序的性能。内联优化的目标是将函数的调用替换成函数本身的代码，以减少函数调用的开销，从而提高程序的运行效率。</p>
+<p>需要注意的是，方法内联并不是在所有情况下都能够提高程序的运行效率。如果方法内联导致代码复杂度增加或者内存占用增加，反而会降低程序的性能。因此，在使用方法内联时需要根据具体情况进行权衡和优化。</p>
+<h5 id="final修饰符"><a href="#final修饰符" class="headerlink" title="final修饰符"></a>final修饰符</h5><p>final修饰符可以使方法成为不可重写的方法。因为不可重写，所以在编译器优化时可以将它们的代码嵌入到调用它们的代码中，从而避免函数调用的开销。使用final修饰符可以在一定程度上提高程序的性能，但同时也减弱了代码的可扩展性。</p>
+<h5 id="限制方法长度"><a href="#限制方法长度" class="headerlink" title="限制方法长度"></a>限制方法长度</h5><p>方法的长度会影响其在编译时能否被内联。通常情况下，长度较小的方法更容易被内联。因此，可以在设计中将代码分解和重构为更小的函数。这种方式并不是100％确保可以内联，但至少提高了实现此优化的机会。内联调优参数，如下表格：</p>
+<table>
+<thead>
+<tr>
+<th>JVM参数</th>
+<th>默认值 (JDK 8, Linux x86_64)</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-XX:MaxInlineSize&#x3D;</td>
+<td>35 字节码</td>
+<td>内联方法大小上限</td>
+</tr>
+<tr>
+<td>-XX:FreqInlineSize&#x3D;</td>
+<td>325 字节码</td>
+<td>内联热方法的最大值</td>
+</tr>
+<tr>
+<td>-XX:InlineSmallCode&#x3D;</td>
+<td>1000字节的原生代码（非分层） 2000字节的原生代码（分层编译）</td>
+<td>如果最后一层的的分层编译代码量已经超过这个值，就不进行内联编译</td>
+</tr>
+<tr>
+<td>-XX:MaxInlineLevel&#x3D;</td>
+<td>9</td>
+<td>调用层级比这个值深的话，就不进行内联</td>
+</tr>
+</tbody></table>
+<h5 id="内联注解"><a href="#内联注解" class="headerlink" title="内联注解"></a>内联注解</h5><p>在Java 5之后，引入了内联注解@inline，使用此注解可以在编译时通知编译器，将该方法内联到它的调用处。注解@inline在Java 9之后已经被弃用，可以使用@ForceInline注释来替代，同时设置JVM参数：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">-XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+JVMCICompiler</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ForceInline</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="2-6-编码优化"><a href="#2-6-编码优化" class="headerlink" title="2.6 编码优化"></a>2.6 编码优化</h4><h5 id="反射机制"><a href="#反射机制" class="headerlink" title="反射机制"></a>反射机制</h5><p>Java反射在一定程度上会影响性能，因为它需要在运行时进行类型检查转换和方法查找，这比直接调用方法会更耗时。此外，反射也不会受到编译器的优化，因此可能会导致更慢的代码执行速度。</p>
+<p>要解决这个问题有以下几种方式：</p>
+<ul>
+<li><p>尽可能使用原生方法调用，而不是通过反射调用；</p>
+</li>
+<li><p>尽可能缓存反射调用结果，避免重复调用。例如，可以将反射结果缓存到静态变量中，以便下次使用时直接获取，而不必再次使用反射；</p>
+</li>
+<li><p>使用字节码增强技术；</p>
+</li>
+</ul>
+<p>下面着重介绍一下反射结果缓存和字节码增强两种方案。</p>
+<ul>
+<li>反射结果缓存可以大幅减少反射过程中的类型检查，类型转换和方法查找等动作，是降低反射对程序执行效率影响的一种优化策略。</li>
+</ul>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 反射工具类</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> liuhuiqing</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2023年5月7日</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">BeanUtils</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOGGER</span> <span class="operator">=</span> LoggerFactory.getLogger(BeanUtils.class);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Field[] NO_FIELDS = &#123;&#125;;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;Class&lt;?&gt;, Field[]&gt; DECLARED_FIELDS_CACHE = <span class="keyword">new</span> <span class="title class_">ConcurrentReferenceHashMap</span>&lt;Class&lt;?&gt;, Field[]&gt;(<span class="number">256</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;Class&lt;?&gt;, Field[]&gt; FIELDS_CACHE = <span class="keyword">new</span> <span class="title class_">ConcurrentReferenceHashMap</span>&lt;Class&lt;?&gt;, Field[]&gt;(<span class="number">256</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取当前类及其父类的属性数组</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Field[] getFields(Class&lt;?&gt; clazz) &#123;</span><br><span class="line">        <span class="keyword">if</span> (clazz == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;Class must not be null&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        Field[] result = FIELDS_CACHE.get(clazz);</span><br><span class="line">        <span class="keyword">if</span> (result == <span class="literal">null</span>) &#123;</span><br><span class="line">            Field[] fields = NO_FIELDS;</span><br><span class="line">            Class&lt;?&gt; searchType = clazz;</span><br><span class="line">            <span class="keyword">while</span> (Object.class != searchType &amp;&amp; searchType != <span class="literal">null</span>) &#123;</span><br><span class="line">                Field[] tempFields = getDeclaredFields(searchType);</span><br><span class="line">                fields = mergeArray(fields, tempFields);</span><br><span class="line">                searchType = searchType.getSuperclass();</span><br><span class="line">            &#125;</span><br><span class="line">            result = fields;</span><br><span class="line">            FIELDS_CACHE.put(clazz, (result.length == <span class="number">0</span> ? NO_FIELDS : result));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取当前类属性数组(不包含父类的属性)</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> clazz</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Field[] getDeclaredFields(Class&lt;?&gt; clazz) &#123;</span><br><span class="line">        <span class="keyword">if</span> (clazz == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;Class must not be null&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        Field[] result = DECLARED_FIELDS_CACHE.get(clazz);</span><br><span class="line">        <span class="keyword">if</span> (result == <span class="literal">null</span>) &#123;</span><br><span class="line">            result = clazz.getDeclaredFields();</span><br><span class="line">            DECLARED_FIELDS_CACHE.put(clazz, (result.length == <span class="number">0</span> ? NO_FIELDS : result));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数组合并</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> array1</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> array2</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T[] mergeArray(<span class="keyword">final</span> T[] array1, <span class="keyword">final</span> T... array2) &#123;</span><br><span class="line">        <span class="keyword">if</span> (array1 == <span class="literal">null</span> || array1.length &lt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> array2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (array2 == <span class="literal">null</span> || array2.length &lt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> array1;</span><br><span class="line">        &#125;</span><br><span class="line">        Class&lt;?&gt; compType = array1.getClass().getComponentType();</span><br><span class="line">        <span class="type">int</span> <span class="variable">newArrLength</span> <span class="operator">=</span> array1.length + array2.length;</span><br><span class="line">        T[] newArr = (T[]) Array.newInstance(compType, newArrLength);</span><br><span class="line">        <span class="type">int</span> <span class="variable">firstArrayLen</span> <span class="operator">=</span> array1.length;</span><br><span class="line">        System.arraycopy(array1, <span class="number">0</span>, newArr, <span class="number">0</span>, firstArrayLen);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.arraycopy(array2, <span class="number">0</span>, newArr, firstArrayLen, array2.length);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ArrayStoreException ase) &#123;</span><br><span class="line">            <span class="keyword">final</span> Class&lt;?&gt; type2 = array2.getClass().getComponentType();</span><br><span class="line">            <span class="keyword">if</span> (!compType.isAssignableFrom(type2)) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;Cannot store &quot;</span> + type2.getName() + <span class="string">&quot; in an array of &quot;</span></span><br><span class="line">                        + compType.getName(), ase);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">throw</span> ase;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> newArr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>字节码增强技术，一般使用第三方库来实现，例如Javassist或Byte Buddy，在运行时生成字节码，从而避免使用反射。</li>
+</ul>
+<p>为什么动态字节码生成方式相比反射也可以提高执行效率呢？</p>
+<ol>
+<li><p>动态字节码生成的方式在编译期就已经将类型信息确定下来，无需进行类型检查和转换；</p>
+</li>
+<li><p>动态字节码生成的方式可以直接调用方法，无需查找，提高了执行效率；</p>
+</li>
+<li><p>动态字节码生成的方式只需要在生成字节码时获取一次Method对象，多次调用时可以直接使用，避免了重复获取Method对象的开销；</p>
+</li>
+</ol>
+<p>这里就不再举例说明了，感兴趣的同学可以自行查阅资料进行深入学习。</p>
+<h5 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h5><p>有效的处理异常可以保证程序的稳定性和可靠性。但异常的处理对性能还是有一定的影响的，这一点常常被人忽视。影响性能的具体表现为：</p>
+<ul>
+<li><p>响应延迟：当异常被抛出时，Java虚拟机需要查找并执行相应的异常处理程序，这会导致一定的延迟。如果程序中存在大量的异常处理，这些延迟可能会累积，导致程序的整体性能下降。</p>
+</li>
+<li><p>内存占用：异常处理需要在堆栈中创建异常对象，这些对象需要占用内存。如果程序中存在大量的异常处理，这些异常对象可能会占用大量的内存，导致程序的整体内存占用量增加。</p>
+</li>
+<li><p>CPU占用：异常处理需要执行额外的代码，这会导致CPU占用率增加。如果程序中存在大量的异常处理，这些额外的代码可能会导致CPU占用率过高，导致程序的整体性能下降。</p>
+</li>
+</ul>
+<p>一些基准测试显示，异常处理可能会导致程序的性能下降几个百分点。在Java虚拟机规范中提到，在没有异常发生的情况下，基于堆栈的方法调用可能比基于异常的方法调用快2-3倍。此外，一些实验表明，在异常处理程序中使用大量的try-catch语句，可能会导致性能下降10倍以上。</p>
+<p>为避免这些问题，在编写代码时谨慎地使用异常处理机制，并确保对异常进行适当的记录和报告，避免过度使用异常处理机制。</p>
+<h5 id="日志处理"><a href="#日志处理" class="headerlink" title="日志处理"></a>日志处理</h5><p>先看以下代码：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line">LOGGER.info(<span class="string">&quot;result:&quot;</span> + JsonUtil.write2JsonStr(contextAdContains) + <span class="string">&quot;, logid = &quot;</span> + DigitThreadLocal.getLogId());</span><br></pre></td></tr></table></figure></div>
+
+<p>以上示例代码中，类似的日志打印方式很常见，难道有什么问题吗？</p>
+<ul>
+<li><p>性能问题：每次使用+进行字符串拼接时，都会创建一个新的字符串对象，这可能会导致内存分配和垃圾回收的开销增加;</p>
+</li>
+<li><p>可读性问题：使用+进行字符串拼接时，代码可能会变得难以阅读和理解，特别是在需要连接多个字符串时;</p>
+</li>
+<li><p>如果日志级别调整到ERROR模式，我们希望日志的字符串内容不需要进行加工计算，但这种写法，即使日志处于不需要打印的模式，日志内容也进行了无效计算</p>
+</li>
+</ul>
+<p>特别实在请求量和日志打印量比较高的场景下，日志内容的序列化和写文件操作，对服务的耗时影响可以达到10%，甚至更多。</p>
+<h5 id="临时对象"><a href="#临时对象" class="headerlink" title="临时对象"></a>临时对象</h5><p>临时对象通常是指在方法内部创建的对象。大量创建临时对象会导致Java虚拟机频繁进行垃圾回收，从而影响程序的性能。也会占用大量的内存空间，从而导致程序崩溃或者出现内存泄漏等问题。</p>
+<p><strong>为了避免大量创建临时对象，在编码时，可以采取以下措施：</strong></p>
+<ol>
+<li>字符串拼接中，使用StringBuilder或StringBuffer进行字符串拼接，避免使用连接符，每次都创建新的字符串对象；</li>
+<li>在集合操作中，尽量使用批量操作，如addAll、removeAll等，避免频繁的add、remove操作，触发数组的扩容或者缩容；</li>
+<li>在正则表达式中，可以使用Pattern.compile()方法预编译正则表达式，避免每次都创建新的Matcher对象；</li>
+<li>尽量使用基本数据类型，避免使用包装类，因为包装类的创建和销毁都会产生临时对象；</li>
+<li>尽量使用对象池的方式创建和管理对象，比如使用静态工厂方法创建对象，避免使用new关键字创建对象，因为静态工厂方法可以重用对象，避免创建新的临时对象；</li>
+</ol>
+<p><strong>临时对象的生命周期应该尽可能短，以便及时释放内存资源。临时对象的生命周期过长通常是由以下原因引起的：</strong></p>
+<ol>
+<li>对象未被正确地释放：如果在方法执行完毕后，临时对象没有被正确地释放，就会导致内存泄漏风险；</li>
+<li>对象过度共享：如果临时对象被过度共享，就可能会导致多个线程同时访问同一个对象，从而导致线程安全问题和性能问题；</li>
+<li>对象创建过于频繁：如果在方法内部频繁地创建临时对象，就会导致内存开销过大，可能会引起性能甚至内存溢出问题；</li>
+</ol>
+<p><strong>为避免临时对象的生命周期过长，建议采取以下措施：</strong></p>
+<ol>
+<li>及时释放对象：在方法执行完毕后，应该及时释放临时对象（比如主动将对象设置为null），以便回收内存资源；</li>
+<li>避免过度共享：在多线程环境下，应该避免过度共享临时对象，可以使用局部变量或ThreadLocal等方式来避免共享问题；</li>
+<li>对象池技术：使用对象池技术可以避免频繁创建临时对象，从而降低内存开销。对象池可以预先创建一定数量的对象，并在需要时从池中获取对象，使用完毕后再将对象放回池中；</li>
+</ol>
+<h5 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h5><p>正所谓：“不积跬步，无以至千里；不积小流，无以成江海”。以上列举的编码细节，都会直接或间接的影响服务的执行效率，只是影响多少的问题。现实中，有时候我们不必过于苛求，但它们有一个共同的注脚：极客精神。</p>
+<h3 id="三-设计优化"><a href="#三-设计优化" class="headerlink" title="三. 设计优化"></a>三. 设计优化</h3><h4 id="3-1-缓存"><a href="#3-1-缓存" class="headerlink" title="3.1 缓存"></a>3.1 缓存</h4><p>合理使用缓存可以有效提高应用程序的性能，缩短数据访问时间，降低对数据源的依赖性。缓存可以进行多层级的设计，举例，为了提高运行效率，CPU就设计了L1-L3三级缓存。在应用设计的时候，我们也可以按照业务诉求进行层设计。常见的分层设计有本地缓存（L1），远程分布式缓存（L2）两级。</p>
+<p>本地缓存可以减少网络请求、节约计算资源、减少高负载数据源访问等优势，进而提高应用程序的响应速度和吞吐量。常见的本地缓存中间件有：Caffeine、Guava Cache、Ehcache。当然你也可以在使用类似Map容器，在应用程序中构建自己的缓存结构。 分布式缓存相比本地缓存的优势是可以保证数据一致性、只保留一份数据，减少数据冗余、可以实现数据分片，实现大容量数据的存储。常见的分布式缓存有：Redis、Memcached。</p>
+<p>实现一个简单的LRU本地缓存示例如下：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Least recently used 内存缓存过期策略:最近最少使用</span></span><br><span class="line"><span class="comment"> * Title: 带容量的&lt;b&gt;线程不安全的&lt;/b&gt;最近访问排序的Hashmap</span></span><br><span class="line"><span class="comment"> * Description: 最后访问的元素在最后面。&lt;br&gt;</span></span><br><span class="line"><span class="comment"> * 如果要线程安全，请使用&lt;pre&gt;Collections.synchronizedMap(new LRUHashMap(123));&lt;/pre&gt; &lt;br&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: liuhuiqing</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 20123/4/27</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LRUHashMap</span>&lt;K, V&gt; <span class="keyword">extends</span> <span class="title class_">LinkedHashMap</span>&lt;K, V&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The Size.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">int</span> maxSize;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 初始化一个最大值, 按访问顺序排序</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> maxSize the max size</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">LRUHashMap</span><span class="params">(<span class="type">int</span> maxSize)</span> &#123;</span><br><span class="line">        <span class="comment">//0.75是默认值，true表示按访问顺序排序</span></span><br><span class="line">        <span class="built_in">super</span>(maxSize, <span class="number">0.75f</span>, <span class="literal">true</span>);</span><br><span class="line">        <span class="built_in">this</span>.maxSize = maxSize;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 初始化一个最大值, 按指定顺序排序</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> maxSize     最大值</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> accessOrder true表示按访问顺序排序，false为插入顺序</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">LRUHashMap</span><span class="params">(<span class="type">int</span> maxSize, <span class="type">boolean</span> accessOrder)</span> &#123;</span><br><span class="line">        <span class="comment">//0.75是默认值，true表示按访问顺序排序，false为插入顺序</span></span><br><span class="line">        <span class="built_in">super</span>(maxSize, <span class="number">0.75f</span>, accessOrder);</span><br><span class="line">        <span class="built_in">this</span>.maxSize = maxSize;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="type">boolean</span> <span class="title function_">removeEldestEntry</span><span class="params">(Map.Entry&lt;K, V&gt; eldest)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">super</span>.size() &gt; maxSize;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="3-2-异步"><a href="#3-2-异步" class="headerlink" title="3.2 异步"></a>3.2 异步</h4><p>异步可以提高程序的性能和响应能力，使其能更高效地处理大规模数据或并发请求。其底层原理涉及到操作系统的多线程、事件循环、任务队列以及回调函数等关键技术，除此之外，异步的思想在应用架构设计方面也有广泛的应用。常规的多线程，消息队列，响应式编程等异步处理方案这里就不再展开介绍了，这里介绍两个大家可能容易忽视但实用技能：非阻塞IO和 协程。</p>
+<h5 id="非阻塞IO"><a href="#非阻塞IO" class="headerlink" title="非阻塞IO"></a>非阻塞IO</h5><p>Java Servlet 3.0规范中引入了异步Servlet的概念，可以帮助开发者提高应用程序的性能和并发处理能力，其原理是非阻塞IO使用单线程同时处理多个请求，避免了线程切换和阻塞的开销，特别是在读取大文件或者进行复杂耗时计算场景时，可以避免阻塞其他请求的处理。Spring MVC框架中也提供了相应的异步处理方案。</p>
+<ul>
+<li><strong>使用Callable方式实现异步处理</strong></li>
+</ul>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/async/callable&quot;)</span></span><br><span class="line"><span class="keyword">public</span> WebAsyncTask&lt;String&gt; <span class="title function_">asyncCallable</span><span class="params">()</span> &#123;</span><br><span class="line">    Callable&lt;String&gt; callable = () -&gt; &#123;</span><br><span class="line">        <span class="comment">// 执行异步操作</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;异步任务已完成&quot;</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">WebAsyncTask</span>&lt;&gt;(<span class="number">10000</span>, callable);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><strong>使用DeferredResult方式实现异步处理</strong></li>
+</ul>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/async/deferredresult&quot;)</span></span><br><span class="line"><span class="keyword">public</span> DeferredResult&lt;String&gt; <span class="title function_">asyncDeferredResult</span><span class="params">()</span> &#123;</span><br><span class="line">    DeferredResult&lt;String&gt; deferredResult = <span class="keyword">new</span> <span class="title class_">DeferredResult</span>&lt;&gt;(<span class="number">10000L</span>);</span><br><span class="line">    <span class="comment">// 异步处理完成后设置结果</span></span><br><span class="line">    deferredResult.setResult(<span class="string">&quot;DeferredResult异步任务已完成&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> deferredResult;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h5><p>我们知道线程的创建、销毁都十分消耗系统资源，所以有了线程池，但这还不够，因为线程的数量是有限的（千级别），线程会阻塞操作系统线程，无法尽可能的提高吞吐量。因为使用线程的成本很高，所以才会有了虚拟线程，它是用户态线程，成本是相当低廉的，调度也完全由用户进行控制（JDK 中的调度器），它同样可以进行阻塞，但不用阻塞操作系统线程，充分提高了硬件利用率，高并发也上了一个量级。</p>
+<p>很长一段时间，协程概念并非作为JVM内置的功能，而是通过第三方库或框架实现的。目前比较常用的协程实现库有Quasar、Kilim等。但在Java19版本中，引入了虚拟线程（Virtual Threads ）的支持（处于Preview阶段）。</p>
+<p>虚拟线程是java.lang.Thread的一个实现，可以使用java.lang.Thread.Builder接口创建</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> Thread.ofVirtual()</span><br><span class="line">     .name(<span class="string">&quot;Virtual Threads&quot;</span>)</span><br><span class="line">     .unstarted(runnable);</span><br></pre></td></tr></table></figure></div>
+
+<p>也可以通过一个线程工厂类进行创建：</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">ThreadFactory</span> <span class="variable">factory</span> <span class="operator">=</span> Thread.ofVirtual().factory();</span><br></pre></td></tr></table></figure></div>
+
+<p>虚拟线程运行的载体必须是线程，同一个线程中可以运行多个虚拟线程实例。</p>
+<h4 id="3-3-并行"><a href="#3-3-并行" class="headerlink" title="3.3 并行"></a>3.3 并行</h4><p>并行处理的思想在大数据，多任务，流水线处理，模型训练等各个方面发挥着重要作用，包括前面介绍的异步（多线程，协程，消息等），也是建立在并行的基础上。在应用层面，典型的场景有：</p>
+<ul>
+<li>分布式计算框架中的MapReduce就是采用一种分而治之的思想设计出来的，将复杂或计算量大的任务，切分成一个个小的任务，小任务分别在不同的线程或服务器上并行的执行，最终再汇总每个小任务的结果。</li>
+<li>边缘计算（Edge Computing）是一种分布式计算范式，它将计算、存储和网络服务的部分功能从云数据中心延伸至离数据源更近的地方，即网络的边缘。这种计算方式能够实现低延迟、节省带宽、提高数据安全性以及实时处理与分析等优势。</li>
+</ul>
+<p>在代码实现方面，做好解耦设计，接下来就可以进行并行设计了，比如：</p>
+<ul>
+<li>多个请求可以通过多线程并行处理，每个请求的不同处理阶段;</li>
+<li>如查询阶段，可以采用协程并行执行;</li>
+<li>存储阶段，可以采用消息订阅发布的方式进行处理；</li>
+<li>监控统计阶段，就可以采用NIO异步的方式进行指标数据文件的写入；</li>
+<li>请求&#x2F;响应采用非阻塞IO模式；</li>
+</ul>
+<h4 id="3-4-池化"><a href="#3-4-池化" class="headerlink" title="3.4 池化"></a>3.4 池化</h4><p>池化就是初始预设资源，降低每次获取资源的消耗，如创建线程的开销，获取远程连接的开销等。典型的场景就是线程池，数据库连接池，业务处理结果缓存池等。</p>
+<p>以数据库连接池为例，其本质是一个 socket 的连接。为每个请求打开和维护数据库连接，尤其是动态数据库驱动的应用程序的请求，既昂贵又浪费资源。为什么这么说呢？以MySQL数据库建立连接（TCP协议）为例，建立连接总共分三步：</p>
+<ul>
+<li>建立TCP连接，通过三次握手实现；</li>
+<li>服务器发送给客户端「握手信息」 ，客户端响应该握手消息；</li>
+<li>客户端「发送认证包」 ，用于用户验证，验证成功后，服务器返回OK响应，之后开始执行命令；</li>
+</ul>
+<p>简单粗略统计，完成一次数据库连接，客户端和服务器之间需要至少往返7次，总计平均耗时大约在200ms左右，这对于很对C端服务来说，几乎是不能接受的。</p>
+<p>落实到代码编写层面，也可以借助这一思想来优化我们的程序执行性能。</p>
+<ul>
+<li>公用的数据可以全局只定义一份，比如使用枚举，static修饰的容器对象等；</li>
+<li>根据实际情况，提前设置List，Map等容器对象的初始化容量大小，防止后面的扩容，对性能的影响；</li>
+<li>亨元设计模式的应用等；</li>
+</ul>
+<h4 id="3-5-预处理"><a href="#3-5-预处理" class="headerlink" title="3.5 预处理"></a>3.5 预处理</h4><p>一般需要池化的内容，都是需要预处理的，比如为了保证服务的稳定性，线程池和数据库连接池等需要池化的内容在JVM容器启动时，处理真正请求之前，对这些池化内容进行预处理，等到真正的业务处理请求过来时，可以正常的快速处理。除此之外，预处理还可以体现在系统架构层面。</p>
+<ol>
+<li>为了提高响应性能，将部分业务数据提前预加载到内存中；</li>
+<li>为了减轻CPU压力，将计算逻辑提前执行，直接将计算后的结果数据保存下来，直接供调用方使用；</li>
+<li>为了降低网络带宽成本，将传输数据通过压缩算法进行压缩处理，到了目标服务，在进行解压，获得原始数据；</li>
+<li>Myibatis为了提高SQL语句的安全性和执行效率，也引入了预处理的概念；</li>
+</ol>
+<h3 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h3><p>性能优化是程序开发过程中绕不过去一个课题，本文聚焦代码和设计两个方面，从CPU硬件到JVM容器，从缓存设计到数据预处理，全面的展现了性能优化的实施方向和落地细节。阐述的过程没有追求各个方向的面面俱到，但都给到了一些场景化案例，来辅助理解和思考，起到抛砖引玉的效果。</p>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a class="link"   href="https://juejin.cn/post/7234180211164512317" >架构师日记-从代码到设计的性能优化指南 | 京东云技术团队 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <categories>
+        <category>架构</category>
+      </categories>
+      <tags>
+        <tag>架构</tag>
       </tags>
   </entry>
   <entry>
@@ -2233,32 +2486,6 @@
       </tags>
   </entry>
   <entry>
-    <title>正确为Android Studio配置ssr代理</title>
-    <url>/2019/09/12/%E6%AD%A3%E7%A1%AE%E4%B8%BAAndroid%20Studio%E9%85%8D%E7%BD%AEssr%E4%BB%A3%E7%90%86/</url>
-    <content><![CDATA[<p>打开Android Studio，进入Preferences，搜索proxy关键字，进入proxy设置页面。</p>
- <span id="more"></span>
-<p>打开本地代理软件SS，等其他socks代理软件</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/4352353.png"
-                     
-                ></p>
-<p>但是这样只能下载sdk，这样配置之后有没有发现我们使用Gradle下载某些依赖的时候还是下载不下来，因为gradle不支持socks代理，这里我们可以将socks转为http代理，或者给jvm设置代理</p>
-<p>在AS中我们可以直接给JVM设置代理</p>
-<div class="highlight-container" data-rel="Groovy"><figure class="iseeu highlight groovy"><table><tr><td class="code"><pre><span class="line">org.gradle.jvmargs=-DsocksProxyHost=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> -DsocksProxyPort=<span class="number">1080</span></span><br></pre></td></tr></table></figure></div>
-
-<p>这里的端口要根据你自己代理的端口变化，一般都是1080</p>
-<p>在我们的跟目录的 gradle.properties 加上上面配置就可以下载了。</p>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>搭建Samba文件共享服务端</title>
     <url>/2019/04/11/%E6%90%AD%E5%BB%BASamba%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB%E6%9C%8D%E5%8A%A1%E7%AB%AF/</url>
     <content><![CDATA[<p><code>Samba</code> 是著名的开源软件项目之一，它在 <code>Linux/UNIX</code> 系统中实现了微软的 <code>SMB/CIFS</code> 网络协议，从而使得跨平台的文件共享变得更加容易。在部署 Windows、Linux&#x2F;UNIX 混合平台的企业环境时，选用 <code>Samba</code> 可以很好地解决不同系统之间的文件互访问题。</p>
@@ -2327,6 +2554,32 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正确为Android Studio配置ssr代理</title>
+    <url>/2019/09/12/%E6%AD%A3%E7%A1%AE%E4%B8%BAAndroid%20Studio%E9%85%8D%E7%BD%AEssr%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<p>打开Android Studio，进入Preferences，搜索proxy关键字，进入proxy设置页面。</p>
+ <span id="more"></span>
+<p>打开本地代理软件SS，等其他socks代理软件</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/4352353.png"
+                     
+                ></p>
+<p>但是这样只能下载sdk，这样配置之后有没有发现我们使用Gradle下载某些依赖的时候还是下载不下来，因为gradle不支持socks代理，这里我们可以将socks转为http代理，或者给jvm设置代理</p>
+<p>在AS中我们可以直接给JVM设置代理</p>
+<div class="highlight-container" data-rel="Groovy"><figure class="iseeu highlight groovy"><table><tr><td class="code"><pre><span class="line">org.gradle.jvmargs=-DsocksProxyHost=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> -DsocksProxyPort=<span class="number">1080</span></span><br></pre></td></tr></table></figure></div>
+
+<p>这里的端口要根据你自己代理的端口变化，一般都是1080</p>
+<p>在我们的跟目录的 gradle.properties 加上上面配置就可以下载了。</p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -2474,6 +2727,32 @@
       </categories>
       <tags>
         <tag>硬件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows10使用Robocopy多线程功能加速中的文件复制</title>
+    <url>/2019/04/18/Windows10%E4%BD%BF%E7%94%A8Robocopy%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8A%9F%E8%83%BD%E5%8A%A0%E9%80%9F%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6/</url>
+    <content><![CDATA[<p>当用户需要将文件或文件夹复制到另一个驱动器时，通常都使用（GUI 中）标准的选择、复制和粘贴操作。虽然默认的批量文件复制和移动功能在 Windows 10 操作系统中已经历经过微软多次优化，已经能够工作得很好，但当尝试传输大批量文件（特别是大量小文件）时，还是需要很长时间，速度就成了一个瓶颈。<br> <span id="more"></span><br>此时，许多精通技术的 Windows 用户都会使用 <strong>Robocopy</strong>（Robust File Copy，强大的文件复制），这是一个内置于 Windows 10 中的命令行工具，它提供了更多功能来帮助用户更快地将数据移动到不同的位置。</p>
+<p><strong>Robocopy</strong> 最为特殊也经常被忽略的是其支持多线程的能力，允许我们同时复制多个文件，而不像在<strong>文件管理器</strong>中复制文件时只能一次一个（移动多个文件时也只是列队之后一个一个移动）。</p>
+<p>下面介绍在 Windows 10 中如何使用 <strong>Robocopy</strong> 的多线程副本功能来加快文件和文件夹的复制、移动传输过程。</p>
+<h3 id="如何使用Robocopy多线程特性"><a href="#如何使用Robocopy多线程特性" class="headerlink" title="如何使用Robocopy多线程特性"></a>如何使用Robocopy多线程特性</h3><p>如果你要将 Windows 10 中的大量文件和文件夹复制到另一个驱动器，可以仿照如下步骤来实现 <strong>Robocopy</strong> 多线程功能以达到超快的数据复制速度：</p>
+<h4 id="以管理员权限打开「命令提示符」"><a href="#以管理员权限打开「命令提示符」" class="headerlink" title="以管理员权限打开「命令提示符」"></a>以管理员权限打开「命令提示符」</h4><h4 id="执行类似如下命令进行多线程复制"><a href="#执行类似如下命令进行多线程复制" class="headerlink" title="执行类似如下命令进行多线程复制"></a>执行类似如下命令进行多线程复制</h4><div class="highlight-container" data-rel="Powershell"><figure class="iseeu highlight powershell"><table><tr><td class="code"><pre><span class="line">ROBOCOPY source destination [<span class="type">file</span> [<span class="type">file</span>]<span class="type">...</span>] [<span class="type">options</span>]</span><br></pre></td></tr></table></figure></div>
+<p><strong>source</strong> :  源目录(驱动器:\路径或\服务器\共享\路径)。<br><strong>destination</strong> :  目标目录(驱动器:\路径或\服务器\共享\路径)。<br><strong>file</strong> :  要复制的文件(名称&#x2F;通配符: 默认为 “<em>.</em>“)。</p>
+<p>例如：</p>
+<div class="highlight-container" data-rel="Powershell"><figure class="iseeu highlight powershell"><table><tr><td class="code"><pre><span class="line">robocopy D:\Pictures\ E:\收藏\Pictures /S /ZB /<span class="built_in">R</span>:<span class="number">5</span> /W:<span class="number">5</span> /V /MT:<span class="number">8</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>注意</strong>：请自行将源路径和目标路径替换成你自己的。</p>
+<h3 id="Robocopy命令行用法解释"><a href="#Robocopy命令行用法解释" class="headerlink" title="Robocopy命令行用法解释"></a>Robocopy命令行用法解释</h3><p>robocopy 的功能非常强大，因此其命令行开关也非常之多，下面我们只列出能够可靠、快速复制文件的常用开关。</p>
+<blockquote>
+<p><strong>&#x2F;S</strong>:  复制子目录，但不复制空的子目录。<br><strong>&#x2F;E</strong>:  复制子目录，包括空的子目录。<br><strong>&#x2F;LEV:n</strong>:  仅复制源目录树的前 n 层。<br><strong>&#x2F;Z</strong>:  在可重新启动模式下复制文件。<br><strong>&#x2F;B</strong>:  在备份模式下复制文件。<br><strong>&#x2F;ZB</strong>:  使用可重新启动模式；如果拒绝访问，请使用备份模式。<br><strong>&#x2F;J</strong>:   复制时使用未缓冲的 I&#x2F;O (推荐在复制大文件时使用)。<br><strong>&#x2F;R:n</strong>:  失败副本的重试次数: 默认为 1 百万。<br><strong>&#x2F;W:n</strong>:  两次重试间的等待时间: 默认为 30 秒。<br><strong>&#x2F;TBD</strong>:   等待定义共享名称(重试错误 67)。<br><strong>&#x2F;NP</strong>:   无进度 – 不显示已复制的百分比。<br><strong>&#x2F;V</strong>:  生成详细输出，同时显示跳过的文件。<br><strong>&#x2F;MOV</strong>:   移动文件(复制后从源中删除)。<br><strong>&#x2F;MOVE</strong>:  移动文件和目录(复制后从源中删除)。<br><strong>&#x2F;MT:32</strong>:  使用 n 个线程进行多线程复制(默认值为 8)。必须至少为 1，但不得大于 128。</p>
+</blockquote>
+<p>上述命令中最为重要的开关就是 &#x2F;MT，它让 robocopy 能够以多线程模式进行复制传输。如果你没为 &#x2F;MT设置数字，那么默认数字是 8，这意味着 Robocopy 将会同时复制 8 个文件。我个人推荐使用 8个线程，虽然可开的线程可以更多，但数字越大，所使用的系统资源和带宽就越多。</p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
